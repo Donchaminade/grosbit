@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROSBIT - Solutions Informatiques Intégrées</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#022157',
+              orange: '#FF6600',
+              dark: '#121212',
+              card: '#1E1E1E',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+      }
+      .animate-fade-in {
+        animation: fadeIn 1.2s both;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px);}
+        to { opacity: 1; transform: translateY(0);}
+      }
+      .badge {
+        display: inline-block;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        background-color: #FFEDD5; /* Tailwind bg-orange-100 */
+        color: #EA580C; /* Tailwind text-orange-600 */
+      }
+      .glass {
+        background: rgba(255,255,255,0.7);
+        backdrop-filter: blur(8px);
+      }
+    </style>
+</head>
+<body class="bg-white text-gray-900 relative overflow-x-hidden">
+    <!-- Decorative SVG Background -->
+    <div class="absolute inset-0 -z-10 pointer-events-none">
+      <svg class="w-full h-full" viewBox="0 0 1440 320" fill="none">
+        <path fill="#022157" fill-opacity="0.08" d="M0,160L80,154.7C160,149,320,139,480,154.7C640,171,800,213,960,197.3C1120,181,1280,107,1360,69.3L1440,32L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+      </svg>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-primary shadow-lg">
+      <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+        <div class="flex items-center gap-2">
+          <img src="https://via.placeholder.com/50x50?text=GROSBIT" alt="GROSBIT Logo" class="h-12 w-12 rounded-full shadow-lg border-2 border-orange-500">
+          <h1 class="text-2xl font-bold tracking-wide text-white">GROSBIT</h1>
+        </div>
+        <nav class="hidden md:flex gap-8">
+          <a href="#home" class="text-white hover:text-orange-400 transition font-semibold">Accueil</a>
+          <a href="#about" class="text-white hover:text-orange-400 transition font-semibold">À propos</a>
+          <a href="#services" class="text-white hover:text-orange-400 transition font-semibold">Services</a>
+          <a href="#products" class="text-white hover:text-orange-400 transition font-semibold">Produits</a>
+          <a href="#team" class="text-white hover:text-orange-400 transition font-semibold">Équipe</a>
+          <a href="#contact" class="text-white hover:text-orange-400 transition font-semibold">Contact</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button id="themeToggle" class="text-white hover:text-orange-400 text-xl transition">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button id="mobileMenuBtn" class="md:hidden text-white text-2xl ml-2">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile nav -->
+      <nav id="mainNav" class="md:hidden bg-primary w-full px-4 py-2 hidden flex-col gap-2">
+        <a href="#home" class="block text-white py-2 hover:text-orange-400">Accueil</a>
+        <a href="#about" class="block text-white py-2 hover:text-orange-400">À propos</a>
+        <a href="#services" class="block text-white py-2 hover:text-orange-400">Services</a>
+        <a href="#products" class="block text-white py-2 hover:text-orange-400">Produits</a>
+        <a href="#team" class="block text-white py-2 hover:text-orange-400">Équipe</a>
+        <a href="#contact" class="block text-white py-2 hover:text-orange-400">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/80 to-orange-500/40 relative">
+      <div class="max-w-2xl mx-auto text-center animate-fade-in glass rounded-xl shadow-2xl p-10">
+        <span class="badge mb-4"><i class="fas fa-star text-orange-400 mr-1"></i>Leader du secteur</span>
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-primary drop-shadow-lg">Solutions Informatiques Intégrées</h1>
+        <p class="text-lg md:text-xl mb-8 text-gray-700">Optimisez vos communications internes et externes avec nos solutions informatiques adaptées à vos besoins.</p>
+        <a href="#contact" class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-full shadow-lg transition transform hover:-translate-y-1 hover:scale-105 text-lg">
+          <i class="fas fa-paper-plane"></i>Contactez-nous
+        </a>
+      </div>
+      <!-- Decorative floating icons -->
+      <div class="absolute left-10 top-10 animate-bounce">
+        <i class="fas fa-network-wired text-4xl text-orange-400 opacity-30"></i>
+      </div>
+      <div class="absolute right-10 bottom-10 animate-spin-slow">
+        <i class="fas fa-server text-5xl text-primary opacity-20"></i>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white animate-fade-in">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-2">À propos de GROSBIT</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">GROSBIT est une société d'ingénierie informatique, intégrateur de solutions informatiques, commerciale et en Marketing digital & Communication.</p>
+        </div>
+        <div class="flex flex-col md:flex-row gap-10 items-center">
+          <div class="flex-1">
+            <h3 class="text-2xl font-semibold text-orange-500 mb-4">Notre petite histoire</h3>
+            <ul class="space-y-3 text-gray-700">
+              <li><i class="fas fa-circle text-orange-400 text-xs mr-2"></i>L'informatique englobe plusieurs branches et services spécialisés.</li>
+              <li><i class="fas fa-circle text-orange-400 text-xs mr-2"></i>Un bit représente la plus petite valeur d'information, l'ajout de services fait "grossir" ce bit.</li>
+              <li><i class="fas fa-circle text-orange-400 text-xs mr-2"></i>Notre nom symbolise la réunion de compétences pour offrir des solutions globales.</li>
+              <li><i class="fas fa-circle text-orange-400 text-xs mr-2"></i>Nous couvrons audit, conseil, installation, formation, maintenance et assistance.</li>
+            </ul>
+            <span class="badge mt-4"><i class="fas fa-award mr-1"></i>+10 ans d'expérience</span>
+          </div>
+          <div class="flex-1 flex justify-center">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Équipe GROSBIT" class="rounded-2xl shadow-xl border-4 border-orange-200 w-full max-w-md hover:scale-105 transition">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gradient-to-b from-orange-50 to-white animate-fade-in">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-2">Nos Services</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Nous offrons une gamme complète de services informatiques pour répondre à tous vos besoins.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition group relative overflow-hidden">
+            <span class="absolute top-4 right-4 badge"><i class="fas fa-shield-alt"></i></span>
+            <div class="text-4xl text-orange-500 mb-4"><i class="fas fa-network-wired"></i></div>
+            <h3 class="font-bold text-xl mb-2 text-primary">Réseau & Sécurité</h3>
+            <p class="text-gray-600">Procédures et stratégies pour garantir la sécurité et la fonctionnalité de vos matériels.</p>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition group relative overflow-hidden">
+            <span class="absolute top-4 right-4 badge"><i class="fas fa-wrench"></i></span>
+            <div class="text-4xl text-orange-500 mb-4"><i class="fas fa-tools"></i></div>
+            <h3 class="font-bold text-xl mb-2 text-primary">Maintenance</h3>
+            <p class="text-gray-600">Entretien préventif systématique de vos matériels et logiciels par des techniciens experts.</p>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition group relative overflow-hidden">
+            <span class="absolute top-4 right-4 badge"><i class="fas fa-chalkboard-teacher"></i></span>
+            <div class="text-4xl text-orange-500 mb-4"><i class="fas fa-graduation-cap"></i></div>
+            <h3 class="font-bold text-xl mb-2 text-primary">Formation</h3>
+            <p class="text-gray-600">Formations IT sur la gestion des outils techniques adaptés à votre domaine.</p>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition group relative overflow-hidden">
+            <span class="absolute top-4 right-4 badge"><i class="fas fa-bullhorn"></i></span>
+            <div class="text-4xl text-orange-500 mb-4"><i class="fas fa-bullhorn"></i></div>
+            <h3 class="font-bold text-xl mb-2 text-primary">Marketing & Communication</h3>
+            <p class="text-gray-600">Solutions pour accroître la visibilité et la performance business via le digital.</p>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition group relative overflow-hidden">
+            <span class="absolute top-4 right-4 badge"><i class="fas fa-cogs"></i></span>
+            <div class="text-4xl text-orange-500 mb-4"><i class="fas fa-server"></i></div>
+            <h3 class="font-bold text-xl mb-2 text-primary">Solutions Intégrées</h3>
+            <p class="text-gray-600">Optimisez vos communications avec nos solutions informatiques sur mesure.</p>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition group relative overflow-hidden">
+            <span class="absolute top-4 right-4 badge"><i class="fas fa-box"></i></span>
+            <div class="text-4xl text-orange-500 mb-4"><i class="fas fa-cubes"></i></div>
+            <h3 class="font-bold text-xl mb-2 text-primary">Distribution de matériels</h3>
+            <p class="text-gray-600">Fourniture de matériels informatiques de qualité de partenaires renommés.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-white animate-fade-in">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-2">Nos Produits</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Découvrez notre gamme de matériels informatiques de haute qualité.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition group overflow-hidden">
+            <div class="h-40 bg-gray-100 flex items-center justify-center">
+              <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Laptop" class="h-full w-full object-cover group-hover:scale-110 transition">
+            </div>
+            <div class="p-5 text-center">
+              <h3 class="font-bold text-lg text-primary mb-1">Laptop</h3>
+              <span class="badge">HP, LENOVO</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition group overflow-hidden">
+            <div class="h-40 bg-gray-100 flex items-center justify-center">
+              <img src="https://images.unsplash.com/photo-1551645120-d70bfe850c07?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Desktop" class="h-full w-full object-cover group-hover:scale-110 transition">
+            </div>
+            <div class="p-5 text-center">
+              <h3 class="font-bold text-lg text-primary mb-1">Desktop</h3>
+              <span class="badge">HP, LENOVO</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition group overflow-hidden">
+            <div class="h-40 bg-gray-100 flex items-center justify-center">
+              <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Serveur" class="h-full w-full object-cover group-hover:scale-110 transition">
+            </div>
+            <div class="p-5 text-center">
+              <h3 class="font-bold text-lg text-primary mb-1">Serveur</h3>
+              <span class="badge">HP Proliant</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition group overflow-hidden">
+            <div class="h-40 bg-gray-100 flex items-center justify-center">
+              <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Imprimante" class="h-full w-full object-cover group-hover:scale-110 transition">
+            </div>
+            <div class="p-5 text-center">
+              <h3 class="font-bold text-lg text-primary mb-1">Imprimante</h3>
+              <span class="badge">HP & consommables originaux</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-gradient-to-b from-orange-50 to-white animate-fade-in">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-2">Notre Équipe</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Découvrez les experts qui font la force de GROSBIT.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition group overflow-hidden flex flex-col items-center p-6"></div>
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Paul-Marie Têko AMUZUN" class="rounded-full w-32 h-32 object-cover border-4 border-orange-200 shadow-lg group-hover:scale-105 transition">
+              <span class="absolute bottom-0 right-0 badge bg-orange-500 text-white"><i class="fas fa-crown"></i> Principal</span>
+            </div>
+            <div class="mt-4 text-center">
+              <h3 class="font-bold text-xl text-primary">Paul-Marie Têko AMUZUN</h3>
+              <p class="text-orange-500 font-semibold mb-2">Le Principal</p>
+              <p class="text-gray-600 text-sm">Instructor CISCO, HP ATP - BladeSystem Solutions Integrator V8.1, HP ATP - Server Solutions V1, HP ATP Implementing HP Network Technologies, Microsoft Certified Professional.</p>
+              <div class="flex justify-center gap-2 mt-2">
+                <span class="badge"><i class="fab fa-linkedin"></i></span>
+                <span class="badge"><i class="fab fa-twitter"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition group overflow-hidden flex flex-col items-center p-6">
+            <div class="relative">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Membre équipe" class="rounded-full w-32 h-32 object-cover border-4 border-orange-200 shadow-lg group-hover:scale-105 transition">
+              <span class="absolute bottom-0 right-0 badge bg-orange-400 text-white"><i class="fas fa-user-tie"></i> IT Manager</span>
+            </div>
+            <div class="mt-4 text-center">
+              <h3 class="font-bold text-xl text-primary">Jean Kossi</h3>
+              <p class="text-orange-500 font-semibold mb-2">IT Manager</p>
+              <p class="text-gray-600 text-sm">Expert en réseaux et sécurité, 8 ans d'expérience dans l'intégration de solutions informatiques.</p>
+              <div class="flex justify-center gap-2 mt-2">
+                <span class="badge"><i class="fab fa-linkedin"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition group overflow-hidden flex flex-col items-center p-6">
+            <div class="relative">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Membre équipe" class="rounded-full w-32 h-32 object-cover border-4 border-orange-200 shadow-lg group-hover:scale-105 transition">
+              <span class="absolute bottom-0 right-0 badge bg-orange-300 text-white"><i class="fas fa-bullhorn"></i> Marketing</span>
+            </div>
+            <div class="mt-4 text-center">
+              <h3 class="font-bold text-xl text-primary">Awa Dossou</h3>
+              <p class="text-orange-500 font-semibold mb-2">Marketing Digital</p>
+              <p class="text-gray-600 text-sm">Spécialiste en communication digitale et stratégie de marque, passionnée par l'innovation.</p>
+              <div class="flex justify-center gap-2 mt-2">
+                <span class="badge"><i class="fab fa-facebook"></i></span>
+                <span class="badge"><i class="fab fa-instagram"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white animate-fade-in">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-2">Contactez-nous</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Une question ? Un projet ? Notre équipe vous répond rapidement !</p>
+        </div>
+        <div class="flex flex-col md:flex-row gap-10">
+          <div class="flex-1 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="text-orange-500 text-2xl"><i class="fas fa-map-marker-alt"></i></span>
+              <span class="text-gray-700">Lomé, Togo</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-orange-500 text-2xl"><i class="fas fa-envelope"></i></span>
+              <span class="text-gray-700">contact@grosbit.com</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-orange-500 text-2xl"><i class="fas fa-phone"></i></span>
+              <span class="text-gray-700">+228 90 00 00 00</span>
+            </div>
+            <div class="flex gap-3 mt-4">
+              <a href="#" class="badge"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="badge"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="badge"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+          <form class="flex-1 bg-white rounded-xl shadow-lg p-8 space-y-6">
+            <div>
+              <label class="block text-primary font-semibold mb-1">Nom</label>
+              <input type="text" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:border-orange-500 outline-none" required>
+            </div>
+            <div>
+              <label class="block text-primary font-semibold mb-1">Email</label>
+              <input type="email" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:border-orange-500 outline-none" required>
+            </div>
+            <div>
+              <label class="block text-primary font-semibold mb-1">Message</label>
+              <textarea class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:border-orange-500 outline-none min-h-[120px]" required></textarea>
+            </div>
+            <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-lg shadow-lg transition">Envoyer <i class="fas fa-paper-plane ml-2"></i></button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/22890000000" target="_blank" class="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg z-50 animate-bounce">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-28 right-8 bg-orange-500 hover:bg-orange-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-lg z-40 opacity-0 pointer-events-none transition">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white pt-12 pb-6 mt-12">
+      <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="font-bold text-lg mb-4">GROSBIT</h3>
+          <p class="text-gray-200 mb-2">Solutions informatiques intégrées pour entreprises et particuliers.</p>
+          <div class="flex gap-3 mt-2">
+            <a href="#" class="hover:text-orange-400"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-orange-400"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="hover:text-orange-400"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-4">Navigation</h3>
+          <ul class="space-y-2">
+            <li><a href="#home" class="hover:text-orange-400">Accueil</a></li>
+            <li><a href="#about" class="hover:text-orange-400">À propos</a></li>
+            <li><a href="#services" class="hover:text-orange-400">Services</a></li>
+            <li><a href="#products" class="hover:text-orange-400">Produits</a></li>
+            <li><a href="#team" class="hover:text-orange-400">Équipe</a></li>
+            <li><a href="#contact" class="hover:text-orange-400">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-4">Contact</h3>
+          <ul class="space-y-2">
+            <li><i class="fas fa-map-marker-alt mr-2"></i>Lomé, Togo</li>
+            <li><i class="fas fa-envelope mr-2"></i>contact@grosbit.com</li>
+            <li><i class="fas fa-phone mr-2"></i>+228 90 00 00 00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 border-t border-white/10 pt-4 text-center text-gray-300 text-sm">
+        &copy; 2024 GROSBIT. Tous droits réservés.
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mainNav = document.getElementById('mainNav');
+      mobileMenuBtn.addEventListener('click', () => {
+        mainNav.classList.toggle('hidden');
+      });
+
+      // Back to top button
+      const backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', () => {
+        if(window.scrollY > 300) {
+          backToTop.classList.remove('opacity-0', 'pointer-events-none');
+        } else {
+          backToTop.classList.add('opacity-0', 'pointer-events-none');
+        }
+      });
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({top:0, behavior:'smooth'});
+      });
+
+      // Theme toggle (light/dark)
+      const themeToggle = document.getElementById('themeToggle');
+      themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('bg-white');
+        document.body.classList.toggle('bg-dark');
+        document.body.classList.toggle('text-gray-900');
+        document.body.classList.toggle('text-gray-100');
+      });
+    </script>
+</body>
+</html>

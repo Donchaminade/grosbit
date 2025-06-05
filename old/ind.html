@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROSBIT - Solutions Informatiques Intégrées</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .montserrat-bold { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        .montserrat-regular { font-family: 'Montserrat', sans-serif; font-weight: 400; }
+        .bg-blue-grosbit { background-color: #022157; }
+        .text-blue-grosbit { color: #022157; }
+        .bg-orange-grosbit { background-color: #FF6600; }
+        .text-orange-grosbit { color: #FF6600; }
+        .whatsapp-button { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0% { transform: scale(1);}
+            50% { transform: scale(1.1);}
+            100% { transform: scale(1);}
+        }
+        .fade-in { opacity: 0; transition: opacity 1s ease-in-out, transform 1s cubic-bezier(.4,2,.3,1); transform: translateY(40px);}
+        .fade-in.visible { opacity: 1; transform: translateY(0);}
+        #particles-js { position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; z-index: -1;}
+        .carousel-track {
+            display: flex;
+            animation: scroll-carousel 30s linear infinite;
+            gap: 3rem;
+        }
+        @keyframes scroll-carousel {
+            0% { transform: translateX(0);}
+            100% { transform: translateX(-50%);}
+        }
+        .dark .bg-blue-grosbit { background-color: #0a1836 !important; }
+        .dark .text-blue-grosbit { color: #60a5fa !important; }
+        .dark .bg-orange-grosbit { background-color: #ff7d1a !important; }
+        .dark .text-orange-grosbit { color: #ff7d1a !important; }
+        .dark .bg-white { background-color: #1e293b !important; }
+        .dark .bg-gray-50 { background-color: #273549 !important; }
+        .dark .bg-gray-100 { background-color: #22304a !important; }
+        .dark .bg-gray-900 { background-color: #0f172a !important; }
+        .dark .text-gray-700 { color: #cbd5e1 !important; }
+        .dark .text-gray-400 { color: #94a3b8 !important; }
+        .dark .border-gray-800 { border-color: #334155 !important; }
+        .dark .shadow-lg { box-shadow: 0 8px 32px 0 rgba(16, 24, 40, 0.5) !important; }
+    </style>
+</head>
+<body class="relative bg-white text-gray-900 transition-colors duration-500 dark:bg-gray-900 dark:text-white">
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Dark Mode Toggle -->
+    <button id="darkModeToggle" class="fixed bottom-6 right-6 z-50 bg-blue-grosbit text-white p-3 rounded-full shadow-lg transition hover:bg-orange-grosbit">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/22896107169?text=Bonjour%20GROSBIT,%20je%20suis%20intéressé%20par%20vos%20services" 
+       class="whatsapp-button fixed bottom-24 right-6 z-50 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-300">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Navbar -->
+    <nav class="bg-blue-grosbit/90 text-white sticky top-0 z-40 shadow-lg backdrop-blur-md transition">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="flex items-center space-x-2">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="GROSBIT Logo" class="h-10">
+                    <span class="montserrat-bold text-xl">GROSBIT</span>
+                </a>
+                <div class="md:hidden">
+                    <button id="menuToggle" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                <div class="hidden md:flex space-x-6 montserrat-bold">
+                    <a href="#accueil" class="hover:text-orange-grosbit transition">Accueil</a>
+                    <a href="#services" class="hover:text-orange-grosbit transition">Services</a>
+                    <a href="#produits" class="hover:text-orange-grosbit transition">Produits</a>
+                    <a href="#apropos" class="hover:text-orange-grosbit transition">À propos</a>
+                    <a href="#contact" class="hover:text-orange-grosbit transition">Contact</a>
+                </div>
+            </div>
+            <div id="mobileMenu" class="md:hidden hidden py-4">
+                <div class="flex flex-col space-y-3 montserrat-bold">
+                    <a href="#accueil" class="hover:text-orange-grosbit transition">Accueil</a>
+                    <a href="#services" class="hover:text-orange-grosbit transition">Services</a>
+                    <a href="#produits" class="hover:text-orange-grosbit transition">Produits</a>
+                    <a href="#apropos" class="hover:text-orange-grosbit transition">À propos</a>
+                    <a href="#contact" class="hover:text-orange-grosbit transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-blue-grosbit via-blue-900 to-orange-grosbit text-white py-20 overflow-hidden">
+        <div class="container mx-auto px-4 text-center fade-in">
+            <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="GROSBIT Logo" class="mx-auto mb-8 w-36 drop-shadow-xl animate-pulse">
+            <h1 class="montserrat-bold text-4xl md:text-6xl mb-6 drop-shadow-lg">SOLUTIONS INFORMATIQUES INTÉGRÉES</h1>
+            <p class="montserrat-regular text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Optimisez vos communications internes et externes avec nos solutions informatiques sur mesure. GROSBIT vous accompagne dans la transformation digitale de votre entreprise.</p>
+            <a href="#contact" class="bg-orange-grosbit hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block montserrat-bold shadow-lg">
+                Contactez-nous
+            </a>
+        </div>
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center">
+            <a href="#services" class="text-white animate-bounce">
+                <i class="fas fa-chevron-down text-3xl"></i>
+            </a>
+        </div>
+        <!-- Decorative shapes -->
+        <div class="absolute top-0 left-0 w-40 h-40 bg-orange-grosbit rounded-full opacity-20 blur-2xl -z-10"></div>
+        <div class="absolute bottom-0 right-0 w-52 h-52 bg-blue-grosbit rounded-full opacity-20 blur-2xl -z-10"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white dark:bg-gray-900 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="montserrat-bold text-4xl text-center text-blue-grosbit dark:text-blue-300 mb-16 fade-in">NOS SERVICES</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Service 1 -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden fade-in hover:scale-105 hover:shadow-2xl transition duration-300 group">
+                    <div class="h-48 bg-gradient-to-br from-blue-grosbit via-blue-700 to-orange-grosbit flex items-center justify-center">
+                        <i class="fas fa-network-wired text-white text-6xl group-hover:scale-110 transition"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="montserrat-bold text-xl text-blue-grosbit dark:text-blue-300 mb-3">Réseau & Sécurité</h3>
+                        <p class="montserrat-regular text-gray-700 dark:text-gray-300">Conception, déploiement et sécurisation de réseaux d'entreprise, VPN, firewalls, audits et plans de reprise d'activité.</p>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden fade-in hover:scale-105 hover:shadow-2xl transition duration-300 group">
+                    <div class="h-48 bg-gradient-to-br from-orange-grosbit via-pink-500 to-blue-grosbit flex items-center justify-center">
+                        <i class="fas fa-tools text-white text-6xl group-hover:scale-110 transition"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="montserrat-bold text-xl text-blue-grosbit dark:text-blue-300 mb-3">Maintenance informatique</h3>
+                        <p class="montserrat-regular text-gray-700 dark:text-gray-300">Maintenance préventive et curative, gestion de parc, support technique, assistance à distance et sur site.</p>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden fade-in hover:scale-105 hover:shadow-2xl transition duration-300 group">
+                    <div class="h-48 bg-gradient-to-br from-blue-grosbit via-teal-500 to-orange-grosbit flex items-center justify-center">
+                        <i class="fas fa-laptop-code text-white text-6xl group-hover:scale-110 transition"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="montserrat-bold text-xl text-blue-grosbit dark:text-blue-300 mb-3">Formation & Conseil</h3>
+                        <p class="montserrat-regular text-gray-700 dark:text-gray-300">Formations sur les outils bureautiques, cybersécurité, cloud, gestion de projet IT et accompagnement à la transformation digitale.</p>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden fade-in hover:scale-105 hover:shadow-2xl transition duration-300 group md:col-span-2">
+                    <div class="h-48 bg-gradient-to-br from-orange-grosbit via-yellow-500 to-blue-grosbit flex items-center justify-center">
+                        <i class="fas fa-shopping-cart text-white text-6xl group-hover:scale-110 transition"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="montserrat-bold text-xl text-blue-grosbit dark:text-blue-300 mb-3">Distribution de matériels</h3>
+                        <p class="montserrat-regular text-gray-700 dark:text-gray-300">Vente et intégration de matériels informatiques : PC, serveurs, imprimantes, équipements réseau, accessoires et logiciels professionnels.</p>
+                    </div>
+                </div>
+                <!-- Service 5 -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden fade-in hover:scale-105 hover:shadow-2xl transition duration-300 group">
+                    <div class="h-48 bg-gradient-to-br from-blue-grosbit via-indigo-500 to-orange-grosbit flex items-center justify-center">
+                        <i class="fas fa-bullhorn text-white text-6xl group-hover:scale-110 transition"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="montserrat-bold text-xl text-blue-grosbit dark:text-blue-300 mb-3">Marketing digital</h3>
+                        <p class="montserrat-regular text-gray-700 dark:text-gray-300">Création de sites web, gestion des réseaux sociaux, campagnes emailing, référencement SEO/SEA, identité visuelle et branding.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 text-center fade-in">
+                <a href="#contact" class="bg-orange-grosbit hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block montserrat-bold shadow-lg">
+                    Discutons de vos besoins
+                </a>
+            </div>
+        </div>
+        <div class="absolute -top-20 right-0 w-60 h-60 bg-orange-grosbit rounded-full opacity-10 blur-2xl -z-10"></div>
+    </section>
+
+    <!-- Produits Section -->
+    <section id="produits" class="py-20 bg-gray-100 dark:bg-gray-800 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="montserrat-bold text-4xl text-center text-blue-grosbit dark:text-blue-300 mb-16 fade-in">NOS PRODUITS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Produit 1 -->
+                <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden fade-in hover:scale-105 hover:shadow-2xl transition duration-300 group">
+                    <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80" alt="Laptop HP, LENOVO" class="object-cover h-40 w-40 rounded-xl shadow-lg group-hover:scale-110 transition">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="montserrat-bold text-xl text-blue-grosbit dark:text-blue-300 mb-3">Laptop HP, LENOVO</h3>
+                        <p class="montserrat-regular text-gray-700 dark:text-gray-300">Des ordinateurs portables performants pour répondre à tous vos besoins professionnels, bureautique ou mobilité.</p>
+                        <ul class="mt-2 text-sm text-gray-500 dark:text-gray-400 list-disc list-inside">
+                            <li>HP EliteBook, ProBook, Lenovo ThinkPad</li>
+                            <li>Garantie constructeur</li>
+                            <li>Livraison rapide</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Produit 2 -->
+                <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden fade-in hover:scale-105 hover:shadow-2xl transition duration-300 group">
+                    <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Desktop HP, LENOVO" class="object-cover h-40 w-40 rounded-xl shadow-lg group-hover:scale-110 transition">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="montserrat-bold text-xl text-blue-grosbit dark:text-blue-300 mb-3">Desktop HP, LENOVO</h3>
+                        <p class="montserrat-regular text-gray-700 dark:text-gray-300">Des postes fixes puissants et fiables pour vos bureaux, adaptés à tous les environnements professionnels.</p>
+                        <ul class="mt-2 text-sm text-gray-500 dark:text-gray-400 list-disc list-inside">
+                            <li>HP ProDesk, Lenovo ThinkCentre</li>
+                            <li>Configurations sur mesure</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Produit 3 -->
+                <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden fade-in hover:scale-105 hover:shadow-2xl transition duration-300 group">
+                    <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Serveur HP Proliant" class="object-cover h-40 w-40 rounded-xl shadow-lg group-hover:scale-110 transition">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="montserrat-bold text-xl text-blue-grosbit dark:text-blue-300 mb-3">Serveur HP Proliant</h3>
+                        <p class="montserrat-regular text-gray-700 dark:text-gray-300">Toute la gamme HP Proliant pour vos besoins en infrastructure serveur, virtualisation et stockage sécurisé.</p>
+                        <ul class="mt-2 text-sm text-gray-500 dark:text-gray-400 list-disc list-inside">
+                            <li>Rack & tour</li>
+                            <li>Installation et configuration</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Produit 4 -->
+                <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden fade-in hover:scale-105 hover:shadow-2xl transition duration-300 group">
+                    <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Imprimantes & consommables" class="object-cover h-40 w-40 rounded-xl shadow-lg group-hover:scale-110 transition">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="montserrat-bold text-xl text-blue-grosbit dark:text-blue-300 mb-3">Imprimantes & consommables</h3>
+                        <p class="montserrat-regular text-gray-700 dark:text-gray-300">Toute la gamme HP, Canon, Epson et les consommables originaux pour une impression de qualité professionnelle.</p>
+                        <ul class="mt-2 text-sm text-gray-500 dark:text-gray-400 list-disc list-inside">
+                            <li>Laser, jet d’encre, multifonctions</li>
+                            <li>Cartouches & toners d’origine</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 text-center fade-in">
+                <a href="#contact" class="bg-orange-grosbit hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block montserrat-bold shadow-lg">
+                    Demander un devis
+                </a>
+            </div>
+        </div>
+        <!-- Carousel logos partenaires -->
+        <div class="mt-20">
+            <div class="overflow-hidden py-6 bg-white dark:bg-gray-900">
+                <div class="carousel-track items-center" style="width:200%;">
+                    <!-- Logos (doubles pour boucle infinie) -->
+                    <div class="flex items-center gap-12">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Cisco_logo_blue_2016.svg" alt="Cisco" class="h-14 grayscale hover:grayscale-0 transition" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="h-12 grayscale hover:grayscale-0 transition" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Lenovo_logo_2015.svg" alt="Lenovo" class="h-10 grayscale hover:grayscale-0 transition" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/HP_logo_2012.svg" alt="HP" class="h-14 grayscale hover:grayscale-0 transition" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/D-Link_logo.svg" alt="D-Link" class="h-10 grayscale hover:grayscale-0 transition" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Canon_wordmark.svg" alt="Canon" class="h-10 grayscale hover:grayscale-0 transition" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Epson_logo.svg" alt="Epson" class="h-10 grayscale hover:grayscale-0 transition" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Netgear_logo.svg" alt="Netgear" class="h-10 grayscale hover:grayscale-0 transition" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/TP-Link_logo_2016.svg" alt="TP-Link" class="h-10 grayscale hover:grayscale-0 transition" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/HP_logo_2012.svg" alt="HP" class="h-14 grayscale hover:grayscale-0 transition" />
+                    </div>
+                    <div class="flex items-center gap-12">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Cisco_logo_blue_2016.svg" alt="Cisco" class="h-14 grayscale hover:grayscale-0 transition" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="h-12 grayscale hover:grayscale-0 transition" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Lenovo_logo_2015.svg" alt="Lenovo" class="h-10 grayscale hover:grayscale-0 transition" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/HP_logo_2012.svg" alt="HP" class="h-14 grayscale hover:grayscale-0 transition" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/D-Link_logo.svg" alt="D-Link" class="h-10 grayscale hover:grayscale-0 transition" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Canon_wordmark.svg" alt="Canon" class="h-10 grayscale hover:grayscale-0 transition" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Epson_logo.svg" alt="Epson" class="h-10 grayscale hover:grayscale-0 transition" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Netgear_logo.svg" alt="Netgear" class="h-10 grayscale hover:grayscale-0 transition" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/TP-Link_logo_2016.svg" alt="TP-Link" class="h-10 grayscale hover:grayscale-0 transition" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/HP_logo_2012.svg" alt="HP" class="h-14 grayscale hover:grayscale-0 transition" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- À Propos Section -->
+    <section id="apropos" class="py-20 bg-white dark:bg-gray-900 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="montserrat-bold text-4xl text-center text-blue-grosbit dark:text-blue-300 mb-16 fade-in">NOTRE HISTOIRE</h2>
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2 fade-in">
+                    <h3 class="montserrat-bold text-2xl text-blue-grosbit dark:text-blue-300 mb-6">L'origine de GROSBIT</h3>
+                    <p class="montserrat-regular text-gray-700 dark:text-gray-300 mb-6">
+                        Fondée par des passionnés de l'informatique, GROSBIT est née de la volonté de rassembler des compétences variées pour offrir une réponse globale aux besoins numériques des entreprises. Notre nom symbolise l'union de multiples expertises pour former une solution complète et robuste.
+                    </p>
+                    <p class="montserrat-regular text-gray-700 dark:text-gray-300 mb-6">
+                        Depuis plus de 30 ans, nous accompagnons des clients de renom dans leur transformation digitale, en alliant rigueur, innovation et respect des normes internationales.
+                    </p>
+                    <div class="bg-orange-grosbit text-white p-6 rounded-lg shadow-lg">
+                        <h4 class="montserrat-bold text-xl mb-3">Notre vocation</h4>
+                        <p class="montserrat-regular">
+                            L'informatique est un domaine complexe et exigeant. Chez GROSBIT, nous croyons à l'accompagnement humain, à la formation continue et à la co-construction de solutions adaptées à chaque client.
+                        </p>
+                        <p class="montserrat-bold mt-4 text-right">Paul-Marie Têko AMUZUN<br>Le Principal</p>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 fade-in">
+                    <!-- Team Members -->
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+                        <h3 class="montserrat-bold text-xl text-blue-grosbit dark:text-blue-300 mb-4">NOTRE ÉQUIPE</h3>
+                        <div class="flex flex-col md:flex-row gap-6">
+                            <div class="text-center">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Paul-Marie Têko AMUZUN" class="rounded-full w-32 h-32 mx-auto mb-3 shadow-lg">
+                                <h4 class="montserrat-bold text-blue-grosbit dark:text-blue-300">Paul-Marie Têko AMUZUN</h4>
+                                <p class="montserrat-regular text-gray-700 dark:text-gray-300 text-sm">Le Principal</p>
+                                <div class="mt-2">
+                                    <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                                    <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                                    <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                                    <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                                    <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://randomuser.me/api/portraits/men/43.jpg" alt="Justin-Marie Auger" class="rounded-full w-32 h-32 mx-auto mb-3 shadow-lg">
+                                <h4 class="montserrat-bold text-blue-grosbit dark:text-blue-300">Justin-Marie Auger AMUZUN</h4>
+                                <p class="montserrat-regular text-gray-700 dark:text-gray-300 text-sm">Responsable Technico-commercial</p>
+                                <div class="mt-2">
+                                    <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                                    <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                                    <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                                    <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                                    <span class="text-yellow-400"><i class="fas fa-star-half-alt"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Clients -->
+                    <div>
+                        <h3 class="montserrat-bold text-xl text-blue-grosbit dark:text-blue-300 mb-4">ILS NOUS ONT FAIT CONFIANCE</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg flex items-center justify-center h-24 shadow">
+                                <span class="montserrat-bold text-blue-grosbit dark:text-blue-300">SGI TOGO</span>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg flex items-center justify-center h-24 shadow">
+                                <span class="montserrat-bold text-blue-grosbit dark:text-blue-300 text-center">PORT AUTONOME DE LOMÉ</span>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg flex items-center justify-center h-24 col-span-2 md:col-span-1 shadow">
+                                <span class="montserrat-bold text-blue-grosbit dark:text-blue-300">WAFI CAPITAL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 text-center fade-in">
+                <a href="#contact" class="bg-orange-grosbit hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block montserrat-bold shadow-lg">
+                    Travaillons ensemble
+                </a>
+            </div>
+        </div>
+        <div class="absolute top-0 left-0 w-40 h-40 bg-blue-grosbit rounded-full opacity-10 blur-2xl -z-10"></div>
+    </section>
+
+    <!-- Témoignages Section -->
+    <section class="py-20 bg-blue-grosbit dark:bg-blue-950 text-white relative">
+        <div class="container mx-auto px-4">
+            <h2 class="montserrat-bold text-4xl text-center mb-16 fade-in">TÉMOIGNAGES</h2>
+            <div class="max-w-3xl mx-auto text-center fade-in">
+                <blockquote class="montserrat-regular text-xl mb-6 italic">
+                    "GROSBIT a fourni un travail de qualité avec tact lors du réaménagement dans notre salle serveur, leur conception de l'esprit d'équipe reflète leur slogan 'Et si nous essayons ensemble!'."
+                </blockquote>
+                <div class="flex items-center justify-center space-x-3">
+                    <div class="text-xl text-orange-grosbit montserrat-bold">FOLI Assiongbon</div>
+                </div>
+                <div class="montserrat-regular text-sm">Chef Division Système d'information au PAL</div>
+                <div class="mt-4 text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="max-w-3xl mx-auto text-center fade-in mt-12">
+                <blockquote class="montserrat-regular text-xl mb-6 italic">
+                    "Une équipe très professionnelle, à l'écoute et réactive. Grâce à GROSBIT, notre infrastructure informatique est désormais fiable et sécurisée."
+                </blockquote>
+                <div class="flex items-center justify-center space-x-3">
+                    <div class="text-xl text-orange-grosbit montserrat-bold">A. Kossi</div>
+                </div>
+                <div class="montserrat-regular text-sm">Responsable IT, SGI TOGO</div>
+                <div class="mt-4 text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-40 h-40 bg-orange-grosbit rounded-full opacity-10 blur-2xl -z-10"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100 dark:bg-gray-800 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="montserrat-bold text-4xl text-center text-blue-grosbit dark:text-blue-300 mb-16 fade-in">CONTACTEZ-NOUS</h2>
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2 fade-in">
+                    <h3 class="montserrat-bold text-2xl text-blue-grosbit dark:text-blue-300 mb-6">Pour toute question ou demande d'information</h3>
+                    <p class="montserrat-regular text-gray-700 dark:text-gray-300 mb-6">
+                        Nous sommes là pour vous aider à optimiser vos solutions informatiques. N'hésitez pas à nous contacter par téléphone, email ou via le formulaire.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-orange-grosbit text-white p-3 rounded-full">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="montserrat-bold text-blue-grosbit dark:text-blue-300">Assistance</h4>
+                                <p class="montserrat-regular text-gray-700 dark:text-gray-300">+228 96 10 71 69 / 99 14 48 47</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-orange-grosbit text-white p-3 rounded-full">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="montserrat-bold text-blue-grosbit dark:text-blue-300">Email</h4>
+                                <p class="montserrat-regular text-gray-700 dark:text-gray-300">contact@grosbit.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-orange-grosbit text-white p-3 rounded-full">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="montserrat-bold text-blue-grosbit dark:text-blue-300">Adresse</h4>
+                                <p class="montserrat-regular text-gray-700 dark:text-gray-300">Lomé, Togo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="montserrat-bold text-blue-grosbit dark:text-blue-300 mb-4">Réseaux sociaux</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-blue-400 text-white p-3 rounded-full hover:bg-blue-500 transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition duration-300">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="bg-blue-800 text-white p-3 rounded-full hover:bg-blue-900 transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 fade-in">
+                    <form class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg">
+                        <div class="mb-6">
+                            <label for="name" class="montserrat-regular block text-gray-700 dark:text-gray-300 mb-2">Votre prénom*</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-grosbit focus:border-transparent bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white" placeholder="Entrez votre prénom ici" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="montserrat-regular block text-gray-700 dark:text-gray-300 mb-2">Votre adresse e-mail*</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-grosbit focus:border-transparent bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white" placeholder="Entrez votre e-mail ici" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="montserrat-regular block text-gray-700 dark:text-gray-300 mb-2">Votre message*</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-grosbit focus:border-transparent bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white" placeholder="Écrivez votre message ici" required></textarea>
+                        </div>
+                        <button type="submit" class="bg-orange-grosbit hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 w-full montserrat-bold">
+                            Envoyer votre message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 right-0 w-40 h-40 bg-orange-grosbit rounded-full opacity-10 blur-2xl -z-10"></div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-grosbit dark:bg-blue-950 text-white text-center relative">
+        <div class="container mx-auto px-4">
+            <i class="fas fa-quote-right text-4xl mb-6 text-orange-grosbit"></i>
+            <h2 class="montserrat-bold text-4xl mb-6">ET SI NOUS ESSAYONS ENSEMBLE !</h2>
+            <a href="#contact" class="bg-white hover:bg-gray-200 text-blue-grosbit font-bold py-3 px-8 rounded-full transition duration-300 inline-block montserrat-bold shadow-lg">
+                Contactez-nous!
+            </a>
+        </div>
+        <div class="absolute top-0 left-0 w-32 h-32 bg-orange-grosbit rounded-full opacity-10 blur-2xl -z-10"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-gray-950 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between gap-8 mb-8">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="flex items-center space-x-2 mb-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="GROSBIT Logo" class="h-10">
+                        <span class="montserrat-bold text-xl">GROSBIT</span>
+                    </a>
+                    <p class="montserrat-regular text-gray-400 mb-4">
+                        Solutions Informatiques Intégrées pour optimiser vos communications internes et externes.
+                    </p>
+                    <p class="montserrat-regular text-sm text-gray-400">
+                        &copy; 2025 GROSBIT. Tous droits réservés.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="montserrat-bold text-lg mb-4">Infos</h3>
+                    <p class="montserrat-regular text-gray-400 mb-2"><i class="fas fa-phone mr-2 text-orange-grosbit"></i> +228 96 10 71 69 / 99 14 48 47</p>
+                    <p class="montserrat-regular text-gray-400"><i class="fas fa-envelope mr-2 text-orange-grosbit"></i> contact@grosbit.com</p>
+                </div>
+                <div>
+                    <h3 class="montserrat-bold text-lg mb-4">Liens utiles</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#accueil" class="montserrat-regular text-gray-400 hover:text-white transition">Accueil</a></li>
+                        <li><a href="#services" class="montserrat-regular text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#produits" class="montserrat-regular text-gray-400 hover:text-white transition">Produits</a></li>
+                        <li><a href="#apropos" class="montserrat-regular text-gray-400 hover:text-white transition">À propos</a></li>
+                        <li><a href="#contact" class="montserrat-regular text-gray-400 hover:text-white transition">Contact</a></li>
+                        <li><a href="#" id="PolitiquesLink" class="montserrat-regular text-gray-400 hover:text-white transition">Politiques et conditions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="montserrat-bold text-lg mb-4">Newsletter</h3>
+                    <form class="flex">
+                        <input type="email" placeholder="Entrez votre adresse e-mail" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 dark:text-white bg-white dark:bg-gray-800">
+                        <button type="submit" class="bg-orange-grosbit hover:bg-orange-700 text-white px-4 py-2 rounded-r-lg montserrat-bold">
+                            S'abonner
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8">
+                <p class="montserrat-regular text-center text-gray-400 text-sm">
+                    GROSBIT SARL • RCCM : TG-01-2023-B13-03219 • N° COE : 1001884942
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Politiques Modal -->
+    <div id="PolitiquesModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50">
+        <div class="bg-white dark:bg-gray-900 rounded-lg max-w-4xl w-full max-h-[80vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="montserrat-bold text-2xl text-blue-grosbit dark:text-blue-300">Politiques et conditions</h3>
+                    <button id="closePolitiques" class="text-gray-500 hover:text-gray-700 dark:text-gray-300">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <div class="montserrat-regular text-gray-700 dark:text-gray-300 space-y-4">
+                    <h4 class="montserrat-bold text-lg text-blue-grosbit dark:text-blue-300">Conditions générales d'utilisation</h4>
+                    <p>
+                        Les présentes conditions générales d'utilisation (dites « CGU ») ont pour objet l'encadrement juridique des modalités de mise à disposition des services du site GROSBIT et leur utilisation par « l'Utilisateur ».
+                    </p>
+                    <h4 class="montserrat-bold text-lg text-blue-grosbit dark:text-blue-300 mt-6">Article 1 : Mentions légales</h4>
+                    <p>
+                        L'édition du site GROSBIT est assurée par la Société GROSBIT SARL dont le siège social est situé à Lomé au Togo. Numéro RCCM : TG-01-2023-B13-03219.
+                    </p>
+                    <h4 class="montserrat-bold text-lg text-blue-grosbit dark:text-blue-300 mt-6">Article 2 : Accès au site</h4>
+                    <p>
+                        Le site GROSBIT permet à l'Utilisateur un accès gratuit aux services suivants : présentation des services et produits de l'entreprise, formulaire de contact. Le site est accessible gratuitement en tout lieu à tout Utilisateur ayant un accès à Internet.
+                    </p>
+                    <h4 class="montserrat-bold text-lg text-blue-grosbit dark:text-blue-300 mt-6">Article 3 : Collecte des données</h4>
+                    <p>
+                        Le site est exempté de déclaration à la Commission Nationale Informatique et Libertés (CNIL) dans la mesure où il ne collecte aucune donnée concernant les Utilisateurs.
+                    </p>
+                    <h4 class="montserrat-bold text-lg text-blue-grosbit dark:text-blue-300 mt-6">Article 4 : Propriété intellectuelle</h4>
+                    <p>
+                        Les marques, logos, signes ainsi que tous les contenus du site (textes, images, son...) font l'objet d'une protection par le Code de la propriété intellectuelle et plus particulièrement par le droit d'auteur.
+                    </p>
+                    <h4 class="montserrat-bold text-lg text-blue-grosbit dark:text-blue-300 mt-6">Article 5 : Responsabilité</h4>
+                    <p>
+                        Les sources des informations diffusées sur le site GROSBIT sont réputées fiables mais le site ne garantit pas qu'il soit exempt de défauts, d'erreurs ou d'omissions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Dark Mode Toggle (avec stockage local et détection système)
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const htmlEl = document.documentElement;
+        function setDarkMode(on) {
+            if(on) {
+                htmlEl.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                darkModeToggle.querySelector('i').classList.remove('fa-moon');
+                darkModeToggle.querySelector('i').classList.add('fa-sun');
+            } else {
+                htmlEl.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                darkModeToggle.querySelector('i').classList.remove('fa-sun');
+                darkModeToggle.querySelector('i').classList.add('fa-moon');
+            }
+        }
+        // Initial theme
+        (function() {
+            let theme = localStorage.getItem('theme');
+            if(!theme) {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            setDarkMode(theme === 'dark');
+        })();
+        darkModeToggle.addEventListener('click', () => {
+            setDarkMode(!htmlEl.classList.contains('dark'));
+        });
+
+        // Scroll Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        fadeElements.forEach(element => observer.observe(element));
+
+        // Politiques Modal
+        const PolitiquesLink = document.getElementById('PolitiquesLink');
+        const PolitiquesModal = document.getElementById('PolitiquesModal');
+        const closePolitiques = document.getElementById('closePolitiques');
+        PolitiquesLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            PolitiquesModal.classList.remove('hidden');
+        });
+        closePolitiques.addEventListener('click', () => {
+            PolitiquesModal.classList.add('hidden');
+        });
+        window.addEventListener('click', (e) => {
+            if (e.target === PolitiquesModal) {
+                PolitiquesModal.classList.add('hidden');
+            }
+        });
+
+        // Initialize Particles.js
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('particles-js')) {
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": { "value": 80, "density": { "enable": true, "value_area": 800 }},
+                        "color": { "value": "#FF6600" },
+                        "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" }, "polygon": { "nb_sides": 5 }},
+                        "opacity": { "value": 0.5, "random": false, "anim": { "enable": false, "speed": 1, "opacity_min": 0.1, "sync": false }},
+                        "size": { "value": 3, "random": true, "anim": { "enable": false, "speed": 40, "size_min": 0.1, "sync": false }},
+                        "line_linked": { "enable": true, "distance": 150, "color": "#FF6600", "opacity": 0.4, "width": 1 },
+                        "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 }}
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+                        "modes": {
+                            "grab": { "distance": 140, "line_linked": { "opacity": 1 }},
+                            "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 },
+                            "repulse": { "distance": 200, "duration": 0.4 },
+                            "push": { "particles_nb": 4 },
+                            "remove": { "particles_nb": 2 }
+                        }
+                    },
+                    "retina_detect": true
+                });
+            }
+        });
+    </script>
+</body>
+</html>
