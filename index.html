@@ -511,35 +511,29 @@
 
     /* Media Queries pour la responsivité */
     @media (max-width: 767px) { /* Appliqué pour les écrans jusqu'à 767px de large (max-md de Tailwind) */
-        /* La disposition flex-col sur le conteneur principal gère déjà l'empilement */
-        /* #home .md\:flex-row { flex-direction: column !important; } */
 
-        /* Ajustements pour le carrousel sur mobile */
-        /* Les classes Tailwind w-full h-[400px] sm:h-[500px] devraient suffire ici. */
-        /* Si vous voulez une hauteur encore plus spécifique sur mobile, ajoutez-la ici */
-        /* Exemple: #hero-2d-carousel { height: 60vw; min-height: 350px; } */
+        /* Ajustez ces tailles de police pour mobile */
+        #home h1 {
+            /* Nous allons viser une taille qui s'adapte bien sur la plupart des mobiles */
+            font-size: 1.5rem; /* Recommandé pour text-2xl équivalent */
+            line-height: 1.2;
+        }
+        #home h1 span.block {
+            /* Assurez-vous que le span ne soit pas plus grand que le h1 principal */
+            font-size: 1.4rem; /* Légèrement plus petit ou égal au h1 si nécessaire */
+            line-height: 1.2;
+        }
+
+        /* Ajustement du paragraphe */
+        #home p {
+            font-size: 0.95rem; /* Bonne taille pour les paragraphes sur mobile */
+        }
 
         /* Ajustement de la hauteur des images du carrousel sur mobile */
         #hero-2d-carousel .carousel-2d-slide img {
-             /* Rendre la hauteur de l'image du carrousel fluide et ne pas écraser */
-            height: 70%; /* L'image prend 70% de la hauteur de la slide */
-            max-height: 250px; /* Limiter la hauteur max pour éviter les images géantes */
-            object-fit: contain; /* Assurer que l'image tient dans l'espace */
-        }
-        /* Ajustements du padding pour la section de texte si nécessaire */
-        /* .backdrop-blur-xl { padding: 1.5rem !important; } */ /* Si p-6 n'est pas suffisant */
-
-        /* Assurez-vous que les titres et paragraphes s'ajustent bien */
-        #home h1 {
-            font-size: 2.25rem; /* Equivalent à text-4xl pour les petits écrans */
-            line-height: 1.1;
-        }
-        #home h1 span.block {
-            font-size: 1.8rem; /* Ajuster la taille si le texte tronqué */
-            line-height: 1.2;
-        }
-        #home p {
-            font-size: 0.95rem; /* Ajuster la taille du paragraphe */
+             height: 70%;
+             max-height: 250px;
+             object-fit: contain;
         }
     }
 </style>
