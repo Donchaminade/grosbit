@@ -317,24 +317,26 @@
     <!-- Hero Section -->
     <!-- HERO SECTION FULLSCREEN, CAROUSEL, BUBBLES DECOR, COLORS APPLIED -->
     <!-- HERO SECTION MODERNE, ANIMÉ, AVEC GRADIENT, GLASSMORPHISM ET ANIMATION DE TEXTE -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#053A97FF] via-[#033A99FF] to-[#024EB1FF]">
+    <section id="home" class="relative min-h-screen flex flex-col md:flex-row items-center justify-center overflow-hidden bg-gradient-to-br from-[#053A97FF] via-[#033A99FF] to-[#024EB1FF] py-12">
     <div class="pointer-events-none absolute inset-0 z-0">
         <span class="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] rounded-full bg-blue-600 opacity-20 blur-3xl animate-pulse-slow"></span>
         <span class="absolute bottom-[-120px] right-[-80px] w-[350px] h-[350px] rounded-full bg-orange-400 opacity-20 blur-3xl animate-pulse-slow2"></span>
         <span class="absolute top-1/2 left-1/2 w-[180px] h-[180px] rounded-full bg-white opacity-10 blur-2xl animate-float"></span>
     </div>
-    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between min-h-[80vh]">
-        <div class="md:w-1/2 text-left animate-on-scroll relative">
-            <div class="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl shadow-2xl p-10 md:p-14 relative overflow-hidden">
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
+
+        <div class="w-full md:w-1/2 text-left animate-on-scroll relative mb-12 md:mb-0">
+            <div class="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl shadow-2xl p-6 sm:p-10 md:p-14 relative overflow-hidden h-auto">
                 <svg class="absolute -top-10 -left-10 w-32 h-32 opacity-30 z-0 animate-spin-slow" viewBox="0 0 100 100" fill="none">
                     <circle cx="50" cy="50" r="50" fill="#FF6600"/>
                 </svg>
                 <div class="relative z-10">
-                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-white drop-shadow-lg">
-                        <span class="block animate-gradient-text bg-gradient-to-r from-orange-400 via-blue to-blue-500 bg-clip-text text-"><br> Solutions Informatiques</span>
+                    <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight sm:leading-tight md:leading-tight mb-6 text-white drop-shadow-lg">
+                        <span class="block animate-gradient-text bg-gradient-to-r from-orange-400 via-blue to-blue-500 bg-clip-text text-transparent">Solutions Informatiques</span>
                         <span class="block animate-fade-in-delay text-orange-400">Intégrées</span>
                     </h1>
-                    <p class="text-lg md:text-xl mb-8 text-white/90 animate-fade-in">
+                    <p class="text-base sm:text-lg md:text-xl mb-8 text-white/90 animate-fade-in">
                         GROSBIT vous accompagne dans la transformation digitale, la sécurité, la maintenance, la formation et la fourniture de matériels informatiques. Faites confiance à notre équipe pour des solutions sur mesure et un accompagnement de qualité.
                     </p>
                     <div class="mb-8 animate-fade-in-up">
@@ -378,7 +380,7 @@
                             Nos Services
                         </a>
                         <a href="#contact"
-                            class="px-8 py-3 rounded-lg font-semibold text-[#022157] border-2 border-orange-500 bg-white text-center transition duration-300 hover:bg-orange-500 hover:text-white shadow-lg ali"
+                            class="px-8 py-3 rounded-lg font-semibold text-[#022157] border-2 border-orange-500 bg-white text-center transition duration-300 hover:bg-orange-500 hover:text-white shadow-lg"
                         >
                             Nous contacter
                         </a>
@@ -386,8 +388,8 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="md:w-full mt-12 md:mt-0 animate-on-scroll relative w-full flex items-center justify-center min-h-[900px] md:justify-end pr-5 md:pr-2"> -->
-        <div class="md:w-full mt-12 md:mt-0 animate-on-scroll relative w-full flex items-center justify-center min-h-[900px] md:justify-end pr-5 md:pr-2" style="width: 120%;">
+
+        <div class="w-full md:w-1/2 mt-12 md:mt-0 animate-on-scroll relative flex items-center justify-center md:justify-end">
             <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" style="opacity:0.18;" viewBox="0 0 700 750" fill="none">
                 <circle cx="120" cy="120" r="60" fill="#3b82f6" fill-opacity="0.13"/>
                 <circle cx="500" cy="200" r="40" fill="#f97316" fill-opacity="0.11"/>
@@ -398,87 +400,72 @@
                 <circle cx="100" cy="650" r="35" fill="#fff" fill-opacity="0.12"/>
             </svg>
 
-
-
-            <section class="py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 lg:py-20 lg:px-12 flex justify-center items-center">
-    <div id="hero-2d-carousel" class="relative rounded-2xl shadow-2xl overflow-hidden bg-transparent border border-transparent w-full h-full md:w-[800px] md:h-[600px] lg:w-[1000px] lg:h-[700px]">
-        <div class="carousel-2d-wrapper w-full h-full flex transition-transform duration-700 ease-in-out">
-            <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center">
-                <img src="https://haima.tech/app/uploads/2023/08/sys_informatique_01.jpg"
-                    alt="Services informatiques"
-                    class="w-full h-[650px] object-contain rounded-t-2xl bg-gradient-to-t from-blue-100/40 to-transparent"/>
-                <div class="p-4 text-center">
-                    <h3 class="font-bold text-lg text-[#0949B8FF] mb-2">Services informatiques</h3>
-                    <p class="text-gray-700 text-sm">Solutions sur mesure pour votre entreprise.</p>
+            <div id="hero-2d-carousel" class="relative rounded-2xl shadow-2xl overflow-hidden bg-transparent border border-transparent w-full h-[400px] sm:h-[500px] md:w-[800px] md:h-[600px] lg:w-[1000px] lg:h-[700px]">
+                <div class="carousel-2d-wrapper w-full h-full flex transition-transform duration-700 ease-in-out">
+                    <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center">
+                        <img src="https://haima.tech/app/uploads/2023/08/sys_informatique_01.jpg"
+                            alt="Services informatiques"
+                            class="w-full h-full object-contain rounded-t-2xl bg-gradient-to-t from-blue-100/40 to-transparent"/>
+                        <div class="p-4 text-center">
+                            <h3 class="font-bold text-lg text-[#0949B8FF] mb-2">Services informatiques</h3>
+                            <p class="text-gray-700 text-sm">Solutions sur mesure pour votre entreprise.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center">
+                        <img src="https://media.istockphoto.com/id/1435605327/fr/photo/concept-de-cybers%C3%A9curit%C3%A9-technologie-de-s%C3%A9curit%C3%A9-des-r%C3%A9seaux-mondiaux-les-gens-daffaires.jpg?s=612x612&w=0&k=20&c=DGg6rKYd3UdbWDI-CiCh8oZExGtEAIUqwzTbsS7jPs8="
+                            alt="Réseau & Sécurité"
+                            class="w-full h-full object-contain rounded-t-2xl bg-gradient-to-t from-blue-100/40 to-transparent"/>
+                        <div class="p-4 text-center">
+                            <h3 class="font-bold text-lg text-[#0949B8FF] mb-2">Réseau & Sécurité</h3>
+                            <p class="text-gray-700 text-sm">Sécurisez vos infrastructures IT.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center">
+                        <img src="https://www.lecoindesentrepreneurs.fr/wp-content/uploads/2020/01/cr%C3%A9er-une-soci%C3%A9t%C3%A9-de-formation.png"
+                            alt="Formation"
+                            class="w-full h-full object-contain rounded-t-2xl bg-gradient-to-t from-blue-100/40 to-transparent"/>
+                        <div class="p-4 text-center">
+                            <h3 class="font-bold text-lg text-[#0949B8FF] mb-2">Formation</h3>
+                            <p class="text-gray-700 text-sm">Développez vos compétences IT.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center">
+                        <img src="https://cheekymunkey.co.uk/wp-content/uploads/2017/11/Business-IT-pic-1.jpg"
+                            alt="Support IT"
+                            class="w-full h-full object-contain rounded-t-2xl bg-gradient-to-t from-blue-100/40 to-transparent"/>
+                        <div class="p-4 text-center">
+                            <h3 class="font-bold text-lg text-[#0949B8FF] mb-2">Support IT</h3>
+                            <p class="text-gray-700 text-sm">Assistance technique et maintenance.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center">
+                        <img src="https://blog.prestataires.pro/wp-content/uploads/2024/10/software-developpement-guide-metier.jpg"
+                            alt="Développement Logiciel"
+                            class="w-full h-full object-contain rounded-t-2xl bg-gradient-to-t from-blue-100/40 to-transparent"/>
+                        <div class="p-4 text-center">
+                            <h3 class="font-bold text-lg text-[#0949B8FF] mb-2">Développement Logiciel</h3>
+                            <p class="text-gray-700 text-sm">Applications personnalisées et performantes.</p>
+                        </div>
+                    </div>
                 </div>
+                <button id="carousel-2d-prev" type="button" class="absolute left-4 top-1/2 -translate-y-1/2 bg-[#022157] bg-opacity-70 text-white p-2 rounded-full hover:bg-[#FF6600] transition z-20">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="carousel-2d-next" type="button" class="absolute right-4 top-1/2 -translate-y-1/2 bg-[#022157] bg-opacity-70 text-white p-2 rounded-full hover:bg-[#FF6600] transition z-20">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
-            <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center">
-                <img src="https://media.istockphoto.com/id/1435605327/fr/photo/concept-de-cybers%C3%A9curit%C3%A9-technologie-de-s%C3%A9curit%C3%A9-des-r%C3%A9seaux-mondiaux-les-gens-daffaires.jpg?s=612x612&w=0&k=20&c=DGg6rKYd3UdbWDI-CiCh8oZExGtEAIUqwzTbsS7jPs8="
-                    alt="Réseau & Sécurité"
-                    class="w-full h-[650px] object-contain rounded-t-2xl bg-gradient-to-t from-blue-100/40 to-transparent"/>
-                <div class="p-4 text-center">
-                    <h3 class="font-bold text-lg text-[#0949B8FF] mb-2">Réseau & Sécurité</h3>
-                    <p class="text-gray-700 text-sm">Sécurisez vos infrastructures IT.</p>
-                </div>
-            </div>
-            <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center">
-                <img src="https://www.lecoindesentrepreneurs.fr/wp-content/uploads/2020/01/cr%C3%A9er-une-soci%C3%A9t%C3%A9-de-formation.png"
-                    alt="Formation"
-                    class="w-full h-[650px] object-contain rounded-t-2xl bg-gradient-to-t from-blue-100/40 to-transparent"/>
-                <div class="p-4 text-center">
-                    <h3 class="font-bold text-lg text-[#0949B8FF] mb-2">Formation</h3>
-                    <p class="text-gray-700 text-sm">Développez vos compétences IT.</p>
-                </div>
-            </div>
-            <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center">
-                <img src="https://cheekymunkey.co.uk/wp-content/uploads/2017/11/Business-IT-pic-1.jpg"
-                    alt="Support IT"
-                    class="w-full h-[650px] object-contain rounded-t-2xl bg-gradient-to-t from-blue-100/40 to-transparent"/>
-                <div class="p-4 text-center">
-                    <h3 class="font-bold text-lg text-[#0949B8FF] mb-2">Support IT</h3>
-                    <p class="text-gray-700 text-sm">Assistance technique et maintenance.</p>
-                </div>
-            </div>
-            <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center">
-                <img src="https://blog.prestataires.pro/wp-content/uploads/2024/10/software-developpement-guide-metier.jpg"
-                    alt="Développement Logiciel"
-                    class="w-full h-[650px] object-contain rounded-t-2xl bg-gradient-to-t from-blue-100/40 to-transparent"/>
-                <div class="p-4 text-center">
-                    <h3 class="font-bold text-lg text-[#0949B8FF] mb-2">Développement Logiciel</h3>
-                    <p class="text-gray-700 text-sm">Applications personnalisées et performantes.</p>
-                </div>
-            </div>
-        </div>
-        <button id="carousel-2d-prev" type="button" class="absolute left-4 top-1/2 -translate-y-1/2 bg-[#022157] bg-opacity-70 text-white p-2 rounded-full hover:bg-[#FF6600] transition z-20">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <button id="carousel-2d-next" type="button" class="absolute right-4 top-1/2 -translate-y-1/2 bg-[#022157] bg-opacity-70 text-white p-2 rounded-full hover:bg-[#FF6600] transition z-20">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-    </div>
-</section>
-            
-
         </div>
     </div>
 </section>
+
 <style>
     /* Styles pour le Carrousel 2D */
 
-    /* Target the main carousel container directly for desktop */
-    #hero-2d-carousel {
-        width: 400%; /* Now takes full width of its parent */
-        height: 200%; /* Now takes full height of its parent */
-        /* You can set a max-width if you don't want it to be excessively large on very wide screens */
-        /* max-width: 1200px; */
-    }
+    /* RETIRÉ les styles spécifiques pour #hero-2d-carousel qui écrasaient Tailwind */
+    /* RETIRÉ les styles pour .carousel-container */
 
-    .carousel-container {
-        /* This class might be for an inner wrapper. Keeping it at 100% ensures it fills its parent. */
-        width: 100%;
-    }
-
-    /* Animations */
+    /* Animations (Gardées telles quelles) */
     @keyframes gradient-text {
         0% { background-position: 0% 50%;}
         100% { background-position: 100% 50%;}
@@ -517,91 +504,73 @@
     .animate-spin-slow { animation: spin-slow 18s linear infinite;}
 
     /* Styles pour le Carrousel 2D */
-    /* Ces classes sont désormais inutilisées pour le 3D, mais gardées si d'autres éléments les utilisent. */
-    /* .perspective-3d { perspective: 1200px; } */ /* Plus nécessaire pour le 2D */
-    /* .carousel-3d-wrapper { transform-style: preserve-3d; width:100%; height:100%; } */ /* Plus nécessaire pour le 2D */
     .carousel-2d-slide {
-        /* Style général de la diapositive */
         box-shadow: 0 10px 32px 0 rgba(2,33,87,0.10), 0 2px 4px 0 rgba(0,0,0,0.04);
         background: rgba(255,255,255,0.85);
-        /* Permet à chaque slide de prendre la largeur complète de son parent (carousel-2d-wrapper) */
         flex-shrink: 0;
     }
 
     /* Media Queries pour la responsivité */
     @media (max-width: 768px) {
-        #home .md\:flex-row { flex-direction: column !important; }
-        /* Ajustez les dimensions du carrousel pour mobile */
-        #hero-2d-carousel {
-            width: 95vw !important; /* This overrides the desktop width for mobile screens */
-            height: 70vw !important; /* Hauteur proportionnelle à la largeur */
-            min-height: 450px; /* Hauteur minimale pour ne pas être trop petit */
+        /* Cette règle est potentiellement redondante avec flex-col sur le parent */
+        /* #home .md\:flex-row { flex-direction: column !important; } */
+
+        /* Supprimé les !important et les sélecteurs trop complexes.
+           Les classes Tailwind sur le HTML devraient suffire maintenant. */
+        /* #hero-2d-carousel {
+            width: 95vw !important;
+            height: 70vw !important;
+            min-height: 450px;
         }
         #hero-2d-carousel .carousel-2d-slide img {
-            height: 45vw !important; /* Image plus petite sur mobile */
+            height: 45vw !important;
             min-height: 250px;
-        }
-        /* Ajustez aussi le conteneur du carrousel */
-        /* Be careful with this selector if you're using Tailwind classes like md:w-1/2 directly in HTML */
-        .md\:w-1\/2.mt-12.md\:mt-0.animate-on-scroll.relative.w-full.flex {
-            min-height: auto; /* Supprime le min-height qui peut poser problème sur mobile */
-        }
+        } */
+        /* Supprimé ce sélecteur car il était trop spécifique et potentiellement incorrect */
+        /* .md\:w-1\/2.mt-12.md\:mt-0.animate-on-scroll.relative.w-full.flex {
+            min-height: auto;
+        } */
+
+        /* Si le texte "Solutions Informatiques" est toujours tronqué sur les très petits écrans,
+           vous pourriez ajouter une min-font-size ou un padding plus petit ici si p-6 n'est pas suffisant. */
+        /* Exemple : */
+        /* #home h1 { font-size: 2rem; line-height: 1.1; } */
+        /* #home p { font-size: 1rem; } */
     }
 </style>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Sélectionne le nouveau wrapper du carrousel 2D
         const carouselWrapper = document.querySelector('#hero-2d-carousel .carousel-2d-wrapper');
         const slides = document.querySelectorAll('#hero-2d-carousel .carousel-2d-slide');
-        const prevButton = document.getElementById('carousel-2d-prev'); // Nouveaux IDs pour les boutons
+        const prevButton = document.getElementById('carousel-2d-prev');
         const nextButton = document.getElementById('carousel-2d-next');
 
         let currentIndex = 0;
         const totalSlides = slides.length;
 
-        /**
-         * Met à jour la position des diapositives pour le carrousel 2D.
-         * Utilise translateX pour un défilement horizontal.
-         */
         function update2DCarousel() {
-            // Calcule la position de translation nécessaire pour afficher la diapositive courante
-            // Chaque diapositive a la largeur de son parent (w-full), donc on translate par un multiple de la largeur.
             carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-            // Vous pouvez ajouter une logique pour activer/désactiver les boutons si vous le souhaitez
-            // (ex: désactiver 'prev' sur la première slide, 'next' sur la dernière)
         }
 
-        /**
-         * Passe à la diapositive suivante.
-         */
         function goToNextSlide() {
             currentIndex = (currentIndex + 1) % totalSlides;
             update2DCarousel();
         }
 
-        /**
-         * Passe à la diapositive précédente.
-         */
         function goToPrevSlide() {
             currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
             update2DCarousel();
         }
 
-        // Attache les écouteurs d'événements aux nouveaux boutons de navigation
-        if (nextButton) { // Add checks to ensure buttons exist before adding listeners
+        if (nextButton) {
             nextButton.addEventListener('click', goToNextSlide);
         }
         if (prevButton) {
             prevButton.addEventListener('click', goToPrevSlide);
         }
 
-
-        // Initialisation de la position du carrousel
         update2DCarousel();
-
-        // Ajoute un défilement automatique toutes les 5 secondes (comme dans votre script original)
         setInterval(goToNextSlide, 5000);
     });
 </script>
