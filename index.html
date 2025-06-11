@@ -315,71 +315,80 @@
     </nav>
 
     <!-- Hero Section -->
-    <!-- HERO SECTION FULLSCREEN, CAROUSEL, BUBBLES DECOR, COLORS APPLIED -->
     <!-- HERO SECTION MODERNE, ANIMÉ, AVEC GRADIENT, GLASSMORPHISM ET ANIMATION DE TEXTE -->
-<section id="home" class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-[#053A97FF] via-[#033A99FF] to-[#024EB1FF] py-16 sm:py-20 md:py-24 lg:py-28">
+    <section id="home" class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-[#024EB1FF] via-[#02060CFF] to-[#024EB1FF] py-16 sm:py-20 md:py-24 lg:py-28">
+                 <!-- <div class="absolute inset-0 bg-[#D4DCE9FF] backdrop-blur-sm z-0"></div> -->
+    <canvas id="services-molecules-canvas" class="absolute inset-0 w-full h-full z-0 pointer-events-none"></canvas>
+    
     <div class="pointer-events-none absolute inset-0 z-0">
         <span class="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] rounded-full bg-blue-600 opacity-20 blur-3xl animate-pulse-slow"></span>
         <span class="absolute bottom-[-120px] right-[-80px] w-[350px] h-[350px] rounded-full bg-orange-400 opacity-20 blur-3xl animate-pulse-slow2"></span>
         <span class="absolute top-1/2 left-1/2 w-[180px] h-[180px] rounded-full bg-white opacity-10 blur-2xl animate-float -translate-x-1/2 -translate-y-1/2"></span>
+
+        <span class="absolute top-[10%] left-[10%] w-[100px] h-[100px] rounded-full bg-orange-400 opacity-20 blur-3xl animate-bubble-1"></span>
+        <span class="absolute top-[20%] right-[15%] w-[120px] h-[120px] rounded-full bg-blue-600 opacity-20 blur-3xl animate-bubble-2"></span>
+        <span class="absolute bottom-[25%] left-[20%] w-[80px] h-[80px] rounded-full bg-blue-600 opacity-20 blur-3xl animate-bubble-3"></span>
+        <span class="absolute bottom-[10%] right-[30%] w-[140px] h-[140px] rounded-full bg-orange-400 opacity-20 blur-3xl animate-bubble-1 delay-2s"></span>
+        <span class="absolute top-[50%] left-[3%] w-[90px] h-[90px] rounded-full bg-orange-400 opacity-20 blur-3xl animate-bubble-2 delay-3s"></span>
+        <span class="absolute bottom-[5%] left-[40%] w-[110px] h-[110px] rounded-full bg-blue-600 opacity-20 blur-3xl animate-bubble-3 delay-1s"></span>
     </div>
 
     <div class="relative z-10 w-full animate-on-scroll mb-12">
         <div class="glass-effect-text w-full px-4 sm:px-6 lg:px-8 py-8 rounded-none sm:py-10 md:py-12">
-            <h1 class="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-6 text-white drop-shadow-lg">
+            <h1 class="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight mb-6 text-white drop-shadow-lg text-center">
                 <span class="block animate-gradient-text bg-gradient-to-r from-white via-white to-white bg-clip-text text-transparent">Solutions Informatiques</span>
                 <span class="block animate-fade-in-delay text-orange-400">Intégrées</span>
             </h1>
-            <p class="text-base sm:text-lg md:text-xl text-white/90 animate-fade-in text-justify max-w-4xl mx-auto">
-                **GROSBIT** vous accompagne dans la transformation digitale, la sécurité, la maintenance, la formation et la fourniture de matériels informatiques. Faites confiance à notre équipe pour des solutions sur mesure et un accompagnement de qualité.
+            <p class="text-base sm:text-lg md:text-xl text-white/90 animate-fade-in text-center max-w-4xl mx-auto">
+                <span class="font-bold text-orange-500">GROSBIT </span> vous accompagne dans la transformation digitale, la sécurité, la maintenance, la formation et la fourniture de matériels informatiques. Faites confiance à notre équipe pour des solutions sur mesure et un accompagnement de qualité.
             </p>
         </div>
     </div>
 
     <div class="relative z-10 w-full px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-12">
-        <div class="w-full md:w-1/2 text-left animate-on-scroll relative">
+        <div class="w-full md:w-1/2 text-center animate-on-scroll relative">
             <div class="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl shadow-2xl p-6 sm:p-10 md:p-14 relative overflow-hidden glass-effect">
                 <svg class="absolute -top-10 -left-10 w-32 h-32 opacity-30 z-0 animate-spin-slow" viewBox="0 0 100 100" fill="none">
                     <circle cx="50" cy="50" r="50" fill="#FF6600"/>
                 </svg>
                 <div class="relative z-10">
                     <ul class="space-y-4 text-white text-base sm:text-lg pl-0">
-                        <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up">
+                        <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-600/80 shadow-md">
                                 <i class="fas fa-shield-alt text-white text-lg"></i>
                             </span>
                             <span>Réseau & Sécurité informatique</span>
                         </li>
-                        <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up">
+                        <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-orange-500/80 shadow-md">
                                 <i class="fas fa-tools text-white text-lg"></i>
                             </span>
                             <span>Maintenance & Assistance</span>
                         </li>
-                        <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up">
+                        <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/80 shadow-md">
                                 <i class="fas fa-box-open text-white text-lg"></i>
                             </span>
                             <span>Distribution de matériels</span>
                         </li>
-                        <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up">
+                        <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-orange-400/80 shadow-md">
                                 <i class="fas fa-chalkboard-teacher text-white text-lg"></i>
                             </span>
                             <span>Formation & Conseil</span>
                         </li>
-                        <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up">
+                        <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-400/80 shadow-md">
                                 <i class="fas fa-bullhorn text-white text-lg"></i>
                             </span>
                             <span>Marketing digital</span>
                         </li>
                     </ul>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-10 animate-fade-in-up2 justify-center md:justify-start">
-                        <a href="#services" class="px-8 py-3 rounded-full font-semibold text-white text-center transition-all duration-300 bg-orange-500 hover:bg-white hover:text-[#022157] border-2 border-orange-500 shadow-lg">
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-10 animate-fade-in-up2 justify-center">
+                        <a href="#services" class="px-8 py-3 rounded-full font-semibold text-base text-white text-center transition-all duration-300 bg-orange-500 hover:bg-white hover:text-[#022157] border-2 border-orange-500 shadow-lg">
                             Nos Services
                         </a>
-                        <a href="#contact" class="px-8 py-3 rounded-full font-semibold text-[#022157] border-2 border-orange-500 bg-white text-center transition-all duration-300 hover:bg-orange-500 hover:text-white shadow-lg">
+                        <a href="#contact" class="px-8 py-3 rounded-full font-semibold text-base text-[#022157] border-2 border-orange-500 bg-white text-center transition-all duration-300 hover:bg-orange-500 hover:text-white shadow-lg">
                             Nous contacter
                         </a>
                     </div>
@@ -398,15 +407,15 @@
                 <circle cx="100" cy="650" r="35" fill="#fff" fill-opacity="0.12"/>
             </svg>
 
-            <div id="hero-2d-carousel" class="relative rounded-2xl shadow-2xl overflow-hidden bg-white border border-gray-200 w-full max-w-2xl h-[450px] sm:h-[550px] md:h-[600px] lg:h-[650px] xl:h-[700px]">
+            <div id="hero-2d-carousel" class="relative rounded-2xl shadow-2xl overflow-hidden bg-white border border-gray-200 w-full max-w-4xl h-[500px] sm:h-[650px] md:h-[800px] lg:h-[900px] xl:h-[1000px]">
                 <div class="carousel-2d-wrapper w-full h-full flex transition-transform duration-700 ease-in-out">
                     <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
                         <img src="https://haima.tech/app/uploads/2023/08/sys_informatique_01.jpg"
                             alt="Services informatiques"
                             class="w-full h-4/5 object-contain rounded-lg shadow-md mb-4"/>
                         <div class="text-center">
-                            <h3 class="font-bold text-lg text-[#0949B8FF] mb-1">Services informatiques</h3>
-                            <p class="text-gray-700 text-sm">Solutions sur mesure pour votre entreprise.</p>
+                            <h3 class="font-bold text-lg sm:text-xl text-[#0949B8FF] mb-1">Services informatiques</h3>
+                            <p class="text-gray-700 text-sm sm:text-base">Solutions sur mesure pour votre entreprise.</p>
                         </div>
                     </div>
                     <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
@@ -414,8 +423,8 @@
                             alt="Réseau & Sécurité"
                             class="w-full h-4/5 object-contain rounded-lg shadow-md mb-4"/>
                         <div class="text-center">
-                            <h3 class="font-bold text-lg text-[#0949B8FF] mb-1">Réseau & Sécurité</h3>
-                            <p class="text-gray-700 text-sm">Sécurisez vos infrastructures IT.</p>
+                            <h3 class="font-bold text-lg sm:text-xl text-[#0949B8FF] mb-1">Réseau & Sécurité</h3>
+                            <p class="text-gray-700 text-sm sm:text-base">Sécurisez vos infrastructures IT.</p>
                         </div>
                     </div>
                     <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
@@ -423,8 +432,8 @@
                             alt="Formation"
                             class="w-full h-4/5 object-contain rounded-lg shadow-md mb-4"/>
                         <div class="text-center">
-                            <h3 class="font-bold text-lg text-[#0949B8FF] mb-1">Formation</h3>
-                            <p class="text-gray-700 text-sm">Développez vos compétences IT.</p>
+                            <h3 class="font-bold text-lg sm:text-xl text-[#0949B8FF] mb-1">Formation</h3>
+                            <p class="text-gray-700 text-sm sm:text-base">Développez vos compétences IT.</p>
                         </div>
                     </div>
                     <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
@@ -432,8 +441,8 @@
                             alt="Support IT"
                             class="w-full h-4/5 object-contain rounded-lg shadow-md mb-4"/>
                         <div class="text-center">
-                            <h3 class="font-bold text-lg text-[#0949B8FF] mb-1">Support IT</h3>
-                            <p class="text-gray-700 text-sm">Assistance technique et maintenance.</p>
+                            <h3 class="font-bold text-lg sm:text-xl text-[#0949B8FF] mb-1">Support IT</h3>
+                            <p class="text-gray-700 text-sm sm:text-base">Assistance technique et maintenance.</p>
                         </div>
                     </div>
                     <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
@@ -441,8 +450,8 @@
                             alt="Développement Logiciel"
                             class="w-full h-4/5 object-contain rounded-lg shadow-md mb-4"/>
                         <div class="text-center">
-                            <h3 class="font-bold text-lg text-[#0949B8FF] mb-1">Développement Logiciel</h3>
-                            <p class="text-gray-700 text-sm">Applications personnalisées et performantes.</p>
+                            <h3 class="font-bold text-lg sm:text-xl text-[#0949B8FF] mb-1">Développement Logiciel</h3>
+                            <p class="text-gray-700 text-sm sm:text-base">Applications personnalisées et performantes.</p>
                         </div>
                     </div>
                 </div>
@@ -455,6 +464,150 @@
             </div>
         </div>
     </div>
+
+    <div class="absolute left-1/2 bottom-0 -translate-x-1/2 w-[500px] h-32 pointer-events-none z-0">
+        <svg class="w-full h-full" viewBox="0 0 500 80" fill="none">
+            <ellipse cx="250" cy="60" rx="220" ry="18" fill="#0447B4FF" fill-opacity="0.07"/>
+            <ellipse cx="250" cy="70" rx="120" ry="10" fill="#f97316" fill-opacity="0.09"/>
+        </svg>
+    </div>
+        <script>
+            // Animated molecules/particles canvas background for services section
+            (function() {
+                const canvas = document.getElementById('services-molecules-canvas');
+                if (!canvas) return;
+                let dpr = window.devicePixelRatio || 1;
+                let width = canvas.offsetWidth, height = canvas.offsetHeight;
+                function resize() {
+                    width = canvas.offsetWidth;
+                    height = canvas.offsetHeight;
+                    canvas.width = width * dpr;
+                    canvas.height = height * dpr;
+                    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                }
+                const ctx = canvas.getContext('2d');
+                resize();
+                window.addEventListener('resize', resize);
+
+                // Charte graphique colors
+                const moleculeColors = [
+                    "#3b82f6", // blue
+                    "#D67129FF", // orange
+                    "#0755DBFFFF", // dark blue
+                    "#fff"      // white
+                ];
+                // Molecule objects
+                const MOLECULES = [];
+                const MOLECULE_COUNT = 44; // x2 pour multiplier les molécules
+                for (let i = 0; i < MOLECULE_COUNT; i++) {
+                    const color = moleculeColors[i % moleculeColors.length];
+                    MOLECULES.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        r: Math.random() * 14 + 12, // un peu plus petites
+                        vx: (Math.random() - 0.5) * 0.8 - 0.15,
+                        vy: (Math.random() - 0.5) * 0.8 - 0.15,
+                        color,
+                        glow: Math.random() * 0.5 + 0.5,
+                        phase: Math.random() * Math.PI * 2,
+                        twinkle: Math.random() * 0.5 + 0.7,
+                        alpha: Math.random() * 0.18 + 0.10 // plus transparent
+                    });
+                }
+                // Draw molecule (circle + nucleus + glow)
+                function drawMolecule(m, t) {
+                    // Twinkle effect
+                    const tw = 0.7 + 0.3 * Math.sin(t * 2 + m.phase);
+                    ctx.save();
+                    ctx.globalAlpha = m.alpha * tw * m.twinkle;
+                    ctx.beginPath();
+                    ctx.arc(m.x, m.y, m.r * 1.25, 0, 2 * Math.PI);
+                    ctx.shadowColor = m.color;
+                    ctx.shadowBlur = 18 * m.glow * tw;
+                    ctx.fillStyle = m.color;
+                    ctx.fill();
+                    ctx.restore();
+
+                    // Main body
+                    ctx.save();
+                    ctx.globalAlpha = m.alpha * 1.3 * tw;
+                    ctx.beginPath();
+                    ctx.arc(m.x, m.y, m.r, 0, 2 * Math.PI);
+                    ctx.fillStyle = m.color;
+                    ctx.fill();
+                    ctx.restore();
+
+                    // Nucleus
+                    ctx.save();
+                    ctx.globalAlpha = m.alpha * 1.7 * tw;
+                    ctx.beginPath();
+                    ctx.arc(m.x + Math.sin(t * 1.2 + m.phase) * m.r * 0.4, m.y + Math.cos(t * 1.2 + m.phase) * m.r * 0.4, m.r * 0.22, 0, 2 * Math.PI);
+                    ctx.fillStyle = "#fff";
+                    ctx.shadowColor = "#fff";
+                    ctx.shadowBlur = 6 * tw;
+                    ctx.fill();
+                    ctx.restore();
+
+                    // Orbiting electrons (small dots)
+                    for (let e = 0; e < 2; e++) {
+                        const angle = t * (1.5 + e * 0.7) + m.phase + e * Math.PI;
+                        ctx.save();
+                        ctx.globalAlpha = m.alpha * 1.1 * tw;
+                        ctx.beginPath();
+                        ctx.arc(
+                            m.x + Math.cos(angle) * m.r * 0.9,
+                            m.y + Math.sin(angle) * m.r * 0.9,
+                            m.r * 0.09,
+                            0, 2 * Math.PI
+                        );
+                        ctx.fillStyle = m.color;
+                        ctx.shadowColor = "#fff";
+                        ctx.shadowBlur = 4 * tw;
+                        ctx.fill();
+                        ctx.restore();
+                    }
+                }
+                // Animate
+                function animate() {
+                    ctx.clearRect(0, 0, width, height);
+                    const t = Date.now() * 0.001;
+                    for (let m of MOLECULES) {
+                        // Move
+                        m.x += m.vx * (1 + 0.2 * Math.sin(t + m.phase));
+                        m.y += m.vy * (1 + 0.2 * Math.cos(t + m.phase));
+                        // Bounce on edges
+                        if (m.x < -m.r) m.x = width + m.r;
+                        if (m.x > width + m.r) m.x = -m.r;
+                        if (m.y < -m.r) m.y = height + m.r;
+                        if (m.y > height + m.r) m.y = -m.r;
+                        drawMolecule(m, t);
+                    }
+                    // Draw links between close molecules (scintillant)
+                    for (let i = 0; i < MOLECULES.length; i++) {
+                        for (let j = i + 1; j < MOLECULES.length; j++) {
+                            const a = MOLECULES[i], b = MOLECULES[j];
+                            const dx = a.x - b.x, dy = a.y - b.y;
+                            const dist = Math.sqrt(dx * dx + dy * dy);
+                            if (dist < 90) {
+                                ctx.save();
+                                ctx.globalAlpha = 0.07 + 0.06 * Math.abs(Math.sin(t * 2 + i + j));
+                                ctx.strokeStyle = a.color;
+                                ctx.lineWidth = 1.2 + 1 * Math.abs(Math.sin(t * 2 + i + j));
+                                ctx.beginPath();
+                                ctx.moveTo(a.x, a.y);
+                                ctx.lineTo(b.x, b.y);
+                                ctx.shadowColor = "#fff";
+                                ctx.shadowBlur = 4;
+                                ctx.stroke();
+                                ctx.restore();
+                            }
+                        }
+                    }
+                    requestAnimationFrame(animate);
+                }
+                animate();
+            })();
+        </script>
 </section>
 
 <style>
@@ -485,6 +638,39 @@
         }
     }
 
+    /* Styles pour le conteneur des particules */
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        /* Attention: le background-color ici est pour le canvas des particules. 
+           Votre section #home a déjà un dégradé. 
+           Si vous ne voulez pas de couleur unie sur les particules, laissez-le transparent.
+           Si vous voulez une couche colorée pour les particules, assurez-vous qu'elle ne cache pas le dégradé de #home.
+           Dans ce cas, on peut la laisser transparente pour laisser voir le dégradé. */
+        background-color: transparent; 
+        z-index: 0; /* Assurez-vous qu'il est en arrière-plan */
+        pointer-events: none; /* Permet les clics sur les éléments au-dessus */
+        overflow: hidden; /* Important pour cacher les particules en dehors de la section */
+    }
+    .particle {
+        position: absolute;
+        background-color: rgb(255, 137, 3); /* Particules orange semi-transparentes */
+        border-radius: 50%;
+        opacity: 0; /* Commence invisible */
+    }
+
+    /* Keyframe pour l'animation d'apparition/disparition des particules */
+    @keyframes fadeInOut {
+        0% { opacity: 0; }
+        20% { opacity: 0.6; } /* Visible */
+        80% { opacity: 0.6; } /* Reste visible */
+        100% { opacity: 0; }
+    }
+
+
     /* Glass Effect for the left panel */
     .glass-effect {
         background: rgba(255, 255, 255, 0.08); /* More transparent white */
@@ -503,7 +689,7 @@
         -webkit-backdrop-filter: blur(15px);
     }
 
-    /* Animations (Kept as is, no changes needed unless specific adjustments to timing/effect are desired) */
+    /* Animations */
     @keyframes gradient-text {
         0% { background-position: 0% 50;}
         100% { background-position: 100% 50;}
@@ -547,6 +733,34 @@
     }
     .animate-spin-slow { animation: spin-slow 18s linear infinite;}
 
+    /* NOUVELLES ANIMATIONS DES BULLES */
+    @keyframes bubble-float-1 {
+        0%, 100% { transform: translate(0, 0) scale(1);}
+        30% { transform: translate(20px, 50px) scale(1.05);}
+        70% { transform: translate(-30px, -40px) scale(0.95);}
+    }
+    .animate-bubble-1 {
+        animation: bubble-float-1 10s ease-in-out infinite alternate;
+    }
+
+    @keyframes bubble-float-2 {
+        0%, 100% { transform: translate(0, 0) scale(1);}
+        40% { transform: translate(-50px, 30px) scale(0.9);}
+        80% { transform: translate(40px, -20px) scale(1.1);}
+    }
+    .animate-bubble-2 {
+        animation: bubble-float-2 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes bubble-float-3 {
+        0%, 100% { transform: translate(0, 0) scale(1);}
+        25% { transform: translate(30px, -60px) scale(1.03);}
+        65% { transform: translate(-20px, 70px) scale(0.97);}
+    }
+    .animate-bubble-3 {
+        animation: bubble-float-3 9s ease-in-out infinite alternate;
+    }
+
     /* Carousel 2D Specific Styles */
     .carousel-2d-slide {
         box-shadow: 0 10px 32px 0 rgba(2,33,87,0.10), 0 2px 4px 0 rgba(0,0,0,0.04);
@@ -557,7 +771,7 @@
     /* Media Queries for Responsiveness */
     @media (max-width: 767px) { /* Small screens (mobile) */
         #home h1 {
-            font-size: 2rem; /* text-3xl */
+            font-size: 2rem; /* text-3xl on mobile */
             line-height: 1.2;
         }
         #home h1 span.block {
@@ -565,41 +779,155 @@
             line-height: 1.2;
         }
         #home p {
-            font-size: 0.95rem;
+            font-size: 0.95rem; /* text-base on mobile */
         }
         #hero-2d-carousel {
-            height: 320px; /* Adjusted height for smaller screens */
+            height: 350px; /* Adjusted height for smaller screens, slightly reduced */
             max-width: 100%; /* Ensure it doesn't exceed screen width */
         }
         #hero-2d-carousel .carousel-2d-slide img {
              height: 70%; /* Image takes up less space, leaving room for text */
-             max-height: 200px; /* Maximum height for images on small screens */
+             max-height: 220px; /* Maximum height for images on small screens */
              object-fit: contain;
         }
         .carousel-2d-slide h3 {
-            font-size: 1rem; /* Smaller heading for carousel cards */
+            font-size: 1.15rem; /* text-lg on mobile */
         }
         .carousel-2d-slide p {
-            font-size: 0.8rem; /* Smaller paragraph for carousel cards */
+            font-size: 0.85rem; /* text-sm on mobile */
         }
 
         /* Adjust button sizes for mobile */
         .px-8.py-3 {
             padding-left: 1.5rem;
             padding-right: 1.5rem;
-            padding-top: 0.65rem;
+            padding-top: 0.65rem; /* Slightly smaller padding */
             padding-bottom: 0.65rem;
-            font-size: 0.9rem;
+            font-size: 0.95rem; /* text-base on mobile */
         }
 
         /* Center buttons on mobile */
         .flex-col.sm:flex-row {
             align-items: center;
         }
+
+        /* Center list items on mobile too if not already */
+        ul.space-y-4 li {
+            justify-content: center; /* Center content of list items */
+        }
     }
 </style>
 
 <script>
+    // JavaScript for background particles animation
+    document.addEventListener('DOMContentLoaded', () => {
+        const particlesContainer = document.getElementById('particles-js');
+        // Check if the container exists
+        if (!particlesContainer) {
+            console.error("particles-js container not found!");
+            return;
+        }
+
+        // --- DÉBUT DES MODIFICATIONS POUR LA VISIBILITÉ ---
+        const numParticles = 200; // Réduit le nombre de particules pour de meilleures performances et une meilleure visibilité
+        const particleColors = ['rgba(255, 255, 255, 0.4)', 'rgba(255, 165, 0, 0.4)']; // Correction de l'opacité pour le blanc
+
+        // Obtenir les dimensions du conteneur une fois pour toutes (et lors du redimensionnement)
+        let containerWidth = particlesContainer.offsetWidth;
+        let containerHeight = particlesContainer.offsetHeight;
+
+        const updateContainerDimensions = () => {
+            containerWidth = particlesContainer.offsetWidth;
+            containerHeight = particlesContainer.offsetHeight;
+        };
+
+        function createParticle(i) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particlesContainer.appendChild(particle);
+
+            // Random size (between 8px and 18px)
+            const size = Math.random() * 10 + 8; // Min 8, Max 18
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+
+            // Random color from the array
+            particle.style.backgroundColor = particleColors[Math.floor(Math.random() * particleColors.length)];
+
+            // Random initial position
+            const startX = Math.random() * containerWidth;
+            const startY = Math.random() * containerHeight;
+            particle.style.left = `${startX}px`;
+            particle.style.top = `${startY}px`;
+
+            // Random animation duration (between 8s and 20s)
+            const duration = Math.random() * 12 + 8;
+            particle.style.animationDuration = `${duration}s`;
+
+            // Random animation delay (to stagger the start)
+            const delay = Math.random() * 5;
+            particle.style.animationDelay = `${delay}s`;
+
+            // Apply a random movement path for each particle
+            const moveRangeX = containerWidth * 0.4; // Move up to 40% of container width
+            const moveRangeY = containerHeight * 0.4; // Move up to 40% of container height
+
+            const endXOffset = (Math.random() - 0.5) * moveRangeX;
+            const endYOffset = (Math.random() - 0.5) * moveRangeY;
+            const midX1Offset = (Math.random() - 0.5) * moveRangeX;
+            const midY1Offset = (Math.random() - 0.5) * moveRangeY;
+            const midX2Offset = (Math.random() - 0.5) * moveRangeX;
+            const midY2Offset = (Math.random() - 0.5) * moveRangeY;
+
+
+            // Create dynamic keyframes for movement
+            const movementAnimationName = `particleMove-${i}`;
+            const styleSheet = document.styleSheets[0]; 
+            
+            // Delete old rule if it exists to prevent accumulation on resize
+            for (let r = 0; r < styleSheet.cssRules.length; r++) {
+                if (styleSheet.cssRules[r].name === movementAnimationName) {
+                    styleSheet.deleteRule(r);
+                    break;
+                }
+            }
+            
+            // Insert the new rule with adjusted opacity and movement for continuous visibility
+            styleSheet.insertRule(`
+                @keyframes ${movementAnimationName} {
+                    0% { transform: translate(0, 0) scale(1); opacity: 0.6; } /* Commence visible */
+                    25% { transform: translate(${midX1Offset}px, ${midY1Offset}px) scale(${1 + Math.random() * 0.2}); }
+                    50% { transform: translate(${midX2Offset}px, ${midY2Offset}px) scale(${1 - Math.random() * 0.2}); }
+                    75% { transform: translate(${endXOffset}px, ${endYOffset}px) scale(${1 + Math.random() * 0.1}); }
+                    100% { transform: translate(0, 0) scale(1); opacity: 0.6; } /* Finit visible pour une boucle fluide */
+                }
+            `, styleSheet.cssRules.length);
+
+            // Combine movement and fade with proper animation properties
+            particle.style.animation = `
+                ${movementAnimationName} ${duration}s ease-in-out infinite alternate,
+                fadeInOut ${duration}s ease-in-out infinite alternate
+            `;
+            particle.style.animationPlayState = 'running';
+        }
+
+        // Initial creation of particles
+        updateContainerDimensions(); // Capture dimensions initially
+        for (let i = 0; i < numParticles; i++) {
+            createParticle(i);
+        }
+
+        // Handle window resize to re-position particles or recreate them
+        window.addEventListener('resize', () => {
+            updateContainerDimensions(); // Update dimensions on resize
+            particlesContainer.innerHTML = ''; // Clear existing particles
+            for (let i = 0; i < numParticles; i++) {
+                createParticle(i); // Recreate them
+            }
+        });
+    });
+
+    // Code for the 2D carousel (existing code, no changes needed)
     document.addEventListener('DOMContentLoaded', () => {
         const carouselWrapper = document.querySelector('#hero-2d-carousel .carousel-2d-wrapper');
         const slides = document.querySelectorAll('#hero-2d-carousel .carousel-2d-slide');
@@ -634,6 +962,144 @@
         setInterval(goToNextSlide, 5000); // Auto-advance every 5 seconds
     });
 </script>
+
+<!-- <script>
+    // JavaScript for background particles animation
+    document.addEventListener('DOMContentLoaded', () => {
+        const particlesContainer = document.getElementById('particles-js');
+        // Check if the container exists
+        if (!particlesContainer) {
+            console.error("particles-js container not found!");
+            return;
+        }
+
+        const numParticles = 10000; // Number of particles
+        const particleColors = ['rgba(255, 255, 255, )', 'rgba(255, 165, 0, 0.4)']; // White and Orange with transparency
+
+        function createParticle(i) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particlesContainer.appendChild(particle);
+
+            // Random size (between 8px and 18px)
+            const size = Math.random() * 10 + 8; // Min 8, Max 18
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+
+            // Random color from the array
+            particle.style.backgroundColor = particleColors[Math.floor(Math.random() * particleColors.length)];
+
+            // Random initial position
+            // Particles start within the bounds of the particlesContainer (which is 100% of #home)
+            const startX = Math.random() * particlesContainer.offsetWidth;
+            const startY = Math.random() * particlesContainer.offsetHeight;
+            particle.style.left = `${startX}px`;
+            particle.style.top = `${startY}px`;
+
+            // Random animation duration (between 8s and 20s)
+            const duration = Math.random() * 12 + 8;
+            particle.style.animationDuration = `${duration}s`;
+
+            // Random animation delay (to stagger the start)
+            const delay = Math.random() * 5;
+            particle.style.animationDelay = `${delay}s`;
+
+            // Apply a random movement path for each particle
+            // Movement should be relative to its starting point to keep it within the container
+            const moveRangeX = particlesContainer.offsetWidth * 0.4; // Move up to 40% of container width
+            const moveRangeY = particlesContainer.offsetHeight * 0.4; // Move up to 40% of container height
+
+            const endXOffset = (Math.random() - 0.5) * moveRangeX; // -0.5 to 0.5 for movement in both directions
+            const endYOffset = (Math.random() - 0.5) * moveRangeY;
+            const midX1Offset = (Math.random() - 0.5) * moveRangeX;
+            const midY1Offset = (Math.random() - 0.5) * moveRangeY;
+            const midX2Offset = (Math.random() - 0.5) * moveRangeX;
+            const midY2Offset = (Math.random() - 0.5) * moveRangeY;
+
+
+            // Create dynamic keyframes for movement
+            const movementAnimationName = `particleMove-${i}`;
+            const styleSheet = document.styleSheets[0]; // Get the first stylesheet
+
+            // Check if the rule already exists (important for resize handler)
+            let ruleExists = false;
+            for (let r = 0; r < styleSheet.cssRules.length; r++) {
+                if (styleSheet.cssRules[r].name === movementAnimationName) {
+                    styleSheet.deleteRule(r); // Delete old rule if it exists
+                    break;
+                }
+            }
+            
+            // Insert the new rule
+            styleSheet.insertRule(`
+                @keyframes ${movementAnimationName} {
+                    0% { transform: translate(0, 0) scale(1); opacity: 0; }
+                    10% { opacity: 0.6; }
+                    25% { transform: translate(${midX1Offset}px, ${midY1Offset}px) scale(${1 + Math.random() * 0.2}); }
+                    50% { transform: translate(${midX2Offset}px, ${midY2Offset}px) scale(${1 - Math.random() * 0.2}); }
+                    75% { transform: translate(${endXOffset}px, ${endYOffset}px) scale(${1 + Math.random() * 0.1}); }
+                    90% { opacity: 0.6; }
+                    100% { transform: translate(0, 0) scale(1); opacity: 0; } /* Reset position for continuous loop */
+                }
+            `, styleSheet.cssRules.length);
+
+            particle.style.animationName = `${movementAnimationName}, fadeInOut`; // Combine movement and fade
+            particle.style.animationIterationCount = 'infinite'; // Loop indefinitely
+            particle.style.animationDirection = 'alternate'; // Go back and forth
+            particle.style.animationTimingFunction = 'ease-in-out';
+            particle.style.animationFillMode = 'forwards';
+            particle.style.animationPlayState = 'running'; // Ensure animation starts
+        }
+
+        // Initial creation of particles
+        for (let i = 0; i < numParticles; i++) {
+            createParticle(i);
+        }
+
+        // Handle window resize to re-position particles or recreate them
+        window.addEventListener('resize', () => {
+            particlesContainer.innerHTML = ''; // Clear existing particles
+            for (let i = 0; i < numParticles; i++) {
+                createParticle(i); // Recreate them
+            }
+        });
+    });
+
+    // Code for the 2D carousel (existing code, no changes needed)
+    document.addEventListener('DOMContentLoaded', () => {
+        const carouselWrapper = document.querySelector('#hero-2d-carousel .carousel-2d-wrapper');
+        const slides = document.querySelectorAll('#hero-2d-carousel .carousel-2d-slide');
+        const prevButton = document.getElementById('carousel-2d-prev');
+        const nextButton = document.getElementById('carousel-2d-next');
+
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+
+        function update2DCarousel() {
+            carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function goToNextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            update2DCarousel();
+        }
+
+        function goToPrevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            update2DCarousel();
+        }
+
+        if (nextButton) {
+            nextButton.addEventListener('click', goToNextSlide);
+        }
+        if (prevButton) {
+            prevButton.addEventListener('click', goToPrevSlide);
+        }
+
+        update2DCarousel();
+        setInterval(goToNextSlide, 5000); // Auto-advance every 5 seconds
+    });
+</script> -->
     <!-- <style>
     /* Animations */
     @keyframes gradient-text {
@@ -2064,6 +2530,8 @@
 
 <!-- script pour effacer les marges -->
 <!-- <script>
+
+
         document.addEventListener('DOMContentLoaded', () => {
         // Fonction pour réinitialiser les marges et paddings d'un élément
         function removeUnwantedMargins(element) {
@@ -2138,6 +2606,50 @@
         console.log("Script de suppression des marges blanches potentiellement inutiles exécuté.");
     });
 </script> -->
+
+
+<!-- signbyadc -->
+   <script>
+        // Script de signature du développeur pour la console
+        document.addEventListener('DOMContentLoaded', () => {
+            const devInfo = {
+                nom: "Chaminade Dondah Adjolou", // Remplacez par votre nom/pseudo
+                specialite: "Développeur Web / Ingénieur Logiciel", // Remplacez par votre spécialité
+                email: "chaminade.d.adjolou@gmail.com", // Remplacez par votre email
+                portfolio: "https://donchaminade.vercel.app", // Remplacez par l'URL de votre portfolio (optionnel)
+                dateMiseAJour: "2025-06-11", // Date de la dernière mise à jour du script
+                messageSpecial: "Merci d'avoir inspecté le code ! N'hésitez pas à me contacter si vous avez des questions ou des opportunités. 😊"
+            };
+
+            // Option 1 : Afficher les informations de manière simple
+            //console.log("%c\n--- Signature du Développeur ---", "color: #f97316; font-weight: bold;");
+            //console.log("Nom         :", devInfo.nom);
+            //console.log("Spécialité  :", devInfo.specialite);
+            //console.log("Email       :", devInfo.email);
+            //if (devInfo.portfolio) {
+            //    console.log("Portfolio   :", devInfo.portfolio);
+            //}
+            //console.log("Dernière MAJ:", devInfo.dateMiseAJour);
+            //console.log("%c" + devInfo.messageSpecial, "color: #022157; font-style: italic;");
+            //console.log("%c-----------------------------\n", "color: #f97316; font-weight: bold;");
+
+
+             //Option 2 (plus avancée) : Grouper les informations pour une meilleure lisibilité
+             console.groupCollapsed("%c--- Signature du Développeur ---", "color: #f97316; font-weight: bold;");
+             console.info("Développé par :", devInfo.nom);
+             console.info("Spécialité    :", devInfo.specialite);
+             console.info("Contact       :", devInfo.email);
+             if (devInfo.portfolio) {
+                 console.info("Portfolio     :", devInfo.portfolio);
+             }
+             console.info("Dernière MAJ  :", devInfo.dateMiseAJour);
+             console.log("%c" + devInfo.messageSpecial, "color: #022157; font-style: italic;");
+             console.groupEnd();
+        });
+    </script>
+
+
+
 </body>
 
 </html>
