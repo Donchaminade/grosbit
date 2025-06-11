@@ -119,6 +119,36 @@
     </style>
 </head>
 <body class="bg-white text-gray-800">
+    <style>
+            body {
+            margin: 0; /* Élimine les marges par défaut du navigateur */
+            padding: 0; /* Élimine les paddings par défaut du navigateur */
+            width: 100%; /* Assure que le body prend toujours 100% de la largeur du viewport */
+            min-height: 100vh; /* Assure que le body prend au moins toute la hauteur de la vue */
+            box-sizing: border-box; /* S'assure que padding et border sont inclus dans la largeur/hauteur */
+            /* display: flex; /* Peut être utile si vous voulez que les sections s'empilent ou se répartissent */
+            /* flex-direction: column; */
+        }
+
+        /* Ajout de styles pour les boutons de navigation du carrousel */
+        #carousel-2d-prev, #carousel-2d-next {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba(2, 33, 87, 0.7);
+            color: white;
+            font-size: 1.5rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #carousel-2d-prev:hover, #carousel-2d-next:hover {
+            background-color: rgba(255, 102, 0, 0.7);
+            transform: scale(1.1);
+        }
+    </style>
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/22899144847?text=Bonjour%20GROSBIT,%20je%20suis%20intéressé%20par%20vos%20services" 
        class="fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl z-50 whatsapp-btn shadow-lg hover:bg-green-700 transition duration-300">
