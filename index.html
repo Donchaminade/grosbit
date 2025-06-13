@@ -128,6 +128,9 @@
             box-sizing: border-box; /* S'assure que padding et border sont inclus dans la largeur/hauteur */
             /* display: flex; /* Peut être utile si vous voulez que les sections s'empilent ou se répartissent */
             /* flex-direction: column; */
+            text-align: justify;
+            word-spacing: normal;
+            hyphens: auto;
         }
 
         /* Ajout de styles pour les boutons de navigation du carrousel */
@@ -355,31 +358,32 @@
                     <ul class="space-y-4 text-white text-base sm:text-lg pl-0">
                         <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-600/80 shadow-md">
-                                <i class="fas fa-shield-alt text-white text-lg"></i>
+                                <i class="fa fa-shield-alt text-white "></i>
                             </span>
                             <span>Réseau & Sécurité informatique</span>
                         </li>
                         <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-orange-500/80 shadow-md">
-                                <i class="fas fa-tools text-white text-lg"></i>
+                                <!-- <i class="fas fa-tools text-white text-lg"></i> -->
+                                 <i class="fa fa-tools text-white"></i>
                             </span>
                             <span>Maintenance & Assistance</span>
                         </li>
                         <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/80 shadow-md">
-                                <i class="fas fa-box-open text-white text-lg"></i>
+                                <i class="fa fa-box-open text-white "></i>
                             </span>
                             <span>Distribution de matériels</span>
                         </li>
                         <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-orange-400/80 shadow-md">
-                                <i class="fas fa-chalkboard-teacher text-white text-lg"></i>
+                                <i class="fa fa-chalkboard-teacher text-white -lg"></i>
                             </span>
                             <span>Formation & Conseil</span>
                         </li>
                         <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
                             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-400/80 shadow-md">
-                                <i class="fas fa-bullhorn text-white text-lg"></i>
+                                <i class="fa fa-bullhorn text-white "></i>
                             </span>
                             <span>Marketing digital</span>
                         </li>
@@ -398,7 +402,7 @@
 
         <div class="w-full md:w-1/2 mt-12 md:mt-0 animate-on-scroll relative flex items-center justify-center md:justify-end">
             <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" style="opacity:0.18;" viewBox="0 0 700 750" fill="none">
-                <circle cx="120" cy="120" r="60" fill="#3b82f6" fill-opacity="0.13"/>
+                <circle cx="120" cy="120" r="60" fill="#3B48F6FF" fill-opacity="0.13"/>
                 <circle cx="500" cy="200" r="40" fill="#f97316" fill-opacity="0.11"/>
                 <circle cx="350" cy="600" r="80" fill="#fff" fill-opacity="0.09"/>
                 <circle cx="600" cy="500" r="30" fill="#022157" fill-opacity="0.10"/>
@@ -410,11 +414,38 @@
             <div id="hero-2d-carousel" class="relative rounded-2xl shadow-2xl overflow-hidden bg-white border border-gray-200 w-full max-w-4xl h-[500px] sm:h-[650px] md:h-[800px] lg:h-[900px] xl:h-[1000px]">
                 <div class="carousel-2d-wrapper w-full h-full flex transition-transform duration-700 ease-in-out">
                     <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
-                        <img src="https://haima.tech/app/uploads/2023/08/sys_informatique_01.jpg"
+                        <img src="/img/gb1.png"
                             alt="Services informatiques"
                             class="w-full h-4/5 object-contain rounded-lg shadow-md mb-4"/>
                         <div class="text-center">
                             <h3 class="font-bold text-lg sm:text-xl text-[#0949B8FF] mb-1">Services informatiques</h3>
+                            <p class="text-gray-700 text-sm sm:text-base">Solutions sur mesure pour votre entreprise.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
+                        <img src="/img/gb2.png"
+                            alt="Services informatiques"
+                            class="w-full h-4/5 object-contain rounded-lg shadow-md mb-4"/>
+                        <div class="text-center">
+                            <!-- <h3 class="font-bold text-lg sm:text-xl text-[#0949B8FF] mb-1">Services informatiques</h3> -->
+                            <p class="text-gray-700 text-sm sm:text-base">Solutions sur mesure pour votre entreprise.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
+                        <img src="/img/gb3.png"
+                            alt="Services informatiques"
+                            class="w-full h-4/5 object-contain rounded-lg shadow-md mb-4"/>
+                        <div class="text-center">
+                            <!-- <h3 class="font-bold text-lg sm:text-xl text-[#0949B8FF] mb-1">Services informatiques</h3> -->
+                            <p class="text-gray-700 text-sm sm:text-base">Solutions sur mesure pour votre entreprise.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
+                        <img src="/img/gb4.png"
+                            alt="Services informatiques"
+                            class="w-full h-4/5 object-contain rounded-lg shadow-md mb-4"/>
+                        <div class="text-center">
+                            <!-- <h3 class="font-bold text-lg sm:text-xl text-[#0949B8FF] mb-1">Services informatiques</h3> -->
                             <p class="text-gray-700 text-sm sm:text-base">Solutions sur mesure pour votre entreprise.</p>
                         </div>
                     </div>
@@ -456,10 +487,10 @@
                     </div>
                 </div>
                 <button id="carousel-2d-prev" type="button" class="absolute left-4 top-1/2 -translate-y-1/2 bg-[#022157] bg-opacity-70 text-white p-3 rounded-full hover:bg-[#FF6600] transition z-20 focus:outline-none focus:ring-2 focus:ring-[#FF6600]">
-                    <i class="fas fa-chevron-left text-lg"></i>
+                    <i class="fas fa-chevron-left "></i>
                 </button>
                 <button id="carousel-2d-next" type="button" class="absolute right-4 top-1/2 -translate-y-1/2 bg-[#022157] bg-opacity-70 text-white p-3 rounded-full hover:bg-[#FF6600] transition z-20 focus:outline-none focus:ring-2 focus:ring-[#FF6600]">
-                    <i class="fas fa-chevron-right text-lg"></i>
+                    <i class="fas fa-chevron-right "></i>
                 </button>
             </div>
         </div>
@@ -1531,6 +1562,11 @@
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto">
                     Découvrez notre gamme de <span class="font-bold ">matériels informatiques</span>, <span class="font-bold ">réseaux</span> et <span class="font-bold">sécurité</span> pour une infrastructure <span class="font-bold ">performante</span> et <span class="font-bold ">sécurisée</span>.
                 </p>
+                <!-- ligne deccorative en orange -->
+                <div class="w-full h-2 mt-6 rounded-full bg-gradient-to-r from-orange-600 via-orange-600 to-orange-600 relative overflow-hidden">
+                    <span class="absolute left-0 top-0 w-4 h-2 bg-white/70 rounded-full animate-pulse"></span>
+                    <span class="absolute right-0 top-0 w-4 h-2 bg-white/70 rounded-full animate-pulse"></span>
+                </div>
             </div>
             <div id="products-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8"></div>
             <div class="flex justify-center mt-10">
@@ -1632,7 +1668,7 @@
         toShow.forEach((p, idx) => {
             const delay = 0.1 * idx;
             grid.innerHTML += `
-            <div class="bg-white rounded-xl p-6 shadow-md transition duration-300 product-card animate-on-scroll" style="animation-delay:${delay}s">
+            <div class="bg-white rounded-xl p-6 shadow-md transition duration-400 product-card animate-on-scroll" style="border-bottom-width: 8px;  border-bottom-color: ; border-top-width: 8px; border-top-color: #0210d6; animation-delay:${delay}s ">
                 <div class="overflow-hidden rounded-lg mb-4 relative">
                     <img src="${p.img}" alt="${p.title.replace(/<[^>]+>/g,'')}" class="w-full h-48 object-contain product-img transition duration-500">
                     <span class="absolute top-2 right-2 inline-flex items-center px-2 py-1 rounded-full text-xs font-bold ${p.badgeColor} shadow">
@@ -1737,7 +1773,7 @@
                 <div class="md:w-1/3 flex flex-col gap-8 items-center animate-on-scroll">
                     <!-- Paul-Marie Têko AMUZUN -->
                     <div class="bg-white/90 border border-gray-200 rounded-2xl shadow-lg p-8 flex flex-col items-center w-full transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl"
-                         style="border-top-width: 8px; border-top-color: #0546b6;">
+                         style="border-top-width: 8px; border-top-color: #0210d6;">
                         <img src="/img/ceo.png" alt="Paul-Marie Têko AMUZUN" class="w-24 h-24 rounded-full border-2 border-gray-300 object-cover mb-4 shadow">
                         <h3 class="font-semibold text-xl text-gray-800 mb-1">Paul-Marie Têko AMUZUN</h3>
                         <p class="text-gray-500 mb-2">Fondateur & Principal</p>
