@@ -417,7 +417,7 @@
                 <circle cx="100" cy="650" r="35" fill="#fff" fill-opacity="0.12"/>
             </svg>
 
-<div id="hero-2d-carousel" class="relative rounded-2xl shadow-2xl overflow-hidden bg-white border border-gray-200 w-full max-w-4xl h-[350px] sm:h-[500px] md:h-[650px] lg:h-[750px] xl:h-[850px]">
+<div id="hero-2d-carousel" class="relative rounded-2xl shadow-2xl overflow-hidden bg-blue border border-gray-200 w-full max-w-4xl h-[250px] sm:h-[400px] md:h-[550px] lg:h-[650px] xl:h-[750px]">
     <div class="carousel-2d-wrapper w-full h-full flex transition-transform duration-700 ease-in-out">
         <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
             <img src="/img/gb1.png"
@@ -1797,7 +1797,7 @@
                 <div class="md:w-1/3 flex flex-col gap-8 items-center animate-on-scroll">
                     <!-- Paul-Marie Têko AMUZUN -->
                     <div class="bg-white/90 border border-gray-200 rounded-2xl shadow-lg p-8 flex flex-col items-center w-full transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl"
-                         style="border-top-width: 8px; border-top-color: blue-600;">
+                         style="border-top-width: 8px; border-top-color: #f97316;">
                         <img src="/img/ceo.png" alt="Paul-Marie Têko AMUZUN" class="w-24 h-24 rounded-full border-2 border-gray-300 object-cover mb-4 shadow">
                         <h3 class="font-semibold text-xl text-gray-800 mb-1">Paul-Marie Têko AMUZUN</h3>
                         <p class="text-gray-500 mb-2">Fondateur & Principal</p>
@@ -1834,10 +1834,10 @@
                 </div>
             </div>
             <!-- Clients & Partners -->
-                <style>
+            <style>
     /* Styles personnalisés et animations CSS pour les défilements */
 
-    /* Défilement continu (contenu se déplace de droite à gauche) */
+    /* Défilement continu (contenu se déplace de droite à gauche, le "marquee" classique) */
     @keyframes scroll-marquee {
         from {
             transform: translateX(0%);
@@ -1857,14 +1857,14 @@
         }
     }
 
-    /* Appliquer l'animation pour "Ils nous ont fait confiance" (de la gauche vers la droite) */
+    /* Appliquer l'animation pour "Ils nous ont fait confiance" (de la droite vers la gauche) */
     .animate-scroll-ltr {
         animation: scroll-marquee-reverse 20s linear infinite; /* Ajustez la durée (20s) pour la vitesse désirée */
     }
 
-    /* Appliquer l'animation pour "Nos Partenaires" (de la droite vers la gauche) */
+    /* Appliquer l'animation pour "Nos Partenaires" (de la gauche vers la droite) */
     .animate-scroll-rtl {
-        animation: scroll-marquee 10s linear infinite; /* Ajustez la durée (20s) pour la vitesse désirée */
+        animation: scroll-marquee 10s linear infinite; /* Ajustez la durée (10s) pour la vitesse désirée */
     }
 
     /* Pause animation au survol */
@@ -1876,27 +1876,29 @@
 
 <div class="mt-24 animate-on-scroll">
     <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">Ils nous ont fait <span class="text-orange-500">confiance</span></h3>
-    
-    <div class="overflow-hidden relative">
-        <div class="flex gap-8 items-center animate-scroll-ltr whitespace-nowrap">
-            <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center h-32 min-w-[200px] hover:scale-105 transition-transform duration-300 border-b-4 border-blue-600/10 flex-shrink-0">
-                <span class="text-xl font-bold text-gray-800 flex items-center gap-2"><i class="fas fa-building text-blue-600"></i>SGI TOGO</span>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center h-32 min-w-[250px] hover:scale-105 transition-transform duration-300 border-b-4 border-orange-500/10 flex-shrink-0">
-                <span class="text-xl font-bold text-gray-800 flex items-center gap-2"><i class="fas fa-ship text-orange-500"></i>PORT AUTONOME DE LOME</span>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center h-32 min-w-[200px] hover:scale-105 transition-transform duration-300 border-b-4 border-blue-600/10 flex-shrink-0">
-                <span class="text-xl font-bold text-gray-800 flex items-center gap-2"><i class="fas fa-university text-blue-600"></i>WAFI CAPITAL</span>
-            </div>
 
-            <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center h-32 min-w-[200px] hover:scale-105 transition-transform duration-300 border-b-4 border-blue-600/10 flex-shrink-0">
-                <span class="text-xl font-bold text-gray-800 flex items-center gap-2"><i class="fas fa-building text-blue-600"></i>SGI TOGO</span>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center h-32 min-w-[250px] hover:scale-105 transition-transform duration-300 border-b-4 border-orange-500/10 flex-shrink-0">
-                <span class="text-xl font-bold text-gray-800 flex items-center gap-2"><i class="fas fa-ship text-orange-500"></i>PORT AUTONOME DE LOME</span>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center h-32 min-w-[200px] hover:scale-105 transition-transform duration-300 border-b-4 border-blue-600/10 flex-shrink-0">
-                <span class="text-xl font-bold text-gray-800 flex items-center gap-2"><i class="fas fa-university text-blue-600"></i>WAFI CAPITAL</span>
+    <div class="overflow-hidden relative">
+        <div class="overflow-hidden relative">
+            <div class="flex gap-8 items-center animate-scroll-ltr whitespace-nowrap">
+                <img src="https://atlantis.sgitogo.tg/assets/images/sgi-togo-login.png" alt="SGI TOGO" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://waficapital.com/wp-content/uploads/2022/12/LOGO-WAFI-CAPITAL.jpg" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://www.togo-port.net/wp-content/uploads/2018/02/logo-port-autonome-lome.png" alt="PORT AUTONOME DE LOME" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://atlantis.sgitogo.tg/assets/images/sgi-togo-login.png" alt="SGI TOGO" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://waficapital.com/wp-content/uploads/2022/12/LOGO-WAFI-CAPITAL.jpg" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://www.togo-port.net/wp-content/uploads/2018/02/logo-port-autonome-lome.png" alt="PORT AUTONOME DE LOME" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+
+                <img src="https://atlantis.sgitogo.tg/assets/images/sgi-togo-login.png" alt="SGI TOGO" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://waficapital.com/wp-content/uploads/2022/12/LOGO-WAFI-CAPITAL.jpg" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://www.togo-port.net/wp-content/uploads/2018/02/logo-port-autonome-lome.png" alt="PORT AUTONOME DE LOME" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://atlantis.sgitogo.tg/assets/images/sgi-togo-login.png" alt="SGI TOGO" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://waficapital.com/wp-content/uploads/2022/12/LOGO-WAFI-CAPITAL.jpg" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://www.togo-port.net/wp-content/uploads/2018/02/logo-port-autonome-lome.png" alt="PORT AUTONOME DE LOME" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
             </div>
         </div>
     </div>
@@ -1906,18 +1908,44 @@
         <p class="text-gray-600 text-center max-w-3xl mx-auto mb-8">
             Nous travaillons d'arrache-pied pour conclure de futurs partenariats avec CISCO, HP, LENOVO et DELL.
         </p>
-        
+
         <div class="overflow-hidden relative">
             <div class="flex gap-8 items-center animate-scroll-rtl whitespace-nowrap">
                 <img src="https://th.bing.com/th/id/OIP.y4f2qtvtTD_RJiuSGF0HJAHaHa?r=0&cb=thvnextc1&w=730&h=730&rs=1&pid=ImgDetMain" alt="Cisco" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/1200px-HP_logo_2012.svg.png" alt="HP" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://logodownload.org/wp-content/uploads/2014/09/lenovo-logo-1-1.png" alt="Lenovo" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Dell_logo_2016.svg/1200px-Dell_logo_2016.svg.png" alt="Dell" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://th.bing.com/th/id/R.b87ac350211b155c514dd4924630b9fe?rik=QvDrXv3gl9u5pQ&pid=ImgRaw&r=0" alt="MS" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://static.vecteezy.com/system/resources/previews/009/030/379/non_2x/hpe-logo-hpe-letter-hpe-letter-logo-design-initials-hpe-logo-linked-with-circle-and-uppercase-monogram-logo-hpe-typography-for-technology-business-and-real-estate-brand-vector.jpg" alt="HPE" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://th.bing.com/th/id/OIP.j_uW4vnbfOT2gQs7a3X_NQHaHa?r=0&rs=1&pid=ImgDetMain" alt="MC3" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://th.bing.com/th/id/OIP.y4f2qtvtTD_RJiuSGF0HJAHaHa?r=0&cb=thvnextc1&w=730&h=730&rs=1&pid=ImgDetMain" alt="Cisco" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/1200px-HP_logo_2012.svg.png" alt="HP" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://logodownload.org/wp-content/uploads/2014/09/lenovo-logo-1-1.png" alt="Lenovo" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Dell_logo_2016.svg/1200px-Dell_logo_2016.svg.png" alt="Dell" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://th.bing.com/th/id/R.b87ac350211b155c514dd4924630b9fe?rik=QvDrXv3gl9u5pQ&pid=ImgRaw&r=0" alt="MS" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://static.vecteezy.com/system/resources/previews/009/030/379/non_2x/hpe-logo-hpe-letter-hpe-letter-logo-design-initials-hpe-logo-linked-with-circle-and-uppercase-monogram-logo-hpe-typography-for-technology-business-and-real-estate-brand-vector.jpg" alt="HPE" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://th.bing.com/th/id/OIP.j_uW4vnbfOT2gQs7a3X_NQHaHa?r=0&rs=1&pid=ImgDetMain" alt="MC3" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
 
                 <img src="https://th.bing.com/th/id/OIP.y4f2qtvtTD_RJiuSGF0HJAHaHa?r=0&cb=thvnextc1&w=730&h=730&rs=1&pid=ImgDetMain" alt="Cisco" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/1200px-HP_logo_2012.svg.png" alt="HP" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://logodownload.org/wp-content/uploads/2014/09/lenovo-logo-1-1.png" alt="Lenovo" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Dell_logo_2016.svg/1200px-Dell_logo_2016.svg.png" alt="Dell" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://th.bing.com/th/id/R.b87ac350211b155c514dd4924630b9fe?rik=QvDrXv3gl9u5pQ&pid=ImgRaw&r=0" alt="MS" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://static.vecteezy.com/system/resources/previews/009/030/379/non_2x/hpe-logo-hpe-letter-hpe-letter-logo-design-initials-hpe-logo-linked-with-circle-and-uppercase-monogram-logo-hpe-typography-for-technology-business-and-real-estate-brand-vector.jpg" alt="HPE" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://th.bing.com/th/id/OIP.j_uW4vnbfOT2gQs7a3X_NQHaHa?r=0&rs=1&pid=ImgDetMain" alt="MC3" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://th.bing.com/th/id/OIP.y4f2qtvtTD_RJiuSGF0HJAHaHa?r=0&cb=thvnextc1&w=730&h=730&rs=1&pid=ImgDetMain" alt="Cisco" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/1200px-HP_logo_2012.svg.png" alt="HP" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://logodownload.org/wp-content/uploads/2014/09/lenovo-logo-1-1.png" alt="Lenovo" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Dell_logo_2016.svg/1200px-Dell_logo_2016.svg.png" alt="Dell" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://th.bing.com/th/id/R.b87ac350211b155c514dd4924630b9fe?rik=QvDrXv3gl9u5pQ&pid=ImgRaw&r=0" alt="MS" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://static.vecteezy.com/system/resources/previews/009/030/379/non_2x/hpe-logo-hpe-letter-hpe-letter-logo-design-initials-hpe-logo-linked-with-circle-and-uppercase-monogram-logo-hpe-typography-for-technology-business-and-real-estate-brand-vector.jpg" alt="HPE" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://th.bing.com/th/id/OIP.j_uW4vnbfOT2gQs7a3X_NQHaHa?r=0&rs=1&pid=ImgDetMain" alt="MC3" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
             </div>
         </div>
     </div>
@@ -1939,7 +1967,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 animate-on-scroll">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Témoi<span class="text-blue-600">gnages</span></h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto text-center mb-8">
                     Ce que nos clients disent de nous.
                 </p>
             </div>
@@ -1972,7 +2000,7 @@
                     </div>
                 </div>
                 
-                <div class="bg-white p-8 rounded-xl shadow-md border border-transparent transition duration-300 review-card animate-on-scroll">
+                <!-- <div class="bg-white p-8 rounded-xl shadow-md border border-transparent transition duration-300 review-card animate-on-scroll">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 flex">
                             <i class="fas fa-star"></i>
@@ -1991,7 +2019,7 @@
                             <p class="text-gray-600">SGI TOGO</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 
                 <div class="bg-white p-8 rounded-xl shadow-md border border-transparent transition duration-300 review-card animate-on-scroll">
                     <div class="flex items-center mb-4">
