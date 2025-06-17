@@ -2267,7 +2267,7 @@
                 </p>
                 <div class="mt-4 md:mt-0">
                     <a href="#" class="text-white/60 hover:underline hover:text-[#055AE2FF]" data-popup-target="privacy">Politique de confidentialité  |  </a>
-                    <a href="#" class="text-white/60 hover:underline hover:text-[#055AE2FF]" data-popup-target="terms">Conditions d'utilisation</a>
+                    <a href="#" class="text-white/60 hover:underline hover:text-[#E29505FF]" data-popup-target="terms">Conditions d'utilisation</a>
                 </div>
             </div>
         </div>
@@ -2285,11 +2285,6 @@
     </div>
   </div>
 </div>
-
-    <!-- <button id="darkModeToggle" class="fixed top-6 right-6 z-50 bg-[#022157] text-white p-3 rounded-full shadow-lg hover:bg-[#FF6600] transition">
-      <i class="fas fa-moon"></i>
-    </button> -->
-
 
 
         <script>
@@ -2386,145 +2381,6 @@
         </script>
 
 
-    <!-- script de contact -->
-    <!-- <script>
-                document.addEventListener('DOMContentLoaded', function () {
-            const contactForm = document.getElementById('contact-form');
-            const feedbackDiv = document.getElementById('form-feedback');
-
-            if (contactForm) {
-                contactForm.addEventListener('submit', function (e) {
-                    // Empêche le rechargement de la page par défaut
-                    e.preventDefault();
-
-                    // Récupère le bouton de soumission pour le désactiver pendant l'envoi
-                    const submitButton = contactForm.querySelector('button[type="submit"]');
-                    const originalButtonText = submitButton.innerHTML;
-
-                    // Affiche un message de chargement
-                    submitButton.disabled = true;
-                    submitButton.innerHTML = 'Envoi en cours...';
-                    feedbackDiv.innerHTML = ''; // Efface les anciens messages
-                    feedbackDiv.className = 'mt-4 text-center'; // Réinitialise les classes
-
-                    // Crée un objet FormData avec les données du formulaire
-                    const formData = new FormData(contactForm);
-                    
-                    // Envoie les données au script PHP
-                    fetch(contactForm.action, {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            // En cas de succès
-                            feedbackDiv.innerHTML = `<p class="text-green-600 font-semibold">${data.message}</p>`;
-                            feedbackDiv.className += ' p-3 bg-green-100 rounded-lg';
-                            contactForm.reset(); // Vide les champs du formulaire
-                        } else {
-                            // En cas d'erreur
-                            feedbackDiv.innerHTML = `<p class="text-red-600 font-semibold">${data.message}</p>`;
-                            feedbackDiv.className += ' p-3 bg-red-100 rounded-lg';
-                        }
-                    })
-                    .catch(error => {
-                        // En cas d'erreur réseau ou si le JSON est invalide
-                        console.error('Erreur:', error);
-                        feedbackDiv.innerHTML = `<p class="text-red-600 font-semibold">Une erreur technique est survenue. Veuillez réessayer plus tard.</p>`;
-                        feedbackDiv.className += ' p-3 bg-red-100 rounded-lg';
-                    })
-                    .finally(() => {
-                        // Réactive le bouton dans tous les cas (succès ou erreur)
-                        submitButton.disabled = false;
-                        submitButton.innerHTML = originalButtonText;
-                    });
-                });
-            }
-        });
-    </script> -->
-<!-- fin script de contact -->
-
-<!-- script pour effacer les marges -->
-<!-- <script>
-
-
-        document.addEventListener('DOMContentLoaded', () => {
-        // Fonction pour réinitialiser les marges et paddings d'un élément
-        function removeUnwantedMargins(element) {
-            if (element) {
-                // Supprimer les marges et paddings externes
-                element.style.margin = '0';
-                element.style.padding = '0';
-                // Supprimer les espacements internes (par exemple, pour les bordures de cellule de tableau)
-                element.style.borderSpacing = '0';
-                element.style.borderCollapse = 'collapse';
-            }
-        }
-
-        // 1. Réinitialiser les marges et paddings du <body> et <html>
-        // C'est la cause la plus fréquente de marges blanches autour de la page
-        removeUnwantedMargins(document.documentElement); // <html>
-        removeUnwantedMargins(document.body); // <body>
-
-        // 2. Cibler les éléments de bloc courants qui pourraient avoir des marges par défaut
-        // Utilise querySelectorAll pour obtenir une NodeList de tous les éléments correspondants
-        const commonBlockElements = document.querySelectorAll(
-            'h1, h2, h3, h4, h5, h6, p, ul, ol, dl, pre, blockquote, figure, hr, form, fieldset, address, article, aside, details, figcaption, footer, header, main, nav, section, summary'
-        );
-
-        commonBlockElements.forEach(element => {
-            removeUnwantedMargins(element);
-        });
-
-        // 3. Spécifique aux images qui pourraient causer un défilement horizontal involontaire
-        // Si une image est plus large que son conteneur parent, elle peut créer une marge blanche
-        // (en fait, un espace vide car le contenu dépasse)
-        const images = document.querySelectorAll('img');
-        images.forEach(img => {
-            // Empêcher l'image de déborder horizontalement de son parent
-            img.style.maxWidth = '100%';
-            img.style.height = 'auto'; // Maintenir le ratio d'aspect
-            img.style.display = 'block'; // Empêche l'espace sous l'image pour les éléments inline
-            removeUnwantedMargins(img); // Assurez-vous que l'image elle-même n'a pas de marges
-        });
-
-        // 4. Traiter les listes (ul, ol) et leurs éléments (li)
-        const lists = document.querySelectorAll('ul, ol');
-        lists.forEach(list => {
-            removeUnwantedMargins(list);
-            list.style.listStyle = 'none'; // Supprime les puces par défaut
-        });
-
-        const listItems = document.querySelectorAll('li');
-        listItems.forEach(li => {
-            removeUnwantedMargins(li);
-        });
-
-        // 5. Ajustements pour les tableaux (table, th, td)
-        const tables = document.querySelectorAll('table');
-        tables.forEach(table => {
-            removeUnwantedMargins(table);
-        });
-
-        const tableCells = document.querySelectorAll('th, td');
-        tableCells.forEach(cell => {
-            removeUnwantedMargins(cell);
-        });
-
-        // 6. Si tu as des iframes ou d'autres éléments embarqués
-        const iframes = document.querySelectorAll('iframe');
-        iframes.forEach(iframe => {
-            removeUnwantedMargins(iframe);
-            iframe.style.display = 'block'; // Pour éviter les espaces parasites
-        });
-
-        // Un log pour confirmer que le script a été exécuté
-        console.log("Script de suppression des marges blanches potentiellement inutiles exécuté.");
-    });
-</script> -->
-
-
 <!-- signbyadc -->
    <script>
         // Script de signature du développeur pour la console
@@ -2564,183 +2420,6 @@
              console.groupEnd();
         });
     </script>
-
-
-<!-- Menu responsif avec mobile  -->
-    <!-- <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-        
-        // Scroll animation
-        const animateElements = document.querySelectorAll('.animate-on-scroll');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-        
-        animateElements.forEach(element => {
-            observer.observe(element);
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80, // Adjust for fixed header
-                        behavior: 'smooth'
-                    });
-                }
-                
-                // Close mobile menu if open
-                const mobileMenu = document.getElementById('mobile-menu');
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
-        
-        // Initialize particles.js
-        particlesJS('particles-js', {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#3b82f6"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#EC8208FF"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
-                },
-                "opacity": {
-                    "value": 0.3,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#3b82f6",
-                    "opacity": 0.2,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 2,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
-        });
-        
-        
-        // Popup politique/conditions
-        document.querySelectorAll('a[href="#"], a:contains("Politique"), a:contains("Conditions")').forEach(link => {
-          link.addEventListener('click', function(e) {
-            if (this.textContent.includes('Politique') || this.textContent.includes('Condition')) {
-              e.preventDefault();
-              document.getElementById('policyModal').classList.remove('hidden');
-            }
-          });
-        });
-        document.getElementById('closePolicy').onclick = () => {
-          document.getElementById('policyModal').classList.add('hidden');
-        }
-        
-        // Open policy modal (example)
-        document.getElementById('openPolicy').addEventListener('click', () => {
-          document.getElementById('policyModal').classList.remove('hidden');
-        });
-    </script> -->
-
 
 <!-- Menu responsif avec mobile nouvelle version su script  -->
     <script>
@@ -2943,7 +2622,6 @@
         }
     });
     </script>
-
 
 </body>
 
