@@ -1,0 +1,28 @@
+# api_php/.htaccess
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # La RewriteBase doit correspondre au chemin relatif depuis htdocs
+    # jusqu'au dossier où se trouve ce .htaccess.
+    # Dans votre cas: htdocs/ai-one/api_php/
+    RewriteBase /ai-one/api_php/
+
+    # Rule to handle /api/{resource}/{id}
+    RewriteRule ^api/([A-Za-z0-9_]+)/([0-9]+)$ api/$1.php?id=$2 [QSA,L]
+    # Rule to handle /api/{resource}/
+    RewriteRule ^api/([A-Za-z0-9_]+)/$ api/$1.php [QSA,L]
+    # Rule to handle /api/{resource} (without trailing slash)
+    RewriteRule ^api/([A-Za-z0-9_]+)$ api/$1.php [QSA,L]
+
+    # For OPTIONS pre-flight requests (CORS)
+    RewriteCond %{REQUEST_METHOD} OPTIONS
+    RewriteRule ^(.*)$ $1 [R=200,L]
+</IfModule>
+
+# Set default handler for PHP files (optional, good for security)
+<FilesMatch "\.php$">
+    SetHandler application/x-httpd-php
+</FilesMatch>
+
+# Prevent directory listing (this is what prevented the "Index of" listing)
+Options -Indexes
