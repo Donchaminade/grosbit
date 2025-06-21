@@ -165,65 +165,70 @@
     </a>
 
     <!-- Navbar -->
-    <nav class="fixed w-full bg-white/90 backdrop-blur shadow-lg z-40 border-b border-blue-100">
+         <nav class="fixed w-full bg-white/90 backdrop-blur shadow-lg z-40 border-b border-blue-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center relative">
-                <!-- Logo à gauche, taille réelle -->
-                <a href="#home" class="flex items-center">
+                <a href="#home" class="flex items-center flex-shrink-0">
                     <img src="logo.png" alt="Logo GROSBIT" class="h-56 w-auto mr-3 rounded-lg object-contain" style="max-height:224px; min-width:224px;">
                 </a>
-                <!-- Decorative SVG left -->
+
                 <svg class="absolute -left-16 top-1/2 -translate-y-1/2 w-20 h-20 opacity-20 pointer-events-none hidden lg:block" viewBox="0 0 100 100">
-                    <!-- <circle cx="50" cy="50" r="50" fill="#023B97FF"/> -->
-                </svg>
-                <!-- Mobile menu button -->
+                    </svg>
+
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex space-x-2 items-center">
+                        <a href="#home" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
+                            <i class="fas fa-home"></i>
+                            Accueil
+                            <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                        </a>
+                        <a href="#services" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
+                            <i class="fas fa-cogs"></i>
+                            Services
+                            <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                        </a>
+                        <a href="#products" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
+                            <i class="fas fa-box"></i>
+                            Produits
+                            <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                        </a>
+                        <a href="#about" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
+                            <i class="fas fa-info-circle"></i>
+                            À propos
+                            <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                        </a>
+                        <a href="#contact" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
+                            <i class="fas fa-envelope"></i>
+                            Contact
+                            <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                        </a>
+                    </div>
+
+                    <div class="relative hidden md:block">
+                        <button id="language-dropdown-button" class="flex items-center font-bold text-gray-700 hover:text-blue-600 px-3 py-2 rounded-lg hover:bg-blue-50 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-haspopup="true" aria-expanded="false">
+                            FR <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                        </button>
+                        <div id="language-dropdown-menu" class="absolute right-0 mt-2 w-28 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 hidden z-50">
+                            <a href="https://grosbit-vercel-app.translate.goog/?_x_tr_sl=ar&_x_tr_tl=en&_x_tr_hl=fr&_x_tr_pto=wapp" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700" data-lang="en">English</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700" data-lang="fr">Français</a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="md:hidden">
-                    <button type="button" id="mobile-menu-button" class="text-gray-700 hover:text-orange-500 focus:outline-none">
+                    <button type="button" id="mobile-menu-button" class="text-gray-700 hover:text-orange-500 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
                         <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
                 </div>
-                <!-- Desktop Menu avec icônes -->
-                <div class="hidden md:flex space-x-2 items-right">
-                    <a href="#home" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
-                        <i class="fas fa-home"></i>
-                        Accueil
-                        <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-                    </a>
-                    <a href="#services" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
-                        <i class="fas fa-cogs"></i>
-                        Services
-                        <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-                    </a>
-                    <a href="#products" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
-                        <i class="fas fa-box"></i>
-                        Produits
-                        <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-                    </a>
-                    <a href="#about" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
-                        <i class="fas fa-info-circle"></i>
-                        À propos
-                        <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-                    </a>
-                    <a href="#contact" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
-                        <i class="fas fa-envelope"></i>
-                        Contact
-                        <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-                    </a>
-                </div>
-                <!-- Decorative SVG right -->
+
                 <svg class="absolute -right-16 top-1/2 -translate-y-1/2 w-20 h-20 opacity-20 pointer-events-none hidden lg:block" viewBox="0 0 100 100">
-                    <!-- <rect width="100" height="100" rx="30" fill="#f97316"/> -->
-                </svg>
+                    </svg>
             </div>
         </div>
-        <!-- Mobile Menu avec icônes -->
+
         <div id="mobile-menu" class="hidden md:hidden bg-white/95 shadow-xl border-t border-blue-100">
-             <!-- Logo à gauche, taille réelle -->
-                <a href="#home" class="flex items-center">
-                    <!-- <img src="logo.png" alt="Logo GROSBIT" class="h-56 w-auto mr-3 rounded-lg object-contain" style="max-height:224px; min-width:224px;"> -->
-                </a>
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#home" class="block px-4 py-3 rounded-md text-base font-bold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition flex items-center gap-2">
                     <i class="fas fa-home"></i>
@@ -245,83 +250,230 @@
                     <i class="fas fa-envelope"></i>
                     Contact
                 </a>
+                <div class="relative px-4 py-3 rounded-md text-base font-bold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition">
+                    <button id="mobile-language-dropdown-button" class="w-full text-left flex items-center justify-between" aria-haspopup="true" aria-expanded="false">
+                        Langue: FR  <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                    </button>
+                    <div id="mobile-language-dropdown-menu" class="absolute left-0 mt-2 w-full bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 hidden z-50">
+                        <a href="https://grosbit-vercel-app.translate.goog/?_x_tr_sl=ar&_x_tr_tl=en&_x_tr_hl=fr&_x_tr_pto=wapp" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700" data-lang="en">English</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700" data-lang="fr">Français</a>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- Animated Bubbles Decor -->
         <div id="particles-js" class="pointer-events-none"></div>
         <script>
-        // Animated SVG bubbles (decorative, floating)
-        // This script creates animated SVG bubbles that move up and down
-        document.addEventListener('DOMContentLoaded', function () {
-            const bubbleColors = [
-                { fill: "#fff", opacity: 0.18 },
-                { fill: "#FF6600", opacity: 0.12 },
-                { fill: "#fff", opacity: 0.10 },
-                { fill: "#0415A7FF", opacity: 0.10 },
-                { fill: "#fff", opacity: 0.13 },
-                { fill: "#FF6600", opacity: 0.09 }
-            ];
-            const bubbleData = [
-                { cx: "10%", cy: "20%", r: 80, dur: 12, delay: 0 },
-                { cx: "80%", cy: "10%", r: 60, dur: 16, delay: 2 },
-                { cx: "50%", cy: "80%", r: 100, dur: 18, delay: 4 },
-                { cx: "90%", cy: "60%", r: 50, dur: 14, delay: 1 },
-                { cx: "30%", cy: "60%", r: 40, dur: 10, delay: 3 },
-                { cx: "70%", cy: "40%", r: 70, dur: 20, delay: 5 }
-            ];
-            const svgNS = "http://www.w3.org/2000/svg";
-            const decor = document.createElementNS(svgNS, "svg");
-            decor.setAttribute("width", "100%");
-            decor.setAttribute("height", "100%");
-            decor.setAttribute("class", "absolute inset-0");
-            decor.style.position = "absolute";
-            decor.style.top = "0";
-            decor.style.left = "0";
-            decor.style.width = "100%";
-            decor.style.height = "100%";
-            decor.style.opacity = "0.18";
-            decor.style.zIndex = "0";
-            bubbleData.forEach((b, i) => {
-                const circle = document.createElementNS(svgNS, "circle");
-                circle.setAttribute("cx", b.cx);
-                circle.setAttribute("cy", b.cy);
-                circle.setAttribute("r", b.r);
-                circle.setAttribute("fill", bubbleColors[i].fill);
-                circle.setAttribute("fill-opacity", bubbleColors[i].opacity);
-                circle.style.transition = "transform 2s cubic-bezier(.4,0,.2,1)";
-                circle.style.willChange = "transform";
-                circle.setAttribute("data-anim", i);
-                decor.appendChild(circle);
-            });
-            // Insert into hero section
-            const heroSection = document.querySelector('#home');
-            if (heroSection) {
-                let decorWrap = heroSection.querySelector('.bubble-anim-wrap');
-                if (!decorWrap) {
-                    decorWrap = document.createElement('div');
-                    decorWrap.className = "bubble-anim-wrap pointer-events-none absolute inset-0 z-0";
-                    decorWrap.style.zIndex = "0";
-                    heroSection.insertBefore(decorWrap, heroSection.firstChild);
-                }
-                decorWrap.appendChild(decor);
-            }
-            // Animate bubbles
-            function animateBubbles() {
-                const now = Date.now() / 1000;
-                decor.querySelectorAll('circle').forEach((circle, i) => {
-                    const b = bubbleData[i];
-                    // Animate up and down with sine wave, add some horizontal drift
-                    const t = now + b.delay;
-                    const y = Math.sin(t / b.dur * Math.PI * 2) * 20;
-                    const x = Math.cos(t / (b.dur * 0.7) * Math.PI * 2) * 10;
-                    circle.style.transform = `translate(${x}px, ${y}px)`;
+            document.addEventListener('DOMContentLoaded', function () {
+                // Animated SVG bubbles (decorative, floating) - Votre code existant
+                const bubbleColors = [
+                    { fill: "#fff", opacity: 0.18 },
+                    { fill: "#FF6600", opacity: 0.12 },
+                    { fill: "#fff", opacity: 0.10 },
+                    { fill: "#0415A7FF", opacity: 0.10 },
+                    { fill: "#fff", opacity: 0.13 },
+                    { fill: "#FF6600", opacity: 0.09 }
+                ];
+                const bubbleData = [
+                    { cx: "10%", cy: "20%", r: 80, dur: 12, delay: 0 },
+                    { cx: "80%", cy: "10%", r: 60, dur: 16, delay: 2 },
+                    { cx: "50%", cy: "80%", r: 100, dur: 18, delay: 4 },
+                    { cx: "90%", cy: "60%", r: 50, dur: 14, delay: 1 },
+                    { cx: "30%", cy: "60%", r: 40, dur: 10, delay: 3 },
+                    { cx: "70%", cy: "40%", r: 70, dur: 20, delay: 5 }
+                ];
+                const svgNS = "http://www.w3.org/2000/svg";
+                const decor = document.createElementNS(svgNS, "svg");
+                decor.setAttribute("width", "100%");
+                decor.setAttribute("height", "100%");
+                decor.setAttribute("class", "absolute inset-0");
+                decor.style.position = "absolute";
+                decor.style.top = "0";
+                decor.style.left = "0";
+                decor.style.width = "100%";
+                decor.style.height = "100%";
+                decor.style.opacity = "0.18";
+                decor.style.zIndex = "0";
+                bubbleData.forEach((b, i) => {
+                    const circle = document.createElementNS(svgNS, "circle");
+                    circle.setAttribute("cx", b.cx);
+                    circle.setAttribute("cy", b.cy);
+                    circle.setAttribute("r", b.r);
+                    circle.setAttribute("fill", bubbleColors[i].fill);
+                    circle.setAttribute("fill-opacity", bubbleColors[i].opacity);
+                    circle.style.transition = "transform 2s cubic-bezier(.4,0,.2,1)";
+                    circle.style.willChange = "transform";
+                    circle.setAttribute("data-anim", i);
+                    decor.appendChild(circle);
                 });
-                requestAnimationFrame(animateBubbles);
-            }
-            animateBubbles();
-        });
+                const heroSection = document.querySelector('#home');
+                if (heroSection) {
+                    let decorWrap = heroSection.querySelector('.bubble-anim-wrap');
+                    if (!decorWrap) {
+                        decorWrap = document.createElement('div');
+                        decorWrap.className = "bubble-anim-wrap pointer-events-none absolute inset-0 z-0";
+                        decorWrap.style.zIndex = "0";
+                        heroSection.insertBefore(decorWrap, heroSection.firstChild);
+                    }
+                    decorWrap.appendChild(decor);
+                }
+                function animateBubbles() {
+                    const now = Date.now() / 1000;
+                    decor.querySelectorAll('circle').forEach((circle, i) => {
+                        const b = bubbleData[i];
+                        const t = now + b.delay;
+                        const y = Math.sin(t / b.dur * Math.PI * 2) * 20;
+                        const x = Math.cos(t / (b.dur * 0.7) * Math.PI * 2) * 10;
+                        circle.style.transform = `translate(${x}px, ${y}px)`;
+                    });
+                    requestAnimationFrame(animateBubbles);
+                }
+                animateBubbles();
+
+
+                // JavaScript for Language Dropdown and Mobile Menu
+                const langDropdownButton = document.getElementById('language-dropdown-button');
+                const langDropdownMenu = document.getElementById('language-dropdown-menu');
+                const mobileLangDropdownButton = document.getElementById('mobile-language-dropdown-button');
+                const mobileLangDropdownMenu = document.getElementById('mobile-language-dropdown-menu');
+                const mobileMenuButton = document.getElementById('mobile-menu-button');
+                const mobileMenu = document.getElementById('mobile-menu');
+
+                // --- Fonctions de gestion des menus et langues ---
+
+                // Fonction pour mettre à jour le texte du bouton de langue
+                function updateLanguageButtonText(selectedLang) {
+                    let desktopText = '';
+                    let mobileText = '';
+
+                    if (selectedLang === 'en') {
+                        desktopText = 'EN';
+                        mobileText = 'Langue: EN';
+                    } else if (selectedLang === 'fr') {
+                        desktopText = 'FR';
+                        mobileText = 'Langue: FR';
+                    } else {
+                        // Fallback to French if an unknown language is passed
+                        desktopText = 'FR';
+                        mobileText = 'Langue: FR';
+                    }
+
+                    if (langDropdownButton) {
+                        langDropdownButton.innerHTML = `${desktopText} <i class="fas fa-chevron-down ml-2 text-sm"></i>`;
+                    }
+                    if (mobileLangDropdownButton) {
+                        mobileLangDropdownButton.innerHTML = `${mobileText} <i class="fas fa-chevron-down ml-2 text-sm"></i>`;
+                    }
+                    // Ici, vous ajouteriez la logique réelle pour changer la langue du site (ex: charger des traductions)
+                    console.log(`Language set to: ${selectedLang}`);
+                }
+
+                // Fonction générique pour basculer la visibilité d'un menu et son aria-expanded
+                function toggleDropdown(button, menu) {
+                    const isHidden = menu.classList.contains('hidden');
+                    if (isHidden) {
+                        menu.classList.remove('hidden');
+                        button.setAttribute('aria-expanded', 'true');
+                    } else {
+                        menu.classList.add('hidden');
+                        button.setAttribute('aria-expanded', 'false');
+                    }
+                }
+
+                // Fonction pour fermer tous les menus déroulants
+                function closeAllDropdowns() {
+                    if (langDropdownMenu && !langDropdownMenu.classList.contains('hidden')) {
+                        langDropdownMenu.classList.add('hidden');
+                        if (langDropdownButton) langDropdownButton.setAttribute('aria-expanded', 'false');
+                    }
+                    if (mobileLangDropdownMenu && !mobileLangDropdownMenu.classList.contains('hidden')) {
+                        mobileLangDropdownMenu.classList.add('hidden');
+                        if (mobileLangDropdownButton) mobileLangDropdownButton.setAttribute('aria-expanded', 'false');
+                    }
+                }
+
+                // --- Initialisation au chargement ---
+                updateLanguageButtonText('fr'); // Définit la langue par défaut à "FR" au chargement
+
+                // --- Écouteurs d'événements ---
+
+                // Desktop language dropdown
+                if (langDropdownButton && langDropdownMenu) {
+                    langDropdownButton.addEventListener('click', function(event) {
+                        event.stopPropagation(); // Empêche la fermeture immédiate par le click document
+                        toggleDropdown(langDropdownButton, langDropdownMenu);
+                        // Fermer le menu mobile si ouvert
+                        if (!mobileMenu.classList.contains('hidden')) {
+                             mobileMenu.classList.add('hidden');
+                             if (mobileMenuButton) mobileMenuButton.setAttribute('aria-expanded', 'false');
+                        }
+                        // S'assurer que l'autre dropdown de langue est fermé
+                        if (mobileLangDropdownMenu && !mobileLangDropdownMenu.classList.contains('hidden')) {
+                            mobileLangDropdownMenu.classList.add('hidden');
+                            if (mobileLangDropdownButton) mobileLangDropdownButton.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                }
+
+                // Mobile language dropdown
+                if (mobileLangDropdownButton && mobileLangDropdownMenu) {
+                    mobileLangDropdownButton.addEventListener('click', function(event) {
+                        event.stopPropagation();
+                        toggleDropdown(mobileLangDropdownButton, mobileLangDropdownMenu);
+                        // S'assurer que l'autre dropdown de langue est fermé
+                        if (langDropdownMenu && !langDropdownMenu.classList.contains('hidden')) {
+                            langDropdownMenu.classList.add('hidden');
+                            if (langDropdownButton) langDropdownButton.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                }
+
+                // Fermer les dropdowns lorsque l'on clique à l'extérieur
+                document.addEventListener('click', function(event) {
+                    if (langDropdownButton && langDropdownMenu && !langDropdownButton.contains(event.target) && !langDropdownMenu.contains(event.target)) {
+                        langDropdownMenu.classList.add('hidden');
+                        langDropdownButton.setAttribute('aria-expanded', 'false');
+                    }
+                    if (mobileLangDropdownButton && mobileLangDropdownMenu && !mobileLangDropdownButton.contains(event.target) && !mobileLangDropdownMenu.contains(event.target)) {
+                        mobileLangDropdownMenu.classList.add('hidden');
+                        mobileLangDropdownButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                // Gérer la sélection de langue
+                document.querySelectorAll('#language-dropdown-menu a, #mobile-language-dropdown-menu a').forEach(item => {
+                    item.addEventListener('click', function(event) {
+                        event.preventDefault(); // Empêche le comportement par défaut du lien
+                        const selectedLang = this.getAttribute('data-lang');
+                        updateLanguageButtonText(selectedLang); // Met à jour le texte du bouton
+                        closeAllDropdowns(); // Ferme tous les dropdowns de langue
+                    });
+                });
+
+                // Bouton du menu mobile
+                if (mobileMenuButton && mobileMenu) {
+                    mobileMenuButton.addEventListener('click', () => {
+                        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                        mobileMenu.classList.toggle('hidden');
+                        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                        // Fermer les dropdowns de langue si le menu mobile s'ouvre ou se ferme
+                        closeAllDropdowns();
+                    });
+                }
+
+                // Fermer le menu mobile lors du clic sur un lien du menu mobile
+                document.querySelectorAll('#mobile-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                            if (mobileMenuButton) mobileMenuButton.setAttribute('aria-expanded', 'false');
+                        }
+                        closeAllDropdowns(); // S'assurer que les dropdowns de langue sont fermés
+                    });
+                });
+            });
         </script>
     </nav>
+   
 
     <!-- Hero Section -->
     <!-- HERO SECTION MODERNE, ANIMÉ, AVEC GRADIENT, GLASSMORPHISM ET ANIMATION DE TEXTE -->
@@ -2202,8 +2354,7 @@
                         <img src="logo.png" alt="Logo GROSBIT" class="h-36 w-auto mr-3 rounded-lg object-contain bg-white" style="max-height:150px; min-width:80px;">
                     </a>
                     <p class="mt-4 text-gray-400 max-w-md">
-                        Votre partenaire pour des solutions 
-                        informatiques intégrées et performantes.
+                        Et si nous essayons ensemble !
                     </p>
                 </div>
                 
@@ -2276,7 +2427,9 @@
     <!-- Modal Politique & Conditions -->
 <div id="policyModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
   <div class="bg-white rounded-xl p-8 max-w-2xl w-full relative">
-    <button id="closePolicy" class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl"><i class="fas fa-times"></i></button>
+    <button id="closePolicy" class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl">
+        <i class="fas fa-times"></i>
+    </button>
     <h2 class="text-2xl font-bold mb-4 text-[#055AE2FF]">Politiques et conditions</h2>
     <div class="text-gray-700 space-y-4" style="max-height:60vh;overflow:auto;">
       <!-- Mets ici ton texte de politique/conditions -->
