@@ -6,6 +6,8 @@
     <title>GROSBIT - Solutions Informatiques Intégrées</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -167,318 +169,318 @@
     <!-- Navbar -->
 
     <nav class="fixed w-full bg-white/90 backdrop-blur shadow-lg z-40 border-b border-blue-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-20 items-center relative">
-            <a href="#home" class="flex items-center flex-shrink-0">
-                <img src="logo.png" alt="Logo GROSBIT" class="h-56 w-auto mr-3 rounded-lg object-contain" style="max-height:224px; min-width:224px;">
-            </a>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center relative">
+                <a href="#home" class="flex items-center flex-shrink-0">
+                    <img src="logo.png" alt="Logo GROSBIT" class="h-56 w-auto mr-3 rounded-lg object-contain" style="max-height:224px; min-width:224px;">
+                </a>
 
-            <svg class="absolute -left-16 top-1/2 -translate-y-1/2 w-20 h-20 opacity-20 pointer-events-none hidden lg:block" viewBox="0 0 100 100">
-                </svg>
+                <svg class="absolute -left-16 top-1/2 -translate-y-1/2 w-20 h-20 opacity-20 pointer-events-none hidden lg:block" viewBox="0 0 100 100">
+                    </svg>
 
-            <div class="flex items-center space-x-4">
-                <div class="hidden md:flex space-x-2 items-center">
-                    <a href="#home" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
-                        <i class="fas fa-home"></i>
-                        Accueil
-                        <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-                    </a>
-                    <a href="#services" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
-                        <i class="fas fa-cogs"></i>
-                        Services
-                        <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-                    </a>
-                    <a href="#products" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
-                        <i class="fas fa-box"></i>
-                        Produits
-                        <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-                    </a>
-                    <a href="#about" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
-                        <i class="fas fa-info-circle"></i>
-                        À propos
-                        <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-                    </a>
-                    <a href="#contact" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
-                        <i class="fas fa-envelope"></i>
-                        Contact
-                        <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-                    </a>
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex space-x-2 items-center">
+                        <a href="#home" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
+                            <i class="fas fa-home"></i>
+                            Accueil
+                            <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                        </a>
+                        <a href="#services" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
+                            <i class="fas fa-cogs"></i>
+                            Services
+                            <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                        </a>
+                        <a href="#products" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
+                            <i class="fas fa-box"></i>
+                            Produits
+                            <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                        </a>
+                        <a href="#about" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
+                            <i class="fas fa-info-circle"></i>
+                            À propos
+                            <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                        </a>
+                        <a href="#contact" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
+                            <i class="fas fa-envelope"></i>
+                            Contact
+                            <span class="absolute left-1/2 -bottom-1 w-0 h-1 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                        </a>
+                    </div>
+
+                    <div class="relative hidden md:block">
+                        <button id="language-dropdown-button" class="flex items-center font-bold text-gray-700 hover:text-blue-600 px-3 py-2 rounded-lg hover:bg-blue-50 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-haspopup="true" aria-expanded="false">
+                            FR <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                        </button>
+                        <div id="language-dropdown-menu" class="absolute right-0 mt-2 w-28 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 hidden z-50">
+                            <a href="https://grosbit-vercel-app.translate.goog/?_x_tr_sl=fr&_x_tr_tl=en&_x_tr_hl=fr&_x_tr_pto=wapp" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700" data-lang="en">English</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700" data-lang="fr">Français</a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="relative hidden md:block">
-                    <button id="language-dropdown-button" class="flex items-center font-bold text-gray-700 hover:text-blue-600 px-3 py-2 rounded-lg hover:bg-blue-50 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-haspopup="true" aria-expanded="false">
-                        FR <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                <div class="md:hidden">
+                    <button type="button" id="mobile-menu-button" class="text-gray-700 hover:text-orange-500 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
                     </button>
-                    <div id="language-dropdown-menu" class="absolute right-0 mt-2 w-28 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 hidden z-50">
+                </div>
+
+                <svg class="absolute -right-16 top-1/2 -translate-y-1/2 w-20 h-20 opacity-20 pointer-events-none hidden lg:block" viewBox="0 0 100 100">
+                    </svg>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 shadow-xl border-t border-blue-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-4 py-3 rounded-md text-base font-bold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition flex items-center gap-2">
+                    <i class="fas fa-home"></i>
+                    Accueil
+                </a>
+                <a href="#services" class="block px-4 py-3 rounded-md text-base font-bold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition flex items-center gap-2">
+                    <i class="fas fa-cogs"></i>
+                    Services
+                </a>
+                <a href="#products" class="block px-4 py-3 rounded-md text-base font-bold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition flex items-center gap-2">
+                    <i class="fas fa-box"></i>
+                    Produits
+                </a>
+                <a href="#about" class="block px-4 py-3 rounded-md text-base font-bold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition flex items-center gap-2">
+                    <i class="fas fa-info-circle"></i>
+                    À propos
+                </a>
+                <a href="#contact" class="block px-4 py-3 rounded-md text-base font-bold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition flex items-center gap-2">
+                    <i class="fas fa-envelope"></i>
+                    Contact
+                </a>
+                <div class="relative px-4 py-3 rounded-md text-base font-bold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition">
+                    <button id="mobile-language-dropdown-button" class="w-full text-left flex items-center justify-between" aria-haspopup="true" aria-expanded="false">
+                        Langue: FR <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                    </button>
+                    <div id="mobile-language-dropdown-menu" class="absolute left-0 mt-2 w-full bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 hidden z-50">
                         <a href="https://grosbit-vercel-app.translate.goog/?_x_tr_sl=fr&_x_tr_tl=en&_x_tr_hl=fr&_x_tr_pto=wapp" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700" data-lang="en">English</a>
                         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700" data-lang="fr">Français</a>
                     </div>
                 </div>
             </div>
-
-            <div class="md:hidden">
-                <button type="button" id="mobile-menu-button" class="text-gray-700 hover:text-orange-500 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
-                    <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <svg class="absolute -right-16 top-1/2 -translate-y-1/2 w-20 h-20 opacity-20 pointer-events-none hidden lg:block" viewBox="0 0 100 100">
-                </svg>
         </div>
-    </div>
-
-    <div id="mobile-menu" class="hidden md:hidden bg-white/95 shadow-xl border-t border-blue-100">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#home" class="block px-4 py-3 rounded-md text-base font-bold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition flex items-center gap-2">
-                <i class="fas fa-home"></i>
-                Accueil
-            </a>
-            <a href="#services" class="block px-4 py-3 rounded-md text-base font-bold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition flex items-center gap-2">
-                <i class="fas fa-cogs"></i>
-                Services
-            </a>
-            <a href="#products" class="block px-4 py-3 rounded-md text-base font-bold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition flex items-center gap-2">
-                <i class="fas fa-box"></i>
-                Produits
-            </a>
-            <a href="#about" class="block px-4 py-3 rounded-md text-base font-bold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition flex items-center gap-2">
-                <i class="fas fa-info-circle"></i>
-                À propos
-            </a>
-            <a href="#contact" class="block px-4 py-3 rounded-md text-base font-bold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition flex items-center gap-2">
-                <i class="fas fa-envelope"></i>
-                Contact
-            </a>
-            <div class="relative px-4 py-3 rounded-md text-base font-bold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition">
-                <button id="mobile-language-dropdown-button" class="w-full text-left flex items-center justify-between" aria-haspopup="true" aria-expanded="false">
-                    Langue: FR <i class="fas fa-chevron-down ml-2 text-sm"></i>
-                </button>
-                <div id="mobile-language-dropdown-menu" class="absolute left-0 mt-2 w-full bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 hidden z-50">
-                    <a href="https://grosbit-vercel-app.translate.goog/?_x_tr_sl=fr&_x_tr_tl=en&_x_tr_hl=fr&_x_tr_pto=wapp" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700" data-lang="en">English</a>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700" data-lang="fr">Français</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="particles-js" class="pointer-events-none"></div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Animated SVG bubbles (decorative, floating) - Votre code existant
-            const bubbleColors = [
-                { fill: "#fff", opacity: 0.18 },
-                { fill: "#FF6600", opacity: 0.12 },
-                { fill: "#fff", opacity: 0.10 },
-                { fill: "#0415A7FF", opacity: 0.10 },
-                { fill: "#fff", opacity: 0.13 },
-                { fill: "#FF6600", opacity: 0.09 }
-            ];
-            const bubbleData = [
-                { cx: "10%", cy: "20%", r: 80, dur: 12, delay: 0 },
-                { cx: "80%", cy: "10%", r: 60, dur: 16, delay: 2 },
-                { cx: "50%", cy: "80%", r: 100, dur: 18, delay: 4 },
-                { cx: "90%", cy: "60%", r: 50, dur: 14, delay: 1 },
-                { cx: "30%", cy: "60%", r: 40, dur: 10, delay: 3 },
-                { cx: "70%", cy: "40%", r: 70, dur: 20, delay: 5 }
-            ];
-            const svgNS = "http://www.w3.org/2000/svg";
-            const decor = document.createElementNS(svgNS, "svg");
-            decor.setAttribute("width", "100%");
-            decor.setAttribute("height", "100%");
-            decor.setAttribute("class", "absolute inset-0");
-            decor.style.position = "absolute";
-            decor.style.top = "0";
-            decor.style.left = "0";
-            decor.style.width = "100%";
-            decor.style.height = "100%";
-            decor.style.opacity = "0.18";
-            decor.style.zIndex = "0";
-            bubbleData.forEach((b, i) => {
-                const circle = document.createElementNS(svgNS, "circle");
-                circle.setAttribute("cx", b.cx);
-                circle.setAttribute("cy", b.cy);
-                circle.setAttribute("r", b.r);
-                circle.setAttribute("fill", bubbleColors[i].fill);
-                circle.setAttribute("fill-opacity", bubbleColors[i].opacity);
-                circle.style.transition = "transform 2s cubic-bezier(.4,0,.2,1)";
-                circle.style.willChange = "transform";
-                circle.setAttribute("data-anim", i);
-                decor.appendChild(circle);
-            });
-            const heroSection = document.querySelector('#home');
-            if (heroSection) {
-                let decorWrap = heroSection.querySelector('.bubble-anim-wrap');
-                if (!decorWrap) {
-                    decorWrap = document.createElement('div');
-                    decorWrap.className = "bubble-anim-wrap pointer-events-none absolute inset-0 z-0";
-                    decorWrap.style.zIndex = "0";
-                    heroSection.insertBefore(decorWrap, heroSection.firstChild);
-                }
-                decorWrap.appendChild(decor);
-            }
-            function animateBubbles() {
-                const now = Date.now() / 1000;
-                decor.querySelectorAll('circle').forEach((circle, i) => {
-                    const b = bubbleData[i];
-                    const t = now + b.delay;
-                    const y = Math.sin(t / b.dur * Math.PI * 2) * 20;
-                    const x = Math.cos(t / (b.dur * 0.7) * Math.PI * 2) * 10;
-                    circle.style.transform = `translate(${x}px, ${y}px)`;
+        <div id="particles-js" class="pointer-events-none"></div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Animated SVG bubbles (decorative, floating) - Votre code existant
+                const bubbleColors = [
+                    { fill: "#fff", opacity: 0.18 },
+                    { fill: "#FF6600", opacity: 0.12 },
+                    { fill: "#fff", opacity: 0.10 },
+                    { fill: "#0415A7FF", opacity: 0.10 },
+                    { fill: "#fff", opacity: 0.13 },
+                    { fill: "#FF6600", opacity: 0.09 }
+                ];
+                const bubbleData = [
+                    { cx: "10%", cy: "20%", r: 80, dur: 12, delay: 0 },
+                    { cx: "80%", cy: "10%", r: 60, dur: 16, delay: 2 },
+                    { cx: "50%", cy: "80%", r: 100, dur: 18, delay: 4 },
+                    { cx: "90%", cy: "60%", r: 50, dur: 14, delay: 1 },
+                    { cx: "30%", cy: "60%", r: 40, dur: 10, delay: 3 },
+                    { cx: "70%", cy: "40%", r: 70, dur: 20, delay: 5 }
+                ];
+                const svgNS = "http://www.w3.org/2000/svg";
+                const decor = document.createElementNS(svgNS, "svg");
+                decor.setAttribute("width", "100%");
+                decor.setAttribute("height", "100%");
+                decor.setAttribute("class", "absolute inset-0");
+                decor.style.position = "absolute";
+                decor.style.top = "0";
+                decor.style.left = "0";
+                decor.style.width = "100%";
+                decor.style.height = "100%";
+                decor.style.opacity = "0.18";
+                decor.style.zIndex = "0";
+                bubbleData.forEach((b, i) => {
+                    const circle = document.createElementNS(svgNS, "circle");
+                    circle.setAttribute("cx", b.cx);
+                    circle.setAttribute("cy", b.cy);
+                    circle.setAttribute("r", b.r);
+                    circle.setAttribute("fill", bubbleColors[i].fill);
+                    circle.setAttribute("fill-opacity", bubbleColors[i].opacity);
+                    circle.style.transition = "transform 2s cubic-bezier(.4,0,.2,1)";
+                    circle.style.willChange = "transform";
+                    circle.setAttribute("data-anim", i);
+                    decor.appendChild(circle);
                 });
-                requestAnimationFrame(animateBubbles);
-            }
-            animateBubbles();
-
-
-            // JavaScript for Language Dropdown and Mobile Menu
-            const langDropdownButton = document.getElementById('language-dropdown-button');
-            const langDropdownMenu = document.getElementById('language-dropdown-menu');
-            const mobileLangDropdownButton = document.getElementById('mobile-language-dropdown-button');
-            const mobileLangDropdownMenu = document.getElementById('mobile-language-dropdown-menu');
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            // --- Fonctions de gestion des menus et langues ---
-
-            // Fonction pour mettre à jour le texte du bouton de langue
-            function updateLanguageButtonText(selectedLang) {
-                let desktopText = '';
-                let mobileText = '';
-
-                if (selectedLang === 'en') {
-                    desktopText = 'EN';
-                    mobileText = 'Langue: EN';
-                } else if (selectedLang === 'fr') {
-                    desktopText = 'FR';
-                    mobileText = 'Langue: FR';
-                } else {
-                    // Fallback to French if an unknown language is passed
-                    desktopText = 'FR';
-                    mobileText = 'Langue: FR';
-                }
-
-                if (langDropdownButton) {
-                    langDropdownButton.innerHTML = `${desktopText} <i class="fas fa-chevron-down ml-2 text-sm"></i>`;
-                }
-                if (mobileLangDropdownButton) {
-                    mobileLangDropdownButton.innerHTML = `${mobileText} <i class="fas fa-chevron-down ml-2 text-sm"></i>`;
-                }
-                // Ici, vous ajouteriez la logique réelle pour changer la langue du site (ex: charger des traductions)
-                console.log(`Language set to: ${selectedLang}`);
-            }
-
-            // Fonction générique pour basculer la visibilité d'un menu et son aria-expanded
-            function toggleDropdown(button, menu) {
-                const isHidden = menu.classList.contains('hidden');
-                if (isHidden) {
-                    menu.classList.remove('hidden');
-                    button.setAttribute('aria-expanded', 'true');
-                } else {
-                    menu.classList.add('hidden');
-                    button.setAttribute('aria-expanded', 'false');
-                }
-            }
-
-            // Fonction pour fermer tous les menus déroulants
-            function closeAllDropdowns() {
-                if (langDropdownMenu && !langDropdownMenu.classList.contains('hidden')) {
-                    langDropdownMenu.classList.add('hidden');
-                    if (langDropdownButton) langDropdownButton.setAttribute('aria-expanded', 'false');
-                }
-                if (mobileLangDropdownMenu && !mobileLangDropdownMenu.classList.contains('hidden')) {
-                    mobileLangDropdownMenu.classList.add('hidden');
-                    if (mobileLangDropdownButton) mobileLangDropdownButton.setAttribute('aria-expanded', 'false');
-                }
-            }
-
-            // --- Initialisation au chargement ---
-            updateLanguageButtonText('fr'); // Définit la langue par défaut à "FR" au chargement
-
-            // --- Écouteurs d'événements ---
-
-            // Desktop language dropdown
-            if (langDropdownButton && langDropdownMenu) {
-                langDropdownButton.addEventListener('click', function(event) {
-                    event.stopPropagation(); // Empêche la fermeture immédiate par le click document
-                    toggleDropdown(langDropdownButton, langDropdownMenu);
-                    // Fermer le menu mobile si ouvert
-                    if (!mobileMenu.classList.contains('hidden')) {
-                           mobileMenu.classList.add('hidden');
-                           if (mobileMenuButton) mobileMenuButton.setAttribute('aria-expanded', 'false');
+                const heroSection = document.querySelector('#home');
+                if (heroSection) {
+                    let decorWrap = heroSection.querySelector('.bubble-anim-wrap');
+                    if (!decorWrap) {
+                        decorWrap = document.createElement('div');
+                        decorWrap.className = "bubble-anim-wrap pointer-events-none absolute inset-0 z-0";
+                        decorWrap.style.zIndex = "0";
+                        heroSection.insertBefore(decorWrap, heroSection.firstChild);
                     }
-                    // S'assurer que l'autre dropdown de langue est fermé
-                    if (mobileLangDropdownMenu && !mobileLangDropdownMenu.classList.contains('hidden')) {
-                        mobileLangDropdownMenu.classList.add('hidden');
-                        if (mobileLangDropdownButton) mobileLangDropdownButton.setAttribute('aria-expanded', 'false');
-                    }
-                });
-            }
+                    decorWrap.appendChild(decor);
+                }
+                function animateBubbles() {
+                    const now = Date.now() / 1000;
+                    decor.querySelectorAll('circle').forEach((circle, i) => {
+                        const b = bubbleData[i];
+                        const t = now + b.delay;
+                        const y = Math.sin(t / b.dur * Math.PI * 2) * 20;
+                        const x = Math.cos(t / (b.dur * 0.7) * Math.PI * 2) * 10;
+                        circle.style.transform = `translate(${x}px, ${y}px)`;
+                    });
+                    requestAnimationFrame(animateBubbles);
+                }
+                animateBubbles();
 
-            // Mobile language dropdown
-            if (mobileLangDropdownButton && mobileLangDropdownMenu) {
-                mobileLangDropdownButton.addEventListener('click', function(event) {
-                    event.stopPropagation();
-                    toggleDropdown(mobileLangDropdownButton, mobileLangDropdownMenu);
-                    // S'assurer que l'autre dropdown de langue est fermé
+
+                // JavaScript for Language Dropdown and Mobile Menu
+                const langDropdownButton = document.getElementById('language-dropdown-button');
+                const langDropdownMenu = document.getElementById('language-dropdown-menu');
+                const mobileLangDropdownButton = document.getElementById('mobile-language-dropdown-button');
+                const mobileLangDropdownMenu = document.getElementById('mobile-language-dropdown-menu');
+                const mobileMenuButton = document.getElementById('mobile-menu-button');
+                const mobileMenu = document.getElementById('mobile-menu');
+
+                // --- Fonctions de gestion des menus et langues ---
+
+                // Fonction pour mettre à jour le texte du bouton de langue
+                function updateLanguageButtonText(selectedLang) {
+                    let desktopText = '';
+                    let mobileText = '';
+
+                    if (selectedLang === 'en') {
+                        desktopText = 'EN';
+                        mobileText = 'Langue: EN';
+                    } else if (selectedLang === 'fr') {
+                        desktopText = 'FR';
+                        mobileText = 'Langue: FR';
+                    } else {
+                        // Fallback to French if an unknown language is passed
+                        desktopText = 'FR';
+                        mobileText = 'Langue: FR';
+                    }
+
+                    if (langDropdownButton) {
+                        langDropdownButton.innerHTML = `${desktopText} <i class="fas fa-chevron-down ml-2 text-sm"></i>`;
+                    }
+                    if (mobileLangDropdownButton) {
+                        mobileLangDropdownButton.innerHTML = `${mobileText} <i class="fas fa-chevron-down ml-2 text-sm"></i>`;
+                    }
+                    // Ici, vous ajouteriez la logique réelle pour changer la langue du site (ex: charger des traductions)
+                    console.log(`Language set to: ${selectedLang}`);
+                }
+
+                // Fonction générique pour basculer la visibilité d'un menu et son aria-expanded
+                function toggleDropdown(button, menu) {
+                    const isHidden = menu.classList.contains('hidden');
+                    if (isHidden) {
+                        menu.classList.remove('hidden');
+                        button.setAttribute('aria-expanded', 'true');
+                    } else {
+                        menu.classList.add('hidden');
+                        button.setAttribute('aria-expanded', 'false');
+                    }
+                }
+
+                // Fonction pour fermer tous les menus déroulants
+                function closeAllDropdowns() {
                     if (langDropdownMenu && !langDropdownMenu.classList.contains('hidden')) {
                         langDropdownMenu.classList.add('hidden');
                         if (langDropdownButton) langDropdownButton.setAttribute('aria-expanded', 'false');
                     }
-                });
-            }
-
-            // Fermer les dropdowns lorsque l'on clique à l'extérieur
-            document.addEventListener('click', function(event) {
-                if (langDropdownButton && langDropdownMenu && !langDropdownButton.contains(event.target) && !langDropdownMenu.contains(event.target)) {
-                    langDropdownMenu.classList.add('hidden');
-                    langDropdownButton.setAttribute('aria-expanded', 'false');
+                    if (mobileLangDropdownMenu && !mobileLangDropdownMenu.classList.contains('hidden')) {
+                        mobileLangDropdownMenu.classList.add('hidden');
+                        if (mobileLangDropdownButton) mobileLangDropdownButton.setAttribute('aria-expanded', 'false');
+                    }
                 }
-                if (mobileLangDropdownButton && mobileLangDropdownMenu && !mobileLangDropdownButton.contains(event.target) && !mobileLangDropdownMenu.contains(event.target)) {
-                    mobileLangDropdownMenu.classList.add('hidden');
-                    mobileLangDropdownButton.setAttribute('aria-expanded', 'false');
+
+                // --- Initialisation au chargement ---
+                updateLanguageButtonText('fr'); // Définit la langue par défaut à "FR" au chargement
+
+                // --- Écouteurs d'événements ---
+
+                // Desktop language dropdown
+                if (langDropdownButton && langDropdownMenu) {
+                    langDropdownButton.addEventListener('click', function(event) {
+                        event.stopPropagation(); // Empêche la fermeture immédiate par le click document
+                        toggleDropdown(langDropdownButton, langDropdownMenu);
+                        // Fermer le menu mobile si ouvert
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                            if (mobileMenuButton) mobileMenuButton.setAttribute('aria-expanded', 'false');
+                        }
+                        // S'assurer que l'autre dropdown de langue est fermé
+                        if (mobileLangDropdownMenu && !mobileLangDropdownMenu.classList.contains('hidden')) {
+                            mobileLangDropdownMenu.classList.add('hidden');
+                            if (mobileLangDropdownButton) mobileLangDropdownButton.setAttribute('aria-expanded', 'false');
+                        }
+                    });
                 }
-            });
 
-            // Gérer la sélection de langue
-            document.querySelectorAll('#language-dropdown-menu a, #mobile-language-dropdown-menu a').forEach(item => {
-                item.addEventListener('click', function(event) {
-                    event.preventDefault(); // Empêche le comportement par défaut du lien
-                    const selectedLang = this.getAttribute('data-lang');
-                    updateLanguageButtonText(selectedLang); // Met à jour le texte du bouton
-                    closeAllDropdowns(); // Ferme tous les dropdowns de langue
+                // Mobile language dropdown
+                if (mobileLangDropdownButton && mobileLangDropdownMenu) {
+                    mobileLangDropdownButton.addEventListener('click', function(event) {
+                        event.stopPropagation();
+                        toggleDropdown(mobileLangDropdownButton, mobileLangDropdownMenu);
+                        // S'assurer que l'autre dropdown de langue est fermé
+                        if (langDropdownMenu && !langDropdownMenu.classList.contains('hidden')) {
+                            langDropdownMenu.classList.add('hidden');
+                            if (langDropdownButton) langDropdownButton.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                }
 
-                    // Redirect only if English is selected
-                    if (selectedLang === 'en') {
-                        window.location.href = this.getAttribute('href'); // Use the href from the clicked link
+                // Fermer les dropdowns lorsque l'on clique à l'extérieur
+                document.addEventListener('click', function(event) {
+                    if (langDropdownButton && langDropdownMenu && !langDropdownButton.contains(event.target) && !langDropdownMenu.contains(event.target)) {
+                        langDropdownMenu.classList.add('hidden');
+                        langDropdownButton.setAttribute('aria-expanded', 'false');
+                    }
+                    if (mobileLangDropdownButton && mobileLangDropdownMenu && !mobileLangDropdownButton.contains(event.target) && !mobileLangDropdownMenu.contains(event.target)) {
+                        mobileLangDropdownMenu.classList.add('hidden');
+                        mobileLangDropdownButton.setAttribute('aria-expanded', 'false');
                     }
                 });
-            });
 
-            // Bouton du menu mobile
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-                    mobileMenu.classList.toggle('hidden');
-                    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-                    // Fermer les dropdowns de langue si le menu mobile s'ouvre ou se ferme
-                    closeAllDropdowns();
-                });
-            }
+                // Gérer la sélection de langue
+                document.querySelectorAll('#language-dropdown-menu a, #mobile-language-dropdown-menu a').forEach(item => {
+                    item.addEventListener('click', function(event) {
+                        event.preventDefault(); // Empêche le comportement par défaut du lien
+                        const selectedLang = this.getAttribute('data-lang');
+                        updateLanguageButtonText(selectedLang); // Met à jour le texte du bouton
+                        closeAllDropdowns(); // Ferme tous les dropdowns de langue
 
-            // Fermer le menu mobile lors du clic sur un lien du menu mobile
-            document.querySelectorAll('#mobile-menu a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                        if (mobileMenuButton) mobileMenuButton.setAttribute('aria-expanded', 'false');
-                    }
-                    closeAllDropdowns(); // S'assurer que les dropdowns de langue sont fermés
+                        // Redirect only if English is selected
+                        if (selectedLang === 'en') {
+                            window.location.href = this.getAttribute('href'); // Use the href from the clicked link
+                        }
+                    });
+                });
+
+                // Bouton du menu mobile
+                if (mobileMenuButton && mobileMenu) {
+                    mobileMenuButton.addEventListener('click', () => {
+                        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                        mobileMenu.classList.toggle('hidden');
+                        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                        // Fermer les dropdowns de langue si le menu mobile s'ouvre ou se ferme
+                        closeAllDropdowns();
+                    });
+                }
+
+                // Fermer le menu mobile lors du clic sur un lien du menu mobile
+                document.querySelectorAll('#mobile-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                            if (mobileMenuButton) mobileMenuButton.setAttribute('aria-expanded', 'false');
+                        }
+                        closeAllDropdowns(); // S'assurer que les dropdowns de langue sont fermés
+                    });
                 });
             });
-        });
-    </script>
-</nav>
+        </script>
+    </nav>
     <!-- <nav class="fixed w-full bg-white/90 backdrop-blur shadow-lg z-40 border-b border-blue-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center relative">
@@ -792,348 +794,348 @@
     <!-- Hero Section -->
     <!-- HERO SECTION MODERNE, ANIMÉ, AVEC GRADIENT, GLASSMORPHISM ET ANIMATION DE TEXTE -->
     <section id="home" class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-[#024EB1FF] via-[#02060CFF] to-[#024EB1FF] py-16 sm:py-20 md:py-24 lg:py-28">
-                 <!-- <div class="absolute inset-0 bg-[#D4DCE9FF] backdrop-blur-sm z-0"></div> -->
-    <canvas id="services-molecules-canvas" class="absolute inset-0 w-full h-full z-0 pointer-events-none"></canvas>
-    
-    <div class="pointer-events-none absolute inset-0 z-0">
-        <span class="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] rounded-full bg-blue-600 opacity-20 blur-3xl animate-pulse-slow"></span>
-        <span class="absolute bottom-[-120px] right-[-80px] w-[350px] h-[350px] rounded-full bg-orange-400 opacity-20 blur-3xl animate-pulse-slow2"></span>
-        <span class="absolute top-1/2 left-1/2 w-[180px] h-[180px] rounded-full bg-white opacity-10 blur-2xl animate-float -translate-x-1/2 -translate-y-1/2"></span>
+                    <!-- <div class="absolute inset-0 bg-[#D4DCE9FF] backdrop-blur-sm z-0"></div> -->
+        <canvas id="services-molecules-canvas" class="absolute inset-0 w-full h-full z-0 pointer-events-none"></canvas>
+        
+        <div class="pointer-events-none absolute inset-0 z-0">
+            <span class="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] rounded-full bg-blue-600 opacity-20 blur-3xl animate-pulse-slow"></span>
+            <span class="absolute bottom-[-120px] right-[-80px] w-[350px] h-[350px] rounded-full bg-orange-400 opacity-20 blur-3xl animate-pulse-slow2"></span>
+            <span class="absolute top-1/2 left-1/2 w-[180px] h-[180px] rounded-full bg-white opacity-10 blur-2xl animate-float -translate-x-1/2 -translate-y-1/2"></span>
 
-        <span class="absolute top-[10%] left-[10%] w-[100px] h-[100px] rounded-full bg-orange-400 opacity-20 blur-3xl animate-bubble-1"></span>
-        <span class="absolute top-[20%] right-[15%] w-[120px] h-[120px] rounded-full bg-blue-600 opacity-20 blur-3xl animate-bubble-2"></span>
-        <span class="absolute bottom-[25%] left-[20%] w-[80px] h-[80px] rounded-full bg-blue-600 opacity-20 blur-3xl animate-bubble-3"></span>
-        <span class="absolute bottom-[10%] right-[30%] w-[140px] h-[140px] rounded-full bg-orange-400 opacity-20 blur-3xl animate-bubble-1 delay-2s"></span>
-        <span class="absolute top-[50%] left-[3%] w-[90px] h-[90px] rounded-full bg-orange-400 opacity-20 blur-3xl animate-bubble-2 delay-3s"></span>
-        <span class="absolute bottom-[5%] left-[40%] w-[110px] h-[110px] rounded-full bg-blue-600 opacity-20 blur-3xl animate-bubble-3 delay-1s"></span>
-    </div>
-
-    <div class="relative z-10 w-full animate-on-scroll mb-12">
-        <div class="glass-effect-text w-full px-4 sm:px-6 lg:px-8 py-8 rounded-none sm:py-10 md:py-12">
-            <h1 class="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight mb-6 text-white drop-shadow-lg text-center">
-                <span class="block animate-gradient-text bg-gradient-to-r from-white via-white to-white bg-clip-text text-transparent">Solutions Informatiques</span>
-                <span class="block animate-fade-in-delay text-orange-400">Intégrées</span>
-            </h1>
-            <p class="text-base sm:text-lg md:text-xl text-white/90 animate-fade-in text-center max-w-4xl mx-auto">
-                <span class="font-bold text-orange-500">GROSBIT </span> vous accompagne dans la transformation digitale, la sécurité, la maintenance, la formation et la fourniture de matériels informatiques. Faites confiance à notre équipe pour des solutions sur mesure et un accompagnement de qualité.
-            </p>
+            <span class="absolute top-[10%] left-[10%] w-[100px] h-[100px] rounded-full bg-orange-400 opacity-20 blur-3xl animate-bubble-1"></span>
+            <span class="absolute top-[20%] right-[15%] w-[120px] h-[120px] rounded-full bg-blue-600 opacity-20 blur-3xl animate-bubble-2"></span>
+            <span class="absolute bottom-[25%] left-[20%] w-[80px] h-[80px] rounded-full bg-blue-600 opacity-20 blur-3xl animate-bubble-3"></span>
+            <span class="absolute bottom-[10%] right-[30%] w-[140px] h-[140px] rounded-full bg-orange-400 opacity-20 blur-3xl animate-bubble-1 delay-2s"></span>
+            <span class="absolute top-[50%] left-[3%] w-[90px] h-[90px] rounded-full bg-orange-400 opacity-20 blur-3xl animate-bubble-2 delay-3s"></span>
+            <span class="absolute bottom-[5%] left-[40%] w-[110px] h-[110px] rounded-full bg-blue-600 opacity-20 blur-3xl animate-bubble-3 delay-1s"></span>
         </div>
-    </div>
 
-    <div class="relative z-10 w-full px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-12">
-        <div class="w-full md:w-1/2 text-center animate-on-scroll relative">
-            <div class="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl shadow-2xl p-6 sm:p-10 md:p-14 relative overflow-hidden glass-effect">
-                <svg class="absolute -top-10 -left-10 w-32 h-32 opacity-30 z-0 animate-spin-slow" viewBox="0 0 100 100" fill="none">
-                    <circle cx="50" cy="50" r="50" fill="#FF6600"/>
-                </svg>
-                <div class="relative z-10">
-                    <ul class="space-y-4 text-white text-base sm:text-lg pl-0">
-                        <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-600/80 shadow-md">
-                                <i class="fa fa-shield-alt text-white "></i>
-                            </span>
-                            <span>Réseau & Sécurité informatique</span>
-                        </li>
-                        <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-orange-500/80 shadow-md">
-                                <!-- <i class="fas fa-tools text-white text-lg"></i> -->
-                                 <i class="fa fa-tools text-white"></i>
-                            </span>
-                            <span>Maintenance & Assistance</span>
-                        </li>
-                        <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/80 shadow-md">
-                                <i class="fa fa-box-open text-white "></i>
-                            </span>
-                            <span>Distribution de matériels</span>
-                        </li>
-                        <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-orange-400/80 shadow-md">
-                                <i class="fa fa-chalkboard-teacher text-white -lg"></i>
-                            </span>
-                            <span>Formation & Conseil</span>
-                        </li>
-                        <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-400/80 shadow-md">
-                                <i class="fa fa-bullhorn text-white "></i>
-                            </span>
-                            <span>Marketing digital</span>
-                        </li>
-                    </ul>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-10 animate-fade-in-up2 justify-center">
-                        <a href="#services" class="px-8 py-3 rounded-full font-semibold text-base text-white text-center transition-all duration-300 bg-orange-500 hover:bg-white hover:text-[#022157] border-2 border-orange-500 shadow-lg">
-                            Nos Services
-                        </a>
-                        <a href="#contact" class="px-8 py-3 rounded-full font-semibold text-base text-[#022157] border-2 border-orange-500 bg-white text-center transition-all duration-300 hover:bg-orange-500 hover:text-white shadow-lg">
-                            Nous contacter
-                        </a>
+        <div class="relative z-10 w-full animate-on-scroll mb-12">
+            <div class="glass-effect-text w-full px-4 sm:px-6 lg:px-8 py-8 rounded-none sm:py-10 md:py-12">
+                <h1 class="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight mb-6 text-white drop-shadow-lg text-center">
+                    <span class="block animate-gradient-text bg-gradient-to-r from-white via-white to-white bg-clip-text text-transparent">Solutions Informatiques</span>
+                    <span class="block animate-fade-in-delay text-orange-400">Intégrées</span>
+                </h1>
+                <p class="text-base sm:text-lg md:text-xl text-white/90 animate-fade-in text-center max-w-4xl mx-auto">
+                    <span class="font-bold text-orange-500">GROSBIT </span> vous accompagne dans la transformation digitale, la sécurité, la maintenance, la formation et la fourniture de matériels informatiques. Faites confiance à notre équipe pour des solutions sur mesure et un accompagnement de qualité.
+                </p>
+            </div>
+        </div>
+
+        <div class="relative z-10 w-full px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="w-full md:w-1/2 text-center animate-on-scroll relative">
+                <div class="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl shadow-2xl p-6 sm:p-10 md:p-14 relative overflow-hidden glass-effect">
+                    <svg class="absolute -top-10 -left-10 w-32 h-32 opacity-30 z-0 animate-spin-slow" viewBox="0 0 100 100" fill="none">
+                        <circle cx="50" cy="50" r="50" fill="#FF6600"/>
+                    </svg>
+                    <div class="relative z-10">
+                        <ul class="space-y-4 text-white text-base sm:text-lg pl-0">
+                            <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-600/80 shadow-md">
+                                    <i class="fa fa-shield-alt text-white "></i>
+                                </span>
+                                <span>Réseau & Sécurité informatique</span>
+                            </li>
+                            <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-orange-500/80 shadow-md">
+                                    <!-- <i class="fas fa-tools text-white text-lg"></i> -->
+                                    <i class="fa fa-tools text-white"></i>
+                                </span>
+                                <span>Maintenance & Assistance</span>
+                            </li>
+                            <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/80 shadow-md">
+                                    <i class="fa fa-box-open text-white "></i>
+                                </span>
+                                <span>Distribution de matériels</span>
+                            </li>
+                            <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-orange-400/80 shadow-md">
+                                    <i class="fa fa-chalkboard-teacher text-white -lg"></i>
+                                </span>
+                                <span>Formation & Conseil</span>
+                            </li>
+                            <li class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 shadow-sm hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up justify-center md:justify-start">
+                                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-400/80 shadow-md">
+                                    <i class="fa fa-bullhorn text-white "></i>
+                                </span>
+                                <span>Marketing digital</span>
+                            </li>
+                        </ul>
+                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-10 animate-fade-in-up2 justify-center">
+                            <a href="#services" class="px-8 py-3 rounded-full font-semibold text-base text-white text-center transition-all duration-300 bg-orange-500 hover:bg-white hover:text-[#022157] border-2 border-orange-500 shadow-lg">
+                                Nos Services
+                            </a>
+                            <a href="#contact" class="px-8 py-3 rounded-full font-semibold text-base text-[#022157] border-2 border-orange-500 bg-white text-center transition-all duration-300 hover:bg-orange-500 hover:text-white shadow-lg">
+                                Nous contacter
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="w-full md:w-1/2 mt-12 md:mt-0 animate-on-scroll relative flex items-center justify-center md:justify-end">
+                <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" style="opacity:0.18;" viewBox="0 0 700 750" fill="none">
+                    <circle cx="120" cy="120" r="60" fill="#3B48F6FF" fill-opacity="0.13"/>
+                    <circle cx="500" cy="200" r="40" fill="#f97316" fill-opacity="0.11"/>
+                    <circle cx="350" cy="600" r="80" fill="#fff" fill-opacity="0.09"/>
+                    <circle cx="600" cy="500" r="30" fill="#022157" fill-opacity="0.10"/>
+                    <circle cx="200" cy="500" r="50" fill="#f97316" fill-opacity="0.08"/>
+                    <circle cx="650" cy="100" r="25" fill="#3b82f6" fill-opacity="0.10"/>
+                    <circle cx="100" cy="650" r="35" fill="#fff" fill-opacity="0.12"/>
+                </svg>
+
+    <div id="hero-2d-carousel" class="relative rounded-2xl shadow-2xl overflow-hidden bg-blue border border-gray-200 w-full max-w-4xl h-[200px] sm:h-[350px] md:h-[500px] lg:h-[500px] xl:h-[600px]">
+        <div class="carousel-2d-wrapper w-full h-full flex transition-transform duration-700 ease-in-out">
+            <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
+                <img src="/img/gb1.png"
+                    alt="Services informatiques"
+                    class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
+                </div>
+            <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
+                <img src="/img/gb2.png"
+                    alt="Services informatiques"
+                    class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
+                </div>
+            <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
+                <img src="/img/img1.png"
+                    alt="Services informatiques"
+                    class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
+                <div class="text-center">
+                    <!-- <p class="text-gray-700 text-sm sm:text-base">Solutions sur mesure pour votre entreprise.</p> -->
+                </div>
+            </div>
+            <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
+                <img src="/img/img2.png"
+                    alt="Services informatiques"
+                    class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
+                <div class="text-center">
+                    <!-- <p class="text-gray-700 text-sm sm:text-base">Solutions sur mesure pour votre entreprise.</p> -->
+                </div>
+            </div>
+            <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
+                <img src="/img/jt.png"
+                    alt="Réseau & Sécurité"
+                    class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
+                <div class="text-center">
+                    <!-- <h3 class="font-bold text-lg sm:text-xl text-[#0949B8FF] mb-1">Réseau & Sécurité</h3>
+                    <p class="text-gray-700 text-sm sm:text-base">Sécurisez vos infrastructures IT.</p> -->
+                </div>
+            </div>
+            <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
+                <img src="img/gb3.png"
+                    alt="Réseau & Sécurité"
+                    class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
+                <div class="text-center">
+                    <!-- <p class="text-gray-700 text-sm sm:text-base">Sécurisez vos infrastructures IT.</p> -->
+                </div>
+            </div>
+            <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
+                <img src="img/img4.png"
+                    alt="Réseau & Sécurité"
+                    class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
+                <div class="text-center">
+                    <!-- <p class="text-gray-700 text-sm sm:text-base">Sécurisez vos infrastructures IT.</p> -->
+                </div>
+            </div>
+            <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
+                <img src="/img/img3.png"
+                    alt="Formation"
+                    class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
+                <div class="text-center">
+                    <!-- <h3 class="font-bold text-lg sm:text-xl text-[#0949B8FF] mb-1">Formation</h3>
+                    <p class="text-gray-700 text-sm sm:text-base">Développez vos compétences IT.</p> -->
+                </div>
+            </div>
+            <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
+                <img src="/img/jt1.png"
+                    alt="Support IT"
+                    class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
+                <div class="text-center">
+                    <!-- <h3 class="font-bold text-lg sm:text-xl text-[#0949B8FF] mb-1">Support IT</h3>
+                    <p class="text-gray-700 text-sm sm:text-base">Assistance technique et maintenance.</p> -->
+                </div>
+            </div>
+            <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
+                <img src="/img/img5.png"
+                    alt="Support IT"
+                    class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
+                <div class="text-center">
+                    <!-- <p class="text-gray-700 text-sm sm:text-base">Assistance technique et maintenance.</p> -->
+                </div>
+            </div>
+            <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
+                <img src="https://th.bing.com/th/id/OIP.iVDtxWF7fyswpJ-s1_xiUAHaEL?r=0&rs=1&pid=ImgDetMain"
+                    alt="Développement Logiciel"
+                    class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
+                <div class="text-center">
+                    <!-- <h3 class="font-bold text-lg sm:text-xl text-[#0949B8FF] mb-1">Développement Logiciel</h3>
+                    <p class="text-gray-700 text-sm sm:text-base">Applications personnalisées et performantes.</p> -->
+                </div>
+            </div>
+            <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
+                <img src="/img/gb4.png"
+                    alt="Développement Logiciel"
+                    class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
+                <div class="text-center">
+                    <!-- <p class="text-gray-700 text-sm sm:text-base">Applications personnalisées et performantes.</p> -->
+                </div>
+            </div>
+        </div>
+        <button id="carousel-2d-prev" type="button" class="absolute left-4 top-1/2 -translate-y-1/2 bg-[#022157] bg-opacity-70 text-white p-3 rounded-full hover:bg-[#FF6600] transition z-20 focus:outline-none focus:ring-2 focus:ring-[#FF6600]">
+            <i class="fas fa-chevron-left "></i>
+        </button>
+        <button id="carousel-2d-next" type="button" class="absolute right-4 top-1/2 -translate-y-1/2 bg-[#022157] bg-opacity-70 text-white p-3 rounded-full hover:bg-[#FF6600] transition z-20 focus:outline-none focus:ring-2 focus:ring-[#FF6600]">
+            <i class="fas fa-chevron-right "></i>
+        </button>
+    </div>
+            </div>
         </div>
 
-        <div class="w-full md:w-1/2 mt-12 md:mt-0 animate-on-scroll relative flex items-center justify-center md:justify-end">
-            <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" style="opacity:0.18;" viewBox="0 0 700 750" fill="none">
-                <circle cx="120" cy="120" r="60" fill="#3B48F6FF" fill-opacity="0.13"/>
-                <circle cx="500" cy="200" r="40" fill="#f97316" fill-opacity="0.11"/>
-                <circle cx="350" cy="600" r="80" fill="#fff" fill-opacity="0.09"/>
-                <circle cx="600" cy="500" r="30" fill="#022157" fill-opacity="0.10"/>
-                <circle cx="200" cy="500" r="50" fill="#f97316" fill-opacity="0.08"/>
-                <circle cx="650" cy="100" r="25" fill="#3b82f6" fill-opacity="0.10"/>
-                <circle cx="100" cy="650" r="35" fill="#fff" fill-opacity="0.12"/>
+        <div class="absolute left-1/2 bottom-0 -translate-x-1/2 w-[500px] h-32 pointer-events-none z-0">
+            <svg class="w-full h-full" viewBox="0 0 500 80" fill="none">
+                <ellipse cx="250" cy="60" rx="220" ry="18" fill="#0447B4FF" fill-opacity="0.07"/>
+                <ellipse cx="250" cy="70" rx="120" ry="10" fill="#f97316" fill-opacity="0.09"/>
             </svg>
+        </div>
+            <script>
+                // Animated molecules/particles canvas background for services section
+                (function() {
+                    const canvas = document.getElementById('services-molecules-canvas');
+                    if (!canvas) return;
+                    let dpr = window.devicePixelRatio || 1;
+                    let width = canvas.offsetWidth, height = canvas.offsetHeight;
+                    function resize() {
+                        width = canvas.offsetWidth;
+                        height = canvas.offsetHeight;
+                        canvas.width = width * dpr;
+                        canvas.height = height * dpr;
+                        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                    }
+                    const ctx = canvas.getContext('2d');
+                    resize();
+                    window.addEventListener('resize', resize);
 
-<div id="hero-2d-carousel" class="relative rounded-2xl shadow-2xl overflow-hidden bg-blue border border-gray-200 w-full max-w-4xl h-[250px] sm:h-[400px] md:h-[550px] lg:h-[650px] xl:h-[750px]">
-    <div class="carousel-2d-wrapper w-full h-full flex transition-transform duration-700 ease-in-out">
-        <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
-            <img src="/img/gb1.png"
-                 alt="Services informatiques"
-                 class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
-            </div>
-        <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
-            <img src="/img/gb2.png"
-                 alt="Services informatiques"
-                 class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
-            </div>
-        <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
-            <img src="/img/img1.png"
-                 alt="Services informatiques"
-                 class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
-            <div class="text-center">
-                <!-- <p class="text-gray-700 text-sm sm:text-base">Solutions sur mesure pour votre entreprise.</p> -->
-            </div>
-        </div>
-        <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
-            <img src="/img/img2.png"
-                 alt="Services informatiques"
-                 class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
-            <div class="text-center">
-                <!-- <p class="text-gray-700 text-sm sm:text-base">Solutions sur mesure pour votre entreprise.</p> -->
-            </div>
-        </div>
-        <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
-            <img src="/img/jt.png"
-                 alt="Réseau & Sécurité"
-                 class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
-            <div class="text-center">
-                <!-- <h3 class="font-bold text-lg sm:text-xl text-[#0949B8FF] mb-1">Réseau & Sécurité</h3>
-                <p class="text-gray-700 text-sm sm:text-base">Sécurisez vos infrastructures IT.</p> -->
-            </div>
-        </div>
-        <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
-            <img src="img/gb3.png"
-                 alt="Réseau & Sécurité"
-                 class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
-            <div class="text-center">
-                <!-- <p class="text-gray-700 text-sm sm:text-base">Sécurisez vos infrastructures IT.</p> -->
-            </div>
-        </div>
-        <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
-            <img src="img/img4.png"
-                 alt="Réseau & Sécurité"
-                 class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
-            <div class="text-center">
-                <!-- <p class="text-gray-700 text-sm sm:text-base">Sécurisez vos infrastructures IT.</p> -->
-            </div>
-        </div>
-        <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
-            <img src="/img/img3.png"
-                 alt="Formation"
-                 class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
-            <div class="text-center">
-                <!-- <h3 class="font-bold text-lg sm:text-xl text-[#0949B8FF] mb-1">Formation</h3>
-                <p class="text-gray-700 text-sm sm:text-base">Développez vos compétences IT.</p> -->
-            </div>
-        </div>
-        <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
-            <img src="/img/jt1.png"
-                 alt="Support IT"
-                 class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
-            <div class="text-center">
-                <!-- <h3 class="font-bold text-lg sm:text-xl text-[#0949B8FF] mb-1">Support IT</h3>
-                <p class="text-gray-700 text-sm sm:text-base">Assistance technique et maintenance.</p> -->
-            </div>
-        </div>
-        <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
-            <img src="/img/img5.png"
-                 alt="Support IT"
-                 class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
-            <div class="text-center">
-                <!-- <p class="text-gray-700 text-sm sm:text-base">Assistance technique et maintenance.</p> -->
-            </div>
-        </div>
-        <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
-            <img src="https://th.bing.com/th/id/OIP.iVDtxWF7fyswpJ-s1_xiUAHaEL?r=0&rs=1&pid=ImgDetMain"
-                 alt="Développement Logiciel"
-                 class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
-            <div class="text-center">
-                <!-- <h3 class="font-bold text-lg sm:text-xl text-[#0949B8FF] mb-1">Développement Logiciel</h3>
-                <p class="text-gray-700 text-sm sm:text-base">Applications personnalisées et performantes.</p> -->
-            </div>
-        </div>
-        <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
-            <img src="/img/gb4.png"
-                 alt="Développement Logiciel"
-                 class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
-            <div class="text-center">
-                <!-- <p class="text-gray-700 text-sm sm:text-base">Applications personnalisées et performantes.</p> -->
-            </div>
-        </div>
-    </div>
-    <button id="carousel-2d-prev" type="button" class="absolute left-4 top-1/2 -translate-y-1/2 bg-[#022157] bg-opacity-70 text-white p-3 rounded-full hover:bg-[#FF6600] transition z-20 focus:outline-none focus:ring-2 focus:ring-[#FF6600]">
-        <i class="fas fa-chevron-left "></i>
-    </button>
-    <button id="carousel-2d-next" type="button" class="absolute right-4 top-1/2 -translate-y-1/2 bg-[#022157] bg-opacity-70 text-white p-3 rounded-full hover:bg-[#FF6600] transition z-20 focus:outline-none focus:ring-2 focus:ring-[#FF6600]">
-        <i class="fas fa-chevron-right "></i>
-    </button>
-</div>
-        </div>
-    </div>
-
-    <div class="absolute left-1/2 bottom-0 -translate-x-1/2 w-[500px] h-32 pointer-events-none z-0">
-        <svg class="w-full h-full" viewBox="0 0 500 80" fill="none">
-            <ellipse cx="250" cy="60" rx="220" ry="18" fill="#0447B4FF" fill-opacity="0.07"/>
-            <ellipse cx="250" cy="70" rx="120" ry="10" fill="#f97316" fill-opacity="0.09"/>
-        </svg>
-    </div>
-        <script>
-            // Animated molecules/particles canvas background for services section
-            (function() {
-                const canvas = document.getElementById('services-molecules-canvas');
-                if (!canvas) return;
-                let dpr = window.devicePixelRatio || 1;
-                let width = canvas.offsetWidth, height = canvas.offsetHeight;
-                function resize() {
-                    width = canvas.offsetWidth;
-                    height = canvas.offsetHeight;
-                    canvas.width = width * dpr;
-                    canvas.height = height * dpr;
-                    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-                }
-                const ctx = canvas.getContext('2d');
-                resize();
-                window.addEventListener('resize', resize);
-
-                // Charte graphique colors
-                const moleculeColors = [
-                    "#3b82f6", // blue
-                    "#D67129FF", // orange
-                    "#0755DBFFFF", // dark blue
-                    "#fff"      // white
-                ];
-                // Molecule objects
-                const MOLECULES = [];
-                const MOLECULE_COUNT = 44; // x2 pour multiplier les molécules
-                for (let i = 0; i < MOLECULE_COUNT; i++) {
-                    const color = moleculeColors[i % moleculeColors.length];
-                    MOLECULES.push({
-                        x: Math.random() * width,
-                        y: Math.random() * height,
-                        r: Math.random() * 14 + 12, // un peu plus petites
-                        vx: (Math.random() - 0.5) * 0.8 - 0.15,
-                        vy: (Math.random() - 0.5) * 0.8 - 0.15,
-                        color,
-                        glow: Math.random() * 0.5 + 0.5,
-                        phase: Math.random() * Math.PI * 2,
-                        twinkle: Math.random() * 0.5 + 0.7,
-                        alpha: Math.random() * 0.18 + 0.10 // plus transparent
-                    });
-                }
-                // Draw molecule (circle + nucleus + glow)
-                function drawMolecule(m, t) {
-                    // Twinkle effect
-                    const tw = 0.7 + 0.3 * Math.sin(t * 2 + m.phase);
-                    ctx.save();
-                    ctx.globalAlpha = m.alpha * tw * m.twinkle;
-                    ctx.beginPath();
-                    ctx.arc(m.x, m.y, m.r * 1.25, 0, 2 * Math.PI);
-                    ctx.shadowColor = m.color;
-                    ctx.shadowBlur = 18 * m.glow * tw;
-                    ctx.fillStyle = m.color;
-                    ctx.fill();
-                    ctx.restore();
-
-                    // Main body
-                    ctx.save();
-                    ctx.globalAlpha = m.alpha * 1.3 * tw;
-                    ctx.beginPath();
-                    ctx.arc(m.x, m.y, m.r, 0, 2 * Math.PI);
-                    ctx.fillStyle = m.color;
-                    ctx.fill();
-                    ctx.restore();
-
-                    // Nucleus
-                    ctx.save();
-                    ctx.globalAlpha = m.alpha * 1.7 * tw;
-                    ctx.beginPath();
-                    ctx.arc(m.x + Math.sin(t * 1.2 + m.phase) * m.r * 0.4, m.y + Math.cos(t * 1.2 + m.phase) * m.r * 0.4, m.r * 0.22, 0, 2 * Math.PI);
-                    ctx.fillStyle = "#fff";
-                    ctx.shadowColor = "#fff";
-                    ctx.shadowBlur = 6 * tw;
-                    ctx.fill();
-                    ctx.restore();
-
-                    // Orbiting electrons (small dots)
-                    for (let e = 0; e < 2; e++) {
-                        const angle = t * (1.5 + e * 0.7) + m.phase + e * Math.PI;
+                    // Charte graphique colors
+                    const moleculeColors = [
+                        "#3b82f6", // blue
+                        "#D67129FF", // orange
+                        "#0755DBFFFF", // dark blue
+                        "#fff"      // white
+                    ];
+                    // Molecule objects
+                    const MOLECULES = [];
+                    const MOLECULE_COUNT = 44; // x2 pour multiplier les molécules
+                    for (let i = 0; i < MOLECULE_COUNT; i++) {
+                        const color = moleculeColors[i % moleculeColors.length];
+                        MOLECULES.push({
+                            x: Math.random() * width,
+                            y: Math.random() * height,
+                            r: Math.random() * 14 + 12, // un peu plus petites
+                            vx: (Math.random() - 0.5) * 0.8 - 0.15,
+                            vy: (Math.random() - 0.5) * 0.8 - 0.15,
+                            color,
+                            glow: Math.random() * 0.5 + 0.5,
+                            phase: Math.random() * Math.PI * 2,
+                            twinkle: Math.random() * 0.5 + 0.7,
+                            alpha: Math.random() * 0.18 + 0.10 // plus transparent
+                        });
+                    }
+                    // Draw molecule (circle + nucleus + glow)
+                    function drawMolecule(m, t) {
+                        // Twinkle effect
+                        const tw = 0.7 + 0.3 * Math.sin(t * 2 + m.phase);
                         ctx.save();
-                        ctx.globalAlpha = m.alpha * 1.1 * tw;
+                        ctx.globalAlpha = m.alpha * tw * m.twinkle;
                         ctx.beginPath();
-                        ctx.arc(
-                            m.x + Math.cos(angle) * m.r * 0.9,
-                            m.y + Math.sin(angle) * m.r * 0.9,
-                            m.r * 0.09,
-                            0, 2 * Math.PI
-                        );
+                        ctx.arc(m.x, m.y, m.r * 1.25, 0, 2 * Math.PI);
+                        ctx.shadowColor = m.color;
+                        ctx.shadowBlur = 18 * m.glow * tw;
                         ctx.fillStyle = m.color;
-                        ctx.shadowColor = "#fff";
-                        ctx.shadowBlur = 4 * tw;
                         ctx.fill();
                         ctx.restore();
-                    }
-                }
-                // Animate
-                function animate() {
-                    ctx.clearRect(0, 0, width, height);
-                    const t = Date.now() * 0.001;
-                    for (let m of MOLECULES) {
-                        // Move
-                        m.x += m.vx * (1 + 0.2 * Math.sin(t + m.phase));
-                        m.y += m.vy * (1 + 0.2 * Math.cos(t + m.phase));
-                        // Bounce on edges
-                        if (m.x < -m.r) m.x = width + m.r;
-                        if (m.x > width + m.r) m.x = -m.r;
-                        if (m.y < -m.r) m.y = height + m.r;
-                        if (m.y > height + m.r) m.y = -m.r;
-                        drawMolecule(m, t);
-                    }
-                    // Draw links between close molecules (scintillant)
-                    for (let i = 0; i < MOLECULES.length; i++) {
-                        for (let j = i + 1; j < MOLECULES.length; j++) {
-                            const a = MOLECULES[i], b = MOLECULES[j];
-                            const dx = a.x - b.x, dy = a.y - b.y;
-                            const dist = Math.sqrt(dx * dx + dy * dy);
-                            if (dist < 90) {
-                                ctx.save();
-                                ctx.globalAlpha = 0.07 + 0.06 * Math.abs(Math.sin(t * 2 + i + j));
-                                ctx.strokeStyle = a.color;
-                                ctx.lineWidth = 1.2 + 1 * Math.abs(Math.sin(t * 2 + i + j));
-                                ctx.beginPath();
-                                ctx.moveTo(a.x, a.y);
-                                ctx.lineTo(b.x, b.y);
-                                ctx.shadowColor = "#fff";
-                                ctx.shadowBlur = 4;
-                                ctx.stroke();
-                                ctx.restore();
-                            }
+
+                        // Main body
+                        ctx.save();
+                        ctx.globalAlpha = m.alpha * 1.3 * tw;
+                        ctx.beginPath();
+                        ctx.arc(m.x, m.y, m.r, 0, 2 * Math.PI);
+                        ctx.fillStyle = m.color;
+                        ctx.fill();
+                        ctx.restore();
+
+                        // Nucleus
+                        ctx.save();
+                        ctx.globalAlpha = m.alpha * 1.7 * tw;
+                        ctx.beginPath();
+                        ctx.arc(m.x + Math.sin(t * 1.2 + m.phase) * m.r * 0.4, m.y + Math.cos(t * 1.2 + m.phase) * m.r * 0.4, m.r * 0.22, 0, 2 * Math.PI);
+                        ctx.fillStyle = "#fff";
+                        ctx.shadowColor = "#fff";
+                        ctx.shadowBlur = 6 * tw;
+                        ctx.fill();
+                        ctx.restore();
+
+                        // Orbiting electrons (small dots)
+                        for (let e = 0; e < 2; e++) {
+                            const angle = t * (1.5 + e * 0.7) + m.phase + e * Math.PI;
+                            ctx.save();
+                            ctx.globalAlpha = m.alpha * 1.1 * tw;
+                            ctx.beginPath();
+                            ctx.arc(
+                                m.x + Math.cos(angle) * m.r * 0.9,
+                                m.y + Math.sin(angle) * m.r * 0.9,
+                                m.r * 0.09,
+                                0, 2 * Math.PI
+                            );
+                            ctx.fillStyle = m.color;
+                            ctx.shadowColor = "#fff";
+                            ctx.shadowBlur = 4 * tw;
+                            ctx.fill();
+                            ctx.restore();
                         }
                     }
-                    requestAnimationFrame(animate);
-                }
-                animate();
-            })();
-        </script>
-</section>
+                    // Animate
+                    function animate() {
+                        ctx.clearRect(0, 0, width, height);
+                        const t = Date.now() * 0.001;
+                        for (let m of MOLECULES) {
+                            // Move
+                            m.x += m.vx * (1 + 0.2 * Math.sin(t + m.phase));
+                            m.y += m.vy * (1 + 0.2 * Math.cos(t + m.phase));
+                            // Bounce on edges
+                            if (m.x < -m.r) m.x = width + m.r;
+                            if (m.x > width + m.r) m.x = -m.r;
+                            if (m.y < -m.r) m.y = height + m.r;
+                            if (m.y > height + m.r) m.y = -m.r;
+                            drawMolecule(m, t);
+                        }
+                        // Draw links between close molecules (scintillant)
+                        for (let i = 0; i < MOLECULES.length; i++) {
+                            for (let j = i + 1; j < MOLECULES.length; j++) {
+                                const a = MOLECULES[i], b = MOLECULES[j];
+                                const dx = a.x - b.x, dy = a.y - b.y;
+                                const dist = Math.sqrt(dx * dx + dy * dy);
+                                if (dist < 90) {
+                                    ctx.save();
+                                    ctx.globalAlpha = 0.07 + 0.06 * Math.abs(Math.sin(t * 2 + i + j));
+                                    ctx.strokeStyle = a.color;
+                                    ctx.lineWidth = 1.2 + 1 * Math.abs(Math.sin(t * 2 + i + j));
+                                    ctx.beginPath();
+                                    ctx.moveTo(a.x, a.y);
+                                    ctx.lineTo(b.x, b.y);
+                                    ctx.shadowColor = "#fff";
+                                    ctx.shadowBlur = 4;
+                                    ctx.stroke();
+                                    ctx.restore();
+                                }
+                            }
+                        }
+                        requestAnimationFrame(animate);
+                    }
+                    animate();
+                })();
+            </script>
+    </section>
 
 <style>
     /* General Enhancements & Responsive Adjustments */
@@ -2347,23 +2349,23 @@
         <div class="overflow-hidden relative">
             <div class="flex gap-8 items-center animate-scroll-ltr whitespace-nowrap">
                 <img src="https://atlantis.sgitogo.tg/assets/images/sgi-togo-login.png" alt="SGI TOGO" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
-                <img src="https://waficapital.com/wp-content/uploads/2022/12/LOGO-WAFI-CAPITAL.jpg" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <!-- <img src="https://waficapital.com/wp-content/uploads/2022/12/LOGO-WAFI-CAPITAL.jpg" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0"> -->
                 <img src="https://www.togo-port.net/wp-content/uploads/2018/02/logo-port-autonome-lome.png" alt="PORT AUTONOME DE LOME" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://atlantis.sgitogo.tg/assets/images/sgi-togo-login.png" alt="SGI TOGO" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
-                <img src="https://waficapital.com/wp-content/uploads/2022/12/LOGO-WAFI-CAPITAL.jpg" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <!-- <img src="https://waficapital.com/wp-content/uploads/2022/12/LOGO-WAFI-CAPITAL.jpg" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0"> -->
                 <img src="https://www.togo-port.net/wp-content/uploads/2018/02/logo-port-autonome-lome.png" alt="PORT AUTONOME DE LOME" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
 
                 <img src="https://atlantis.sgitogo.tg/assets/images/sgi-togo-login.png" alt="SGI TOGO" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
-                <img src="https://waficapital.com/wp-content/uploads/2022/12/LOGO-WAFI-CAPITAL.jpg" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <!-- <img src="https://waficapital.com/wp-content/uploads/2022/12/LOGO-WAFI-CAPITAL.jpg" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0"> -->
                 <img src="https://www.togo-port.net/wp-content/uploads/2018/02/logo-port-autonome-lome.png" alt="PORT AUTONOME DE LOME" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://atlantis.sgitogo.tg/assets/images/sgi-togo-login.png" alt="SGI TOGO" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
-                <img src="https://waficapital.com/wp-content/uploads/2022/12/LOGO-WAFI-CAPITAL.jpg" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <!-- <img src="https://waficapital.com/wp-content/uploads/2022/12/LOGO-WAFI-CAPITAL.jpg" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0"> -->
                 <img src="https://www.togo-port.net/wp-content/uploads/2018/02/logo-port-autonome-lome.png" alt="PORT AUTONOME DE LOME" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
             </div>
         </div>
@@ -2372,7 +2374,7 @@
     <div class="mt-16 animate-on-scroll">
         <h3 class="text-2xl font-bold text-center text-gray-800 mb-8"><span class="text-blue-600">Nos</span> Partenaires</h3>
         <p class="text-gray-600 text-center max-w-3xl mx-auto mb-8">
-            Nous travaillons d'arrache-pied pour conclure de futurs partenariats avec CISCO, HP, LENOVO et DELL.
+            <!-- Nous travaillons d'arrache-pied pour conclure de futurs partenariats avec CISCO, HP, LENOVO et DELL. -->
         </p>
 
         <div class="overflow-hidden relative">
@@ -2429,90 +2431,185 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="bg-blue-50 py-20 align-items-center">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 animate-on-scroll">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Témoi<span class="text-blue-600">gnages</span></h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto text-center mb-8">
-                    Ce que nos clients disent de nous.
-                </p>
-            </div>
-
-                    <div class="w-full h-2 mt-6 rounded-full bg-gradient-to-r from-blue-600 via-blue-600 to-blue-600 relative overflow-hidden">
-                    <span class="absolute left-0 top-0 w-4 h-2 bg-white/70 rounded-full animate-pulse"></span>
-                    <span class="absolute right-0 top-0 w-4 h-2 bg-white/70 rounded-full animate-pulse"></span>
-                </div>
-                <br>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-md border border-transparent transition duration-300 review-card animate-on-scroll">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 flex">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic mb-6">
-                        "GROSBIT a fournit un travail de qualité avec tact lors du réaménagement dans notre salle serveur, leur conception de l'esprit d'équipe reflète leur slogan 'Et si nous essayons ensemble!'."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="ml-4">
-                            <h4 class="text-lg font-semibold text-gray-800">FOLI Assiongbon</h4>
-                            <p class="text-gray-600">Chef Division Système d'information au PAL</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- <div class="bg-white p-8 rounded-xl shadow-md border border-transparent transition duration-300 review-card animate-on-scroll">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 flex">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic mb-6">
-                        "Leur équipe a su répondre rapidement à nos besoins en matériel informatique avec des produits de qualité et un service après-vente irréprochable."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="ml-4">
-                            <h4 class="text-lg font-semibold text-gray-800">Directeur Technique</h4>
-                            <p class="text-gray-600">SGI TOGO</p>
-                        </div>
-                    </div>
-                </div> -->
-                
-                <div class="bg-white p-8 rounded-xl shadow-md border border-transparent transition duration-300 review-card animate-on-scroll">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 flex">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic mb-6">
-                        "Leur expertise en sécurité réseau a permis de sécuriser notre infrastructure avec des solutions adaptées à notre budget. Nous recommandons vivement."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="ml-4">
-                            <h4 class="text-lg font-semibold text-gray-800">Responsable IT</h4>
-                            <p class="text-gray-600">WAFI CAPITAL</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<section class="bg-blue-50 py-20 flex justify-center items-center">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="text-center mb-12 animate-on-scroll">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">Ce que nos clients <span class="text-blue-600">disent de nous</span></h2>
+            <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                Découvrez les retours d'expérience de ceux qui nous font confiance.
+            </p>
         </div>
-    </section>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper items-stretch">
+                <div class="swiper-slide flex justify-center p-4">
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-t-orange-500 border-x border-b border-gray-200 transition duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-gray-300 flex flex-col justify-between w-full max-w-sm h-full review-card animate-on-scroll">
+                        <div>
+                            <div class="text-yellow-500 flex text-base mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-gray-700 italic mb-4 text-sm leading-relaxed">
+                                "GROSBIT a fourni un travail de qualité avec tact lors du réaménagement dans notre salle serveur, leur conception de l'esprit d'équipe reflète leur slogan 'Et si nous essayons ensemble!'."
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-md font-semibold text-gray-800">FOLI Assiongbon</h4>
+                            <p class="text-gray-600 text-xs">Chef Division Système d'information au PAL</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide flex justify-center p-4">
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-t-orange-500 border-x border-b border-gray-200 transition duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-gray-300 flex flex-col justify-between w-full max-w-sm h-full review-card animate-on-scroll">
+                        <div>
+                            <div class="text-yellow-500 flex text-base mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="text-gray-700 italic mb-4 text-sm leading-relaxed">
+                                "Leur équipe a su répondre rapidement à nos besoins en matériel informatique avec des produits de qualité et un service après-vente irréprochable."
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-md font-semibold text-gray-800">Directeur Technique</h4>
+                            <p class="text-gray-600 text-xs">SGI TOGO</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide flex justify-center p-4">
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-t-orange-500 border-x border-b border-gray-200 transition duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-gray-300 flex flex-col justify-between w-full max-w-sm h-full review-card animate-on-scroll">
+                        <div>
+                            <div class="text-yellow-500 flex text-base mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-gray-700 italic mb-4 text-sm leading-relaxed">
+                                "Leur expertise en sécurité réseau a permis de sécuriser notre infrastructure avec des solutions adaptées à notre budget. Nous recommandons vivement."
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-md font-semibold text-gray-800">Responsable IT</h4>
+                            <p class="text-gray-600 text-xs">WAFI CAPITAL</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide flex justify-center p-4">
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-t-orange-500 border-x border-b border-gray-200 transition duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-gray-300 flex flex-col justify-between w-full max-w-sm h-full review-card animate-on-scroll">
+                        <div>
+                            <div class="text-yellow-500 flex text-base mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-gray-700 italic mb-4 text-sm leading-relaxed">
+                                "Une collaboration fructueuse et un accompagnement de qualité. GROSBIT a dépassé nos attentes sur ce projet complexe."
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-md font-semibold text-gray-800">Directrice Générale</h4>
+                            <p class="text-gray-600 text-xs">Startup XYZ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide flex justify-center p-4">
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-t-orange-500 border-x border-b border-gray-200 transition duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-gray-300 flex flex-col justify-between w-full max-w-sm h-full review-card animate-on-scroll">
+                        <div>
+                            <div class="text-yellow-500 flex text-base mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <p class="text-gray-700 italic mb-4 text-sm leading-relaxed">
+                                "Leur support technique est réactif et compétent. Nous sommes très satisfaits de la solution mise en place."
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-md font-semibold text-gray-800">Chef de Projet</h4>
+                            <p class="text-gray-600 text-xs">Entreprise ABC</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-pagination mt-8"></div>
+
+            </div>
+    </div>
+</section>
+<script>
+    // Initialisation de Swiper
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1, // Par défaut, affiche 1 témoignage
+        spaceBetween: 30, // Espace entre les slides
+        loop: true, // Carrousel en boucle continue
+        allowTouchMove: true, // Permet le défilement manuel tactile
+        autoplay: {
+            delay: 0, // IMPORTANT : Délai à 0 pour un défilement continu
+            disableOnInteraction: false, // Continue le défilement après interaction utilisateur
+            reverseDirection: true, // Fait défiler de droite à gauche
+        },
+        speed: 3000, // Vitesse de défilement (plus le chiffre est élevé, plus c'est lent)
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        // Navigation (commentée pour un défilement purement automatique et continu)
+        // navigation: {
+        //     nextEl: ".swiper-button-next",
+        //     prevEl: ".swiper-button-prev",
+        // },
+        // Points de rupture pour le responsive design
+        breakpoints: {
+            640: { // Pour les écrans de taille sm (640px) et plus
+                slidesPerView: 2,
+            },
+            1024: { // Pour les écrans de taille lg (1024px) et plus
+                slidesPerView: 3,
+            },
+            1280: { // Pour les écrans de taille xl (1280px) et plus
+                slidesPerView: 4,
+            }
+        },
+        // Centrer les slides pour un meilleur rendu visuel si moins de slides que le breakpoint
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+        // Évite le "saut" au début du défilement si peu de slides
+        // grabCursor: true, // Change le curseur en main quand on peut glisser
+    });
+
+    // Optionnel : Mettre en pause le défilement au survol de la souris
+    const swiperContainer = document.querySelector('.mySwiper');
+    if (swiperContainer) {
+        swiperContainer.addEventListener('mouseenter', () => {
+            swiper.autoplay.stop();
+        });
+        swiperContainer.addEventListener('mouseleave', () => {
+            swiper.autoplay.start();
+        });
+    }
+</script>
+
+
 
     <!-- Mission Section -->
-    <section class="py-20 bg-gradient-to-r from-blue-800 to-blue-800 text-white">
+    <!-- <section class="py-20 bg-gradient-to-r from-blue-800 to-blue-800 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto text-center animate-on-scroll">
                 <h2 class="text-3xl md:text-4xl font-bold mb-8">Notre <span class="text-orange-400">Vocation</span></h2>
@@ -2524,7 +2621,7 @@
                 </p>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Contact Section -->
     <section id="contact" class="section bg-white py-20">
@@ -2641,23 +2738,93 @@
 </div>
 
     <!-- CTA Section -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="relative rounded-xl overflow-hidden animate-on-scroll">
-                <img src="https://th.bing.com/th/id/R.330eac921777f76c42b4833346036afd?rik=6BLFHf7%2fjyzjzQ&riu=http%3a%2f%2fcabinetregardscroises.fr%2fwp-content%2fuploads%2f2020%2f08%2fEtre-ensemble-1024x644.jpg&ehk=6ofBKJapM0J0xCHhzF5G70IEH%2bSQeuf%2bVbVAgXdMFzQ%3d&risl=&pid=ImgRaw&r=0" 
-                     alt="Contactez-nous" 
-                     class="w-full h-64 object-cover rounded-xl">
-                <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-600/80 rounded-xl"></div>
-                <div class="relative z-10 h-full flex flex-col items-center justify-center p-8">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Et si nous essayons ensemble !</h2>
-                    <p class="text-xl text-white mb-8 max-w-2xl align-center">
-                        Contactez-nous dès maintenant pour discuter de vos besoins en solutions informatiques.
-                    </p>
-                    <a href="#contact" class="bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition duration-300 inline-block">Contactez-nous!</a>
-                </div>
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="relative rounded-xl overflow-hidden animate-on-scroll">
+            <img src="https://th.bing.com/th/id/R.330eac921777f76c42b4833346036afd?rik=6BLFHf7%2fjyzjzQ&riu=http%3a%2f%2fcabinetregardscroises.fr%2fwp-content%2fuploads%2f2020%2f08%2fEtre-ensemble-1024x644.jpg&ehk=6ofBKJapM0J0xCHhzF5G70IEH%2bSQeuf%2bVbVAgXdMFzQ%3d&risl=&pid=ImgRaw&r=0"
+                alt="Contactez-nous"
+                class="w-full h-64 object-cover rounded-xl">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-600/80 rounded-xl"></div>
+            <div class="relative z-10 h-full flex flex-col items-center justify-center p-8">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4 slogan-typing" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+                    <span id="typing-text"></span>
+                </h2>
+                <p class="text-xl text-white mb-8 max-w-2xl align-center">
+                    Contactez-nous dès maintenant pour discuter de vos besoins en solutions informatiques.
+                </p>
+                <a href="#contact" class="bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition duration-300 inline-block">Contactez-nous!</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const typingTextElement = document.getElementById('typing-text');
+        const slogans = [
+            { text: "Et si nous essayons ensemble !", color: "text-white" },
+            { text: "Et si nous essayons ensemble !", color: "text-orange-500" }
+        ];
+        let sloganIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100; // Vitesse de frappe (ms par caractère)
+        let deletingSpeed = 50; // Vitesse d'effacement
+        let pauseBetweenSlogans = 1500; // Pause avant de changer de couleur/phrase
+
+        function typeSlogan() {
+            const currentSlogan = slogans[sloganIndex];
+            const currentText = currentSlogan.text;
+
+            if (isDeleting) {
+                typingTextElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingTextElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                // Appliquer la couleur actuelle
+                typingTextElement.className = currentSlogan.color; // Réinitialise les classes de couleur
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                // Phrase complète, attendre avant de passer à la couleur suivante ou d'effacer
+                setTimeout(() => {
+                    isDeleting = true;
+                    if (sloganIndex === slogans.length - 1) { // Si c'est la dernière couleur/phrase
+                         // On ne veut pas effacer si c'est la dernière couleur et la même phrase
+                         isDeleting = false; 
+                         sloganIndex = 0; // Revient à la première phrase/couleur
+                         charIndex = 0; // Réinitialise l'index des caractères
+                         setTimeout(typeSlogan, pauseBetweenSlogans); // Recommence après une pause
+                         return;
+                    }
+                    setTimeout(typeSlogan, deletingSpeed); // Commence à effacer ou passe à la couleur suivante
+                }, pauseBetweenSlogans);
+            } else if (isDeleting && charIndex === 0) {
+                // Phrase complètement effacée, passer à la prochaine couleur/phrase
+                isDeleting = false;
+                sloganIndex = (sloganIndex + 1) % slogans.length; // Passe au slogan suivant ou revient au début
+                setTimeout(typeSlogan, typingSpeed);
+            } else {
+                const speed = isDeleting ? deletingSpeed : typingSpeed;
+                setTimeout(typeSlogan, speed);
+            }
+        }
+
+        typeSlogan(); // Lance l'animation au chargement de la page
+    });
+</script>
+
+<style>
+/* Pour l'effet de glace sur le texte */
+.slogan-typing {
+    /* Cela simule un léger flou/brillance. `backdrop-filter` est pour l'effet de glace en arrière-plan. */
+    /* text-shadow est déjà en ligne, mais vous pourriez affiner ici */
+    color: rgba(255, 255, 255, 0.9);  /* Peut donner un effet de translucidité */
+     text-rendering: optimizeLegibility;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4);
+}
+</style>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
