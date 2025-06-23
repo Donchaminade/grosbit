@@ -255,231 +255,453 @@
                 </a>
                 <div class="relative px-4 py-3 rounded-md text-base font-bold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition">
                     <button id="mobile-language-dropdown-button" class="w-full text-left flex items-center justify-between" aria-haspopup="true" aria-expanded="false">
-                        Langue: FR <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                        FR  <i class="fas fa-chevron-down ml-2 text-sm"></i> 
                     </button>
                     <div id="mobile-language-dropdown-menu" class="absolute left-0 mt-2 w-full bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 hidden z-50">
                         <a href="https://grosbit-vercel-app.translate.goog/?_x_tr_sl=fr&_x_tr_tl=en&_x_tr_hl=fr&_x_tr_pto=wapp" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700" data-lang="en">English</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700" data-lang="fr">Français</a>
+                        <a href="grosbit.vercel.app" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700" data-lang="fr">Français</a>
                     </div>
                 </div>
             </div>
         </div>
         <div id="particles-js" class="pointer-events-none"></div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                // Animated SVG bubbles (decorative, floating) - Votre code existant
-                const bubbleColors = [
-                    { fill: "#fff", opacity: 0.18 },
-                    { fill: "#FF6600", opacity: 0.12 },
-                    { fill: "#fff", opacity: 0.10 },
-                    { fill: "#0415A7FF", opacity: 0.10 },
-                    { fill: "#fff", opacity: 0.13 },
-                    { fill: "#FF6600", opacity: 0.09 }
-                ];
-                const bubbleData = [
-                    { cx: "10%", cy: "20%", r: 80, dur: 12, delay: 0 },
-                    { cx: "80%", cy: "10%", r: 60, dur: 16, delay: 2 },
-                    { cx: "50%", cy: "80%", r: 100, dur: 18, delay: 4 },
-                    { cx: "90%", cy: "60%", r: 50, dur: 14, delay: 1 },
-                    { cx: "30%", cy: "60%", r: 40, dur: 10, delay: 3 },
-                    { cx: "70%", cy: "40%", r: 70, dur: 20, delay: 5 }
-                ];
-                const svgNS = "http://www.w3.org/2000/svg";
-                const decor = document.createElementNS(svgNS, "svg");
-                decor.setAttribute("width", "100%");
-                decor.setAttribute("height", "100%");
-                decor.setAttribute("class", "absolute inset-0");
-                decor.style.position = "absolute";
-                decor.style.top = "0";
-                decor.style.left = "0";
-                decor.style.width = "100%";
-                decor.style.height = "100%";
-                decor.style.opacity = "0.18";
-                decor.style.zIndex = "0";
-                bubbleData.forEach((b, i) => {
-                    const circle = document.createElementNS(svgNS, "circle");
-                    circle.setAttribute("cx", b.cx);
-                    circle.setAttribute("cy", b.cy);
-                    circle.setAttribute("r", b.r);
-                    circle.setAttribute("fill", bubbleColors[i].fill);
-                    circle.setAttribute("fill-opacity", bubbleColors[i].opacity);
-                    circle.style.transition = "transform 2s cubic-bezier(.4,0,.2,1)";
-                    circle.style.willChange = "transform";
-                    circle.setAttribute("data-anim", i);
-                    decor.appendChild(circle);
-                });
-                const heroSection = document.querySelector('#home');
-                if (heroSection) {
-                    let decorWrap = heroSection.querySelector('.bubble-anim-wrap');
-                    if (!decorWrap) {
-                        decorWrap = document.createElement('div');
-                        decorWrap.className = "bubble-anim-wrap pointer-events-none absolute inset-0 z-0";
-                        decorWrap.style.zIndex = "0";
-                        heroSection.insertBefore(decorWrap, heroSection.firstChild);
-                    }
-                    decorWrap.appendChild(decor);
-                }
-                function animateBubbles() {
-                    const now = Date.now() / 1000;
-                    decor.querySelectorAll('circle').forEach((circle, i) => {
-                        const b = bubbleData[i];
-                        const t = now + b.delay;
-                        const y = Math.sin(t / b.dur * Math.PI * 2) * 20;
-                        const x = Math.cos(t / (b.dur * 0.7) * Math.PI * 2) * 10;
-                        circle.style.transform = `translate(${x}px, ${y}px)`;
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Animated SVG bubbles (decorative, floating) - Votre code existant
+                    const bubbleColors = [
+                        { fill: "#fff", opacity: 0.18 },
+                        { fill: "#FF6600", opacity: 0.12 },
+                        { fill: "#fff", opacity: 0.10 },
+                        { fill: "#0415A7FF", opacity: 0.10 },
+                        { fill: "#fff", opacity: 0.13 },
+                        { fill: "#FF6600", opacity: 0.09 }
+                    ];
+                    const bubbleData = [
+                        { cx: "10%", cy: "20%", r: 80, dur: 12, delay: 0 },
+                        { cx: "80%", cy: "10%", r: 60, dur: 16, delay: 2 },
+                        { cx: "50%", cy: "80%", r: 100, dur: 18, delay: 4 },
+                        { cx: "90%", cy: "60%", r: 50, dur: 14, delay: 1 },
+                        { cx: "30%", cy: "60%", r: 40, dur: 10, delay: 3 },
+                        { cx: "70%", cy: "40%", r: 70, dur: 20, delay: 5 }
+                    ];
+                    const svgNS = "http://www.w3.org/2000/svg";
+                    const decor = document.createElementNS(svgNS, "svg");
+                    decor.setAttribute("width", "100%");
+                    decor.setAttribute("height", "100%");
+                    decor.setAttribute("class", "absolute inset-0");
+                    decor.style.position = "absolute";
+                    decor.style.top = "0";
+                    decor.style.left = "0";
+                    decor.style.width = "100%";
+                    decor.style.height = "100%";
+                    decor.style.opacity = "0.18";
+                    decor.style.zIndex = "0";
+                    bubbleData.forEach((b, i) => {
+                        const circle = document.createElementNS(svgNS, "circle");
+                        circle.setAttribute("cx", b.cx);
+                        circle.setAttribute("cy", b.cy);
+                        circle.setAttribute("r", b.r);
+                        circle.setAttribute("fill", bubbleColors[i].fill);
+                        circle.setAttribute("fill-opacity", bubbleColors[i].opacity);
+                        circle.style.transition = "transform 2s cubic-bezier(.4,0,.2,1)";
+                        circle.style.willChange = "transform";
+                        circle.setAttribute("data-anim", i);
+                        decor.appendChild(circle);
                     });
-                    requestAnimationFrame(animateBubbles);
-                }
-                animateBubbles();
-
-
-                // JavaScript for Language Dropdown and Mobile Menu
-                const langDropdownButton = document.getElementById('language-dropdown-button');
-                const langDropdownMenu = document.getElementById('language-dropdown-menu');
-                const mobileLangDropdownButton = document.getElementById('mobile-language-dropdown-button');
-                const mobileLangDropdownMenu = document.getElementById('mobile-language-dropdown-menu');
-                const mobileMenuButton = document.getElementById('mobile-menu-button');
-                const mobileMenu = document.getElementById('mobile-menu');
-
-                // --- Fonctions de gestion des menus et langues ---
-
-                // Fonction pour mettre à jour le texte du bouton de langue
-                function updateLanguageButtonText(selectedLang) {
-                    let desktopText = '';
-                    let mobileText = '';
-
-                    if (selectedLang === 'en') {
-                        desktopText = 'EN';
-                        mobileText = 'Langue: EN';
-                    } else if (selectedLang === 'fr') {
-                        desktopText = 'FR';
-                        mobileText = 'Langue: FR';
-                    } else {
-                        // Fallback to French if an unknown language is passed
-                        desktopText = 'FR';
-                        mobileText = 'Langue: FR';
-                    }
-
-                    if (langDropdownButton) {
-                        langDropdownButton.innerHTML = `${desktopText} <i class="fas fa-chevron-down ml-2 text-sm"></i>`;
-                    }
-                    if (mobileLangDropdownButton) {
-                        mobileLangDropdownButton.innerHTML = `${mobileText} <i class="fas fa-chevron-down ml-2 text-sm"></i>`;
-                    }
-                    // Ici, vous ajouteriez la logique réelle pour changer la langue du site (ex: charger des traductions)
-                    console.log(`Language set to: ${selectedLang}`);
-                }
-
-                // Fonction générique pour basculer la visibilité d'un menu et son aria-expanded
-                function toggleDropdown(button, menu) {
-                    const isHidden = menu.classList.contains('hidden');
-                    if (isHidden) {
-                        menu.classList.remove('hidden');
-                        button.setAttribute('aria-expanded', 'true');
-                    } else {
-                        menu.classList.add('hidden');
-                        button.setAttribute('aria-expanded', 'false');
-                    }
-                }
-
-                // Fonction pour fermer tous les menus déroulants
-                function closeAllDropdowns() {
-                    if (langDropdownMenu && !langDropdownMenu.classList.contains('hidden')) {
-                        langDropdownMenu.classList.add('hidden');
-                        if (langDropdownButton) langDropdownButton.setAttribute('aria-expanded', 'false');
-                    }
-                    if (mobileLangDropdownMenu && !mobileLangDropdownMenu.classList.contains('hidden')) {
-                        mobileLangDropdownMenu.classList.add('hidden');
-                        if (mobileLangDropdownButton) mobileLangDropdownButton.setAttribute('aria-expanded', 'false');
-                    }
-                }
-
-                // --- Initialisation au chargement ---
-                updateLanguageButtonText('fr'); // Définit la langue par défaut à "FR" au chargement
-
-                // --- Écouteurs d'événements ---
-
-                // Desktop language dropdown
-                if (langDropdownButton && langDropdownMenu) {
-                    langDropdownButton.addEventListener('click', function(event) {
-                        event.stopPropagation(); // Empêche la fermeture immédiate par le click document
-                        toggleDropdown(langDropdownButton, langDropdownMenu);
-                        // Fermer le menu mobile si ouvert
-                        if (!mobileMenu.classList.contains('hidden')) {
-                            mobileMenu.classList.add('hidden');
-                            if (mobileMenuButton) mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    const heroSection = document.querySelector('#home');
+                    if (heroSection) {
+                        let decorWrap = heroSection.querySelector('.bubble-anim-wrap');
+                        if (!decorWrap) {
+                            decorWrap = document.createElement('div');
+                            decorWrap.className = "bubble-anim-wrap pointer-events-none absolute inset-0 z-0";
+                            decorWrap.style.zIndex = "0";
+                            heroSection.insertBefore(decorWrap, heroSection.firstChild);
                         }
-                        // S'assurer que l'autre dropdown de langue est fermé
-                        if (mobileLangDropdownMenu && !mobileLangDropdownMenu.classList.contains('hidden')) {
+                        decorWrap.appendChild(decor);
+                    }
+                    function animateBubbles() {
+                        const now = Date.now() / 1000;
+                        decor.querySelectorAll('circle').forEach((circle, i) => {
+                            const b = bubbleData[i];
+                            const t = now + b.delay;
+                            const y = Math.sin(t / b.dur * Math.PI * 2) * 20;
+                            const x = Math.cos(t / (b.dur * 0.7) * Math.PI * 2) * 10;
+                            circle.style.transform = `translate(${x}px, ${y}px)`;
+                        });
+                        requestAnimationFrame(animateBubbles);
+                    }
+                    animateBubbles();
+
+
+                    // JavaScript for Language Dropdown and Mobile Menu
+                    const langDropdownButton = document.getElementById('language-dropdown-button');
+                    const langDropdownMenu = document.getElementById('language-dropdown-menu');
+                    const mobileLangDropdownButton = document.getElementById('mobile-language-dropdown-button');
+                    const mobileLangDropdownMenu = document.getElementById('mobile-language-dropdown-menu');
+                    const mobileMenuButton = document.getElementById('mobile-menu-button');
+                    const mobileMenu = document.getElementById('mobile-menu');
+
+                    // --- Fonctions de gestion des menus et langues ---
+
+                    // Fonction pour mettre à jour le texte et le drapeau du bouton de langue
+                    function updateLanguageButtonDisplay(selectedLang) {
+                        let desktopText = '';
+                        let mobileText = '';
+                        let flagSrc = ''; // Variable pour stocker le chemin du drapeau
+
+                        // Définir le texte et le chemin du drapeau en fonction de la langue sélectionnée
+                        if (selectedLang === 'en') {
+                            desktopText = 'EN';
+                            mobileText = 'Langue: EN';
+                            flagSrc = 'https://th.bing.com/th/id/OIP.p9k8MsXPHxTZgr9XxMoMHwHaHj?r=0&rs=1&pid=ImgDetMain&cb=idpwebpc2'; // IMPORTANT: Mettez votre chemin réel ici
+                        } else if (selectedLang === 'fr') {
+                            desktopText = 'FR';
+                            mobileText = 'Langue: FR';
+                            flagSrc = 'https://i.etsystatic.com/32106414/r/il/0d5ad8/4627120014/il_fullxfull.4627120014_4woj.jpg'; // IMPORTANT: Mettez votre chemin réel ici
+                        } else {
+                            // Fallback au français si une langue inconnue est passée
+                            desktopText = 'FR';
+                            mobileText = 'Langue: FR';
+                            flagSrc = 'https://i.etsystatic.com/32106414/r/il/0d5ad8/4627120014/il_fullxfull.4627120014_4woj.jpg';
+                        }
+
+                        // Mettre à jour le bouton de langue desktop
+                        if (langDropdownButton) {
+                            langDropdownButton.innerHTML = `
+                                <img src="${flagSrc}" alt="${selectedLang.toUpperCase()} Flag" class="w-5 h-5 mr-2 rounded-full border border-gray-300">
+                                ${desktopText} <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                            `;
+                        }
+                        // Mettre à jour le bouton de langue mobile
+                        if (mobileLangDropdownButton) {
+                            mobileLangDropdownButton.innerHTML = `
+                                <img src="${flagSrc}" alt="${selectedLang.toUpperCase()} Flag" class="w-5 h-5 mr-2 rounded-full border border-gray-300">
+                                ${mobileText} <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                            `;
+                        }
+                        
+                        console.log(`Language set to: ${selectedLang}`);
+                    }
+
+                    // Fonction générique pour basculer la visibilité d'un menu et son aria-expanded
+                    function toggleDropdown(button, menu) {
+                        if (!button || !menu) { // S'assurer que les éléments existent
+                            console.warn("Attempted to toggle dropdown with missing button or menu element.");
+                            return;
+                        }
+
+                        const isHidden = menu.classList.contains('hidden');
+                        if (isHidden) {
+                            menu.classList.remove('hidden');
+                            button.setAttribute('aria-expanded', 'true');
+                        } else {
+                            menu.classList.add('hidden');
+                            button.setAttribute('aria-expanded', 'false');
+                        }
+                    }
+
+                    // Fonction pour fermer tous les menus déroulants de langue, sauf celui potentiellement exclu
+                    function closeAllLanguageDropdownsExcept(excludedMenu = null) {
+                        if (langDropdownMenu && langDropdownMenu !== excludedMenu && !langDropdownMenu.classList.contains('hidden')) {
+                            langDropdownMenu.classList.add('hidden');
+                            if (langDropdownButton) langDropdownButton.setAttribute('aria-expanded', 'false');
+                        }
+                        if (mobileLangDropdownMenu && mobileLangDropdownMenu !== excludedMenu && !mobileLangDropdownMenu.classList.contains('hidden')) {
+                            mobileLangDropdownMenu.classList.add('hidden');
+                            if (mobileLangDropdownButton) mobileLangDropdownButton.setAttribute('aria-expanded', 'false');
+                        }
+                    }
+
+                    // --- Initialisation au chargement ---
+                    // Détecter la langue actuelle (par exemple, depuis l'URL, un cookie, ou par défaut)
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const initialLang = urlParams.get('lang') || localStorage.getItem('siteLang') || 'fr'; // 'fr' par défaut
+                    updateLanguageButtonDisplay(initialLang); // Définit la langue par défaut au chargement
+
+                    // --- Écouteurs d'événements ---
+
+                    // Desktop language dropdown
+                    if (langDropdownButton) { 
+                        langDropdownButton.addEventListener('click', function (event) {
+                            event.stopPropagation(); // Empêche la fermeture immédiate par le click document
+                            toggleDropdown(langDropdownButton, langDropdownMenu);
+                            // Fermer le menu mobile si ouvert
+                            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                                mobileMenu.classList.add('hidden');
+                                if (mobileMenuButton) mobileMenuButton.setAttribute('aria-expanded', 'false');
+                            }
+                            closeAllLanguageDropdownsExcept(langDropdownMenu); // Ferme l'autre dropdown de langue
+                        });
+                    }
+
+                    // Mobile language dropdown
+                    if (mobileLangDropdownButton) {
+                        mobileLangDropdownButton.addEventListener('click', function (event) {
+                            event.stopPropagation();
+                            toggleDropdown(mobileLangDropdownButton, mobileLangDropdownMenu);
+                            closeAllLanguageDropdownsExcept(mobileLangDropdownMenu); // Ferme l'autre dropdown de langue
+                        });
+                    }
+
+                    // Fermer les dropdowns lorsque l'on clique à l'extérieur
+                    document.addEventListener('click', function (event) {
+                        if (langDropdownButton && langDropdownMenu && !langDropdownButton.contains(event.target) && !langDropdownMenu.contains(event.target)) {
+                            langDropdownMenu.classList.add('hidden');
+                            if (langDropdownButton) langDropdownButton.setAttribute('aria-expanded', 'false');
+                        }
+                        if (mobileLangDropdownButton && mobileLangDropdownMenu && !mobileLangDropdownButton.contains(event.target) && !mobileLangDropdownMenu.contains(event.target)) {
                             mobileLangDropdownMenu.classList.add('hidden');
                             if (mobileLangDropdownButton) mobileLangDropdownButton.setAttribute('aria-expanded', 'false');
                         }
                     });
-                }
 
-                // Mobile language dropdown
-                if (mobileLangDropdownButton && mobileLangDropdownMenu) {
-                    mobileLangDropdownButton.addEventListener('click', function(event) {
-                        event.stopPropagation();
-                        toggleDropdown(mobileLangDropdownButton, mobileLangDropdownMenu);
-                        // S'assurer que l'autre dropdown de langue est fermé
-                        if (langDropdownMenu && !langDropdownMenu.classList.contains('hidden')) {
-                            langDropdownMenu.classList.add('hidden');
-                            if (langDropdownButton) langDropdownButton.setAttribute('aria-expanded', 'false');
-                        }
+                    // Gérer la sélection de langue
+                    document.querySelectorAll('#language-dropdown-menu a, #mobile-language-dropdown-menu a').forEach(item => {
+                        item.addEventListener('click', function (event) {
+                            event.preventDefault(); // Empêche le comportement par défaut du lien
+                            const selectedLang = this.getAttribute('data-lang');
+                            
+                            // Stocke la langue dans localStorage pour la persistance
+                            localStorage.setItem('siteLang', selectedLang);
+
+                            updateLanguageButtonDisplay(selectedLang); // Met à jour le texte et le drapeau du bouton
+                            closeAllLanguageDropdownsExcept(); // Ferme tous les dropdowns de langue après sélection
+
+                            // Logique de redirection pour appliquer la langue
+                            // Adaptez ces URLs à votre structure de site réelle !
+                            if (selectedLang === 'en') {
+                                window.location.href = '######'; // Exemple pour l'anglais
+                            } else if (selectedLang === 'fr') {
+                                window.location.href = '######'; // Exemple pour le français
+                            } else {
+                                // Recharger la page actuelle avec le paramètre de langue
+                                const currentUrl = new URL(window.location.href);
+                                currentUrl.searchParams.set('lang', selectedLang);
+                                window.location.href = currentUrl.toString();
+                            }
+                        });
                     });
-                }
 
-                // Fermer les dropdowns lorsque l'on clique à l'extérieur
-                document.addEventListener('click', function(event) {
-                    if (langDropdownButton && langDropdownMenu && !langDropdownButton.contains(event.target) && !langDropdownMenu.contains(event.target)) {
-                        langDropdownMenu.classList.add('hidden');
-                        langDropdownButton.setAttribute('aria-expanded', 'false');
+                    // Bouton du menu mobile (navigation principale)
+                    if (mobileMenuButton && mobileMenu) {
+                        mobileMenuButton.addEventListener('click', () => {
+                            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                            mobileMenu.classList.toggle('hidden');
+                            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                            closeAllLanguageDropdownsExcept(); // Fermer les dropdowns de langue si le menu mobile s'ouvre ou se ferme
+                        });
                     }
-                    if (mobileLangDropdownButton && mobileLangDropdownMenu && !mobileLangDropdownButton.contains(event.target) && !mobileLangDropdownMenu.contains(event.target)) {
-                        mobileLangDropdownMenu.classList.add('hidden');
-                        mobileLangDropdownButton.setAttribute('aria-expanded', 'false');
+
+                    // Fermer le menu mobile lors du clic sur un lien du menu mobile
+                    document.querySelectorAll('#mobile-menu a').forEach(link => {
+                        // Assurez-vous que ce n'est pas un lien de langue pour éviter la double gestion
+                        if (!link.closest('#mobile-language-dropdown-menu')) {
+                            link.addEventListener('click', () => {
+                                if (!mobileMenu.classList.contains('hidden')) {
+                                    mobileMenu.classList.add('hidden');
+                                    if (mobileMenuButton) mobileMenuButton.setAttribute('aria-expanded', 'false');
+                                }
+                                closeAllLanguageDropdownsExcept(); // S'assurer que les dropdowns de langue sont fermés
+                            });
+                        }
+                    });
+
+                    // Optionnel: Fermer le menu mobile et les dropdowns de langue si la fenêtre est redimensionnée (desktop)
+                    window.addEventListener('resize', function() {
+                        if (window.innerWidth >= 768) { // Supposons 768px pour "md" dans Tailwind
+                            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                                mobileMenu.classList.add('hidden');
+                                if (mobileMenuButton) mobileMenuButton.setAttribute('aria-expanded', 'false');
+                            }
+                            closeAllLanguageDropdownsExcept(); // Ferme les dropdowns de langue
+                        }
+                    });
+
+                    // 2. Scroll animation (Intersection Observer) - Votre code existant pour le défilement
+                    const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                            }
+                        });
+                    }, {
+                        threshold: 0.1 // L'élément devient visible quand 10% de celui-ci est dans le viewport
+                    });
+
+                    animateElements.forEach(element => {
+                        observer.observe(element);
+                    });
+
+                    // 3. Smooth scrolling for anchor links - Votre code existant pour le défilement doux
+                    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                        anchor.addEventListener('click', function(e) {
+                            e.preventDefault(); // Empêche le comportement de saut par défaut
+
+                            const targetId = this.getAttribute('href');
+                            const targetElement = document.querySelector(targetId);
+
+                            if (targetElement) {
+                                window.scrollTo({
+                                    top: targetElement.offsetTop - 80, // Ajustez la valeur (80px ici) si votre en-tête fixe a une hauteur différente
+                                    behavior: 'smooth' // Défilement doux
+                                });
+                            }
+
+                            // Ferme le menu mobile si ouvert après avoir cliqué sur un lien
+                            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                                mobileMenu.classList.add('hidden');
+                                mobileMenuButton.setAttribute('aria-expanded', 'false');
+                            }
+                            closeAllLanguageDropdownsExcept(); // S'assurer que les dropdowns de langue sont fermés
+                        });
+                    });
+
+                    // 4. Initialize particles.js - Votre code existant pour particles.js
+                    if (typeof particlesJS !== 'undefined') {
+                        particlesJS('particles-js', {
+                            "particles": {
+                                "number": {
+                                    "value": 80,
+                                    "density": {
+                                        "enable": true,
+                                        "value_area": 800
+                                    }
+                                },
+                                "color": {
+                                    "value": "#3b82f6"
+                                },
+                                "shape": {
+                                    "type": "circle",
+                                    "stroke": {
+                                        "width": 0,
+                                        "color": "#EC8208FF"
+                                    },
+                                    "polygon": {
+                                        "nb_sides": 5
+                                    }
+                                },
+                                "opacity": {
+                                    "value": 0.3,
+                                    "random": false,
+                                    "anim": {
+                                        "enable": false,
+                                        "speed": 1,
+                                        "opacity_min": 0.1,
+                                        "sync": false
+                                    }
+                                },
+                                "size": {
+                                    "value": 3,
+                                    "random": true,
+                                    "anim": {
+                                        "enable": false,
+                                        "speed": 40,
+                                        "size_min": 0.1,
+                                        "sync": false
+                                    }
+                                },
+                                "line_linked": {
+                                    "enable": true,
+                                    "distance": 150,
+                                    "color": "#3b82f6",
+                                    "opacity": 0.2,
+                                    "width": 1
+                                },
+                                "move": {
+                                    "enable": true,
+                                    "speed": 2,
+                                    "direction": "none",
+                                    "random": false,
+                                    "straight": false,
+                                    "out_mode": "out",
+                                    "bounce": false,
+                                    "attract": {
+                                        "enable": false,
+                                        "rotateX": 600,
+                                        "rotateY": 1200
+                                    }
+                                }
+                            },
+                            "interactivity": {
+                                "detect_on": "canvas",
+                                "events": {
+                                    "onhover": {
+                                        "enable": true,
+                                        "mode": "grab"
+                                    },
+                                    "onclick": {
+                                        "enable": true,
+                                        "mode": "push"
+                                    },
+                                    "resize": true
+                                },
+                                "modes": {
+                                    "grab": {
+                                        "distance": 140,
+                                        "line_linked": {
+                                            "opacity": 1
+                                        }
+                                    },
+                                    "bubble": {
+                                        "distance": 400,
+                                        "size": 40,
+                                        "duration": 2,
+                                        "opacity": 8,
+                                        "speed": 3
+                                    },
+                                    "repulse": {
+                                        "distance": 200,
+                                        "duration": 0.4
+                                    },
+                                    "push": {
+                                        "particles_nb": 4
+                                    },
+                                    "remove": {
+                                        "particles_nb": 2
+                                    }
+                                }
+                            },
+                            "retina_detect": true
+                        });
+                    }
+
+                    // 5. Popup politique/conditions (utilisation de JS natif pour vérifier le texte du lien)
+                    document.querySelectorAll('a').forEach(link => {
+                        link.addEventListener('click', function(e) {
+                            if (this.textContent.includes('Politique') || this.textContent.includes('Conditions')) {
+                                e.preventDefault();
+                                const policyModal = document.getElementById('policyModal');
+                                if (policyModal) {
+                                    policyModal.classList.remove('hidden');
+                                }
+                            }
+                        });
+                    });
+
+                    const closePolicyButton = document.getElementById('closePolicy');
+                    if (closePolicyButton) {
+                        closePolicyButton.onclick = () => {
+                            const policyModal = document.getElementById('policyModal');
+                            if (policyModal) {
+                                policyModal.classList.add('hidden');
+                            }
+                        }
+                    }
+
+                    // 6. Ouvrir la modale de politique (exemple, si vous avez un bouton dédié)
+                    const openPolicyButton = document.getElementById('openPolicy');
+                    if (openPolicyButton) {
+                        openPolicyButton.addEventListener('click', () => {
+                            const policyModal = document.getElementById('policyModal');
+                            if (policyModal) {
+                                policyModal.classList.remove('hidden');
+                            }
+                        });
                     }
                 });
-
-                // Gérer la sélection de langue
-                document.querySelectorAll('#language-dropdown-menu a, #mobile-language-dropdown-menu a').forEach(item => {
-                    item.addEventListener('click', function(event) {
-                        event.preventDefault(); // Empêche le comportement par défaut du lien
-                        const selectedLang = this.getAttribute('data-lang');
-                        updateLanguageButtonText(selectedLang); // Met à jour le texte du bouton
-                        closeAllDropdowns(); // Ferme tous les dropdowns de langue
-
-                        // Redirect only if English is selected
-                        if (selectedLang === 'en') {
-                            window.location.href = this.getAttribute('href'); // Use the href from the clicked link
-                        }
-                    });
-                });
-
-                // Bouton du menu mobile
-                if (mobileMenuButton && mobileMenu) {
-                    mobileMenuButton.addEventListener('click', () => {
-                        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-                        mobileMenu.classList.toggle('hidden');
-                        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-                        // Fermer les dropdowns de langue si le menu mobile s'ouvre ou se ferme
-                        closeAllDropdowns();
-                    });
-                }
-
-                // Fermer le menu mobile lors du clic sur un lien du menu mobile
-                document.querySelectorAll('#mobile-menu a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        if (!mobileMenu.classList.contains('hidden')) {
-                            mobileMenu.classList.add('hidden');
-                            if (mobileMenuButton) mobileMenuButton.setAttribute('aria-expanded', 'false');
-                        }
-                        closeAllDropdowns(); // S'assurer que les dropdowns de langue sont fermés
-                    });
-                });
-            });
-        </script>
+            </script>
     </nav>
     <!-- <nav class="fixed w-full bg-white/90 backdrop-blur shadow-lg z-40 border-b border-blue-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -3056,22 +3278,45 @@
     </script>
 
 <!-- Menu responsif avec mobile nouvelle version su script  -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', function() {
         // 1. Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        // Vérifie si les éléments existent avant d'ajouter des écouteurs
         if (mobileMenuButton && mobileMenu) {
             mobileMenuButton.addEventListener('click', function() {
                 mobileMenu.classList.toggle('hidden');
+                // Optionnel : Basculer un attribut ARIA pour l'accessibilité
+                const isHidden = mobileMenu.classList.contains('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', !isHidden);
+                mobileMenu.setAttribute('aria-hidden', isHidden);
+            });
+
+            // Fermer le menu si on clique en dehors (pour mobile)
+            document.addEventListener('click', function(event) {
+                if (!mobileMenu.classList.contains('hidden') && 
+                    !mobileMenu.contains(event.target) && 
+                    !mobileMenuButton.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    mobileMenu.setAttribute('aria-hidden', 'true');
+                }
+            });
+
+            // Fermer le menu si la fenêtre est redimensionnée (ex: passage mobile -> desktop)
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 768) { // Supposons 768px pour "md" dans Tailwind
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    mobileMenu.setAttribute('aria-hidden', 'true');
+                }
             });
         }
 
         // 2. Scroll animation (Intersection Observer)
         const animateElements = document.querySelectorAll('.animate-on-scroll');
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -3081,36 +3326,36 @@
         }, {
             threshold: 0.1 // L'élément devient visible quand 10% de celui-ci est dans le viewport
         });
-        
+
         animateElements.forEach(element => {
             observer.observe(element);
         });
-        
+
         // 3. Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault(); // Empêche le comportement de saut par défaut
-                
+
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                
+
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80, // Ajustez la valeur (80px ici) si votre en-tête fixe a une hauteur différente
                         behavior: 'smooth' // Défilement doux
                     });
                 }
-                
+
                 // Ferme le menu mobile si ouvert après avoir cliqué sur un lien
-                // mobileMenu est défini plus haut dans le scope de DOMContentLoaded
-                if (mobileMenu && !mobileMenu.classList.contains('hidden')) { 
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                     mobileMenu.classList.add('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    mobileMenu.setAttribute('aria-hidden', 'true');
                 }
             });
         });
-        
+
         // 4. Initialize particles.js
-        // Vérifie si la librairie particlesJS est chargée avant d'essayer de l'initialiser
         if (typeof particlesJS !== 'undefined') {
             particlesJS('particles-js', {
                 "particles": {
@@ -3218,16 +3463,14 @@
                 "retina_detect": true
             });
         }
-        
+
         // 5. Popup politique/conditions (utilisation de JS natif pour vérifier le texte du lien)
-        // Cela sélectionne tous les liens <a>, puis filtre en fonction de leur contenu textuel.
-        // C'est plus robuste que de s'appuyer sur le sélecteur jQuery :contains avec querySelectorAll.
-        document.querySelectorAll('a').forEach(link => { 
+        document.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function(e) {
                 if (this.textContent.includes('Politique') || this.textContent.includes('Conditions')) {
                     e.preventDefault();
                     const policyModal = document.getElementById('policyModal');
-                    if (policyModal) { // Vérifie si la modale existe
+                    if (policyModal) {
                         policyModal.classList.remove('hidden');
                     }
                 }
@@ -3235,27 +3478,27 @@
         });
 
         const closePolicyButton = document.getElementById('closePolicy');
-        if (closePolicyButton) { // Vérifie si le bouton de fermeture existe
+        if (closePolicyButton) {
             closePolicyButton.onclick = () => {
                 const policyModal = document.getElementById('policyModal');
-                if (policyModal) { // Vérifie si la modale existe
+                if (policyModal) {
                     policyModal.classList.add('hidden');
                 }
             }
         }
-        
+
         // 6. Ouvrir la modale de politique (exemple, si vous avez un bouton dédié)
         const openPolicyButton = document.getElementById('openPolicy');
-        if (openPolicyButton) { // Vérifie si le bouton d'ouverture existe
+        if (openPolicyButton) {
             openPolicyButton.addEventListener('click', () => {
                 const policyModal = document.getElementById('policyModal');
-                if (policyModal) { // Vérifie si la modale existe
+                if (policyModal) {
                     policyModal.classList.remove('hidden');
                 }
             });
         }
     });
-    </script>
+</script> -->
 
 </body>
 
