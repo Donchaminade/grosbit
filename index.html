@@ -144,22 +144,22 @@
     }
 
     /* Pour les écrans mobiles (largeur max 767px) */
-    @media (max-width: 767px) { 
-        p {
-            /* On ne peut pas être "centré et justifié sans espaces blancs et sans coupures" en même temps. */
-            /* Choix 1 (Lisibilité & Absence de Coupure) : Centré */
-            text-align: center; 
-            /* Laissez 'word-break: normal;' et 'hyphens: none;' du style par défaut ci-dessus. */
-            /* Si un mot est trop long pour la ligne, il peut déborder ou forcer la ligne à s'étirer. */
-            
-            /* Si vous préférez une justification "propre" sur mobile (mais avec tirets): */
-            /* text-align: justify; */
-            /* hyphens: auto; */
-            /* -webkit-hyphens: auto; */
-            /* -ms-hyphens: auto; */
-            /* word-break: normal; */ /* Les tirets gèrent la coupure, pas le mot entier */
+        @media (max-width: 767px) { 
+            p {
+                /* On ne peut pas être "centré et justifié sans espaces blancs et sans coupures" en même temps. */
+                /* Choix 1 (Lisibilité & Absence de Coupure) : Centré */
+                text-align: justify; /* Justifié pour une apparence propre */
+                /* Laissez 'word-break: normal;' et 'hyphens: none;' du style par défaut ci-dessus. */
+                /* Si un mot est trop long pour la ligne, il peut déborder ou forcer la ligne à s'étirer. */
+                
+                /* Si vous préférez une justification "propre" sur mobile (mais avec tirets): */
+                /* text-align: justify; */
+                /* hyphens: auto; */
+                /* -webkit-hyphens: auto; */
+                /* -ms-hyphens: auto; */
+                /* word-break: normal; */ /* Les tirets gèrent la coupure, pas le mot entier */
+            }
         }
-    }
 
     /* Pour les écrans desktop et plus grands (largeur min 768px) */
     @media (min-width: 768px) { 
