@@ -123,9 +123,319 @@
     </style>
 </head>
 <body class="bg-white text-gray-800">
-
-    
 <style>
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100vh;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Styles par défaut pour les paragraphes (s'appliquent partout sauf si écrasés par une media query) */
+    p {
+        /* Par défaut, on empêche les coupures arbitraires, les tirets sont gérés par les media queries */
+        word-break: normal;
+        overflow-wrap: normal; /* Ou 'anywhere' si vous voulez vraiment que les mots très longs se cassent sans tiret */
+        hyphens: none; /* Désactivé par défaut, activé si besoin dans les media queries */
+        -webkit-hyphens: none; /* Ajouté pour compatibilité Safari iOS */
+        text-align: left;
+        
+        /* Pour le moment, pas d'alignement global ici, car il sera défini par media query */
+    }
+
+    /* Pour les écrans mobiles (largeur max 767px) */
+        @media (max-width: 767px) { 
+            p {
+                /* On ne peut pas être "centré et justifié sans espaces blancs et sans coupures" en même temps. */
+                /* Choix 1 (Lisibilité & Absence de Coupure) : Centré */
+                text-align: normal; /* Justifié pour une apparence propre */
+                /* Laissez 'word-break: normal;' et 'hyphens: none;' du style par défaut ci-dessus. */
+                /* Si un mot est trop long pour la ligne, il peut déborder ou forcer la ligne à s'étirer. */
+                
+                /* Si vous préférez une justification "propre" sur mobile (mais avec tirets): */
+                /* text-align: justify; */
+                /* hyphens: auto; */
+                /* -webkit-hyphens: auto; */
+                /* -ms-hyphens: auto; */
+                /* word-break: normal; */ /* Les tirets gèrent la coupure, pas le mot entier */
+            }
+        }
+
+    /* Pour les écrans desktop et plus grands (largeur min 768px) */
+    @media (min-width: 768px) { 
+        p {
+            text-align: normal;
+            text-justify: inter-word; /* Force l'ajustement entre les mots */
+            
+            /* Pour minimiser les espaces blancs avec la justification, vous DEVEZ autoriser les tirets. */
+            /* Si vous refusez 'hyphens: auto;', vous aurez des espaces plus prononcés. */
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            
+            word-break: normal; /* Empêche les coupures arbitraires du mot, laisse les tirets gérer */
+            overflow-wrap: normal;
+        }
+    }
+
+    /* Ajoutez de l'espacement entre les mots si vous le souhaitez (en plus de l'alignement) */
+    /* Attention : cela affectera *tous* les mots, uniformément. */
+    /* p {
+        word-spacing: 0.05em; 
+    } */
+
+    /* Le reste de votre CSS */
+    /* General Enhancements & Responsive Adjustments */
+    #home {
+        padding-top: 2rem; /* py-16 */
+        padding-bottom: 2rem; /* py-16 */
+    }
+
+    @media (min-width: 640px) { /* sm */
+        #home {
+            padding-top: 5rem; /* sm:py-20 */
+            padding-bottom: 5rem; /* sm:py-20 */
+        }
+    }
+
+    @media (min-width: 768px) { /* md */
+        #home {
+            padding-top: 6rem; /* md:py-24 */
+            padding-bottom: 6rem; /* md:py-24 */
+        }
+    }
+
+    @media (min-width: 1024px) { /* lg */
+        #home {
+            padding-top: 7rem; /* lg:py-28 */
+            padding-bottom: 7rem; /* lg:py-28 */
+        }
+    }
+
+    /* Styles pour le conteneur des particules */
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: transparent; 
+        z-index: 0; 
+        pointer-events: none; 
+        overflow: hidden; 
+    }
+    .particle {
+        position: absolute;
+        background-color: rgb(255, 137, 3);
+        border-radius: 50%;
+        opacity: 0;
+    }
+
+    /* Keyframe pour l'animation d'apparition/disparition des particules */
+    @keyframes fadeInOut {
+        0% { opacity: 0; }
+        20% { opacity: 0.6; }
+        80% { opacity: 0.6; }
+        100% { opacity: 0; }
+    }
+
+    /* Glass Effect for the left panel */
+    .glass-effect {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+
+    /* Glass Effect for the text (Title + Paragraph) */
+    .glass-effect-text {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+
+    /* Animations */
+    @keyframes gradient-text {
+        0% { background-position: 0% 50;}
+        100% { background-position: 100% 50;}
+    }
+    .animate-gradient-text {
+        background-size: 200% 200%;
+        animation: gradient-text 3s linear infinite alternate;
+    }
+    @keyframes fade-in {
+        from { opacity: 0; transform: translateY(30px);}
+        to { opacity: 1; transform: translateY(0);}
+    }
+    .animate-fade-in { animation: fade-in 1s 0.2s both;}
+    .animate-fade-in-delay { animation: fade-in 1s 0.5s both;}
+    .animate-fade-in-up { animation: fade-in 1s both;} 
+    .animate-fade-in-up:nth-child(1) { animation-delay: 0.8s; } 
+    .animate-fade-in-up:nth-child(2) { animation-delay: 0.9s; }
+    .animate-fade-in-up:nth-child(3) { animation-delay: 1.0s; }
+    .animate-fade-in-up:nth-child(4) { animation-delay: 1.1s; }
+    .animate-fade-in-up:nth-child(5) { animation-delay: 1.2s; }
+    .animate-fade-in-up2 { animation: fade-in 1s 1.3s both;} 
+
+    @keyframes pulse-slow {
+        0%,100% { transform: scale(1);}
+        50% { transform: scale(1.08);}
+    }
+    .animate-pulse-slow { animation: pulse-slow 6s infinite;}
+    @keyframes pulse-slow2 {
+        0%,100% { transform: scale(1);}
+        50% { transform: scale(1.12);}
+    }
+    .animate-pulse-slow2 { animation: pulse-slow2 8s infinite;}
+    @keyframes float {
+        0%,100% { transform: translateY(0) translateX(-50%) translateY(-50%);}
+        50% { transform: translateY(-30px) translateX(-50%) translateY(-50%);}
+    }
+    .animate-float { animation: float 7s ease-in-out infinite;}
+    @keyframes spin-slow {
+        0% { transform: rotate(0deg);}
+        100% { transform: rotate(360deg);}
+    }
+    .animate-spin-slow { animation: spin-slow 18s linear infinite;}
+
+    /* NOUVELLES ANIMATIONS DES BULLES */
+    @keyframes bubble-float-1 {
+        0%, 100% { transform: translate(0, 0) scale(1);}
+        30% { transform: translate(20px, 50px) scale(1.05);}
+        70% { transform: translate(-30px, -40px) scale(0.95);}
+    }
+    .animate-bubble-1 {
+        animation: bubble-float-1 10s ease-in-out infinite alternate;
+    }
+
+    @keyframes bubble-float-2 {
+        0%, 100% { transform: translate(0, 0) scale(1);}
+        40% { transform: translate(-50px, 30px) scale(0.9);}
+        80% { transform: translate(40px, -20px) scale(1.1);}
+    }
+    .animate-bubble-2 {
+        animation: bubble-float-2 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes bubble-float-3 {
+        0%, 100% { transform: translate(0, 0) scale(1);}
+        25% { transform: translate(30px, -60px) scale(1.03);}
+        65% { transform: translate(-20px, 70px) scale(0.97);}
+    }
+    .animate-bubble-3 {
+        animation: bubble-float-3 9s ease-in-out infinite alternate;
+    }
+
+    /* Carousel 2D Specific Styles */
+    .carousel-2d-slide {
+        box-shadow: 0 10px 32px 0 rgba(2,33,87,0.10), 0 2px 4px 0 rgba(0,0,0,0.04);
+        background: rgba(255,255,255,0.95); 
+        flex-shrink: 0;
+    }
+
+    /* Adjustments for mobile (max-width: 767px) */
+    @media (max-width: 767px) {
+        #home h1 {
+            font-size: 2rem; 
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            text-align: center; /* Titres centrés sur mobile */
+            word-break: normal; /* Pas de coupure arbitraire */
+            overflow-wrap: normal;
+            hyphens: none; /* Pas de tirets */
+            /* Attention : un mot très long va déborder. */
+        }
+        #home h1 span.block {
+            font-size: 1.8rem;
+            line-height: 1.2;
+            text-align: center;
+            word-break: normal;
+            overflow-wrap: normal;
+            hyphens: none;
+            -webkit-hyphens: none;
+        }
+        /* Ajustez les tailles de police pour la lisibilité sur mobile */
+        #home p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            text-align: center; /* Paragraphes centrés sur mobile */
+            word-break: normal;
+            overflow-wrap: normal;
+            hyphens: none;
+            /* Attention : un mot très long va déborder. */
+        }
+        #hero-2d-carousel {
+            height: 350px;
+            max-width: 100%;
+        }
+        #hero-2d-carousel .carousel-2d-slide img {
+             height: 100%;
+             max-height: 220px;
+             object-fit: contain;
+        }
+        .carousel-2d-slide h3 {
+            font-size: 1.15rem; 
+            text-align: center; /* Titres de carrousel centrés sur mobile */
+            word-break: normal;
+            overflow-wrap: normal;
+            hyphens: none;
+        }
+        .carousel-2d-slide p {
+            font-size: 0.85rem; 
+            text-align: center; /* Texte de carrousel centré sur mobile */
+            word-break: normal;
+            overflow-wrap: normal;
+            hyphens: none;
+        }
+
+        /* Adjust button sizes for mobile */
+        .px-8.py-3 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-top: 0.65rem;
+            padding-bottom: 0.65rem;
+            font-size: 0.95rem;
+        }
+
+        /* Center buttons on mobile */
+        .flex-col.sm:flex-row {
+            align-items: center;
+        }
+
+        /* Center list items on mobile too */
+        ul.space-y-4 li {
+            justify-content: center;
+            text-align: center;
+        }
+    }
+
+    /* Ajout de styles pour les boutons de navigation du carrousel */
+    #carousel-2d-prev, #carousel-2d-next {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: rgba(2, 33, 87, 0.7);
+        color: white;
+        font-size: 1.5rem;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    #carousel-2d-prev:hover, #carousel-2d-next:hover {
+        background-color: rgba(255, 102, 0, 0.7);
+        transform: scale(1.1);
+    }
+</style>
+    
+<!-- <style>
     body {
         margin: 0;
         padding: 0;
@@ -416,7 +726,7 @@
         background-color: rgba(255, 102, 0, 0.7);
         transform: scale(1.1);
     }
-</style>
+</style> -->
     
 
 
