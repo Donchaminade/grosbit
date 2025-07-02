@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GROSBIT - Solutions Informatiques Intégrées</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -123,7 +123,735 @@
     </style>
 </head>
 <body class="bg-white text-gray-800">
+
+
+
 <style>
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100vh;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Styles par défaut pour les paragraphes (s'appliquent partout sauf si écrasés par une media query) */
+    p {
+         /* Empêche les coupures arbitraires des mots */
+         /* Permet aux mots longs de se couper si nécessaire pour éviter le débordement */
+        /* Active les tirets automatiques pour une meilleure justification */
+         /* Compatibilité IE/Edge */
+        text-align: normal; /* Alignement par défaut, ajusté par media query */
+    }
+
+    @media (max-width: 320px) { /* Très petits écrans, typiques des montres (ex: Apple Watch, Galaxy Watch) */
+        body {
+            font-size: 0.75rem; /* Taille de police de base très petite pour la lisibilité */
+            padding: 0.3rem; /* Réduire l'espacement global */
+            min-height: auto; /* Laisser la hauteur s'adapter au contenu sur montre */
+        }
+
+        /* Masquer les éléments non essentiels ou lourds */
+        #particles-js, /* Les particules sont trop gourmandes et inutiles sur montre */
+        .animate-gradient-text, 
+        .animate-fade-in-delay, 
+        .animate-pulse-slow,
+        .animate-pulse-slow2,
+        .animate-float, 
+        .animate-spin-slow,
+        .animate-bubble-1, 
+        .animate-bubble-2, 
+        .animate-bubble-3, /* Toutes les animations sont désactivées */
+        #hero-2d-carousel, /* Le carrousel est trop complexe pour une montre */
+        #carousel-2d-prev, 
+        #carousel-2d-next /* Les boutons de navigation du carrousel */
+        {
+            display: none !important; /* Force la désactivation pour ces tailles */
+        }
+
+        /* Réajustement des marges et paddings pour la section home */
+        
+        p {
+            font-size: 0.7rem !important; /* Corps de texte très petit et lisible */
+            line-height: 1.4;
+            text-align: center; /* Paragraphes centrés pour la lisibilité */
+            hyphens: none; /* Pas de tirets sur des lignes très courtes */
+             /* Important pour éviter le débordement */
+        }
+        
+        /* Les titres h3 et paragraphes du carrousel n'ont pas besoin d'être stylisés ici s'ils sont désactivés. */
+        /* Si vous les réactivez pour une version très simplifiée, ajustez-les ici. */
+
+        /* Ajustez les tailles de boutons pour montre */
+        .px-8.py-3 {
+            padding-left: 0.8rem;
+            padding-right: 0.8rem;
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            font-size: 0.8rem; /* Petits boutons */
+            margin: 0.2rem auto; /* Centrez et réduisez les marges */
+            display: block; /* S'assurer qu'ils prennent toute la largeur nécessaire */
+            width: fit-content; /* S'adapte au contenu du bouton */
+        }
+
+        /* Centrez les groupes de boutons sur mobile */
+        .flex-col.sm:flex-row {
+            flex-direction: column; /* Force la colonne si la ligne pose problème */
+            align-items: center;
+            gap: 0.5rem; /* Petit espace entre les boutons */
+        }
+
+        /* Centrez les éléments de liste sur mobile */
+        ul.space-y-4 li {
+            justify-content: center;
+            text-align: center;
+            padding: 0.1rem 0; /* Réduire le padding */
+        }
+
+        /* Effets de verre : Simplifier ou désactiver pour la performance */
+        .glass-effect, .glass-effect-text {
+            background: rgba(255, 255, 255, 0.05); /* Moins visible */
+            border: none; /* Pas de bordure */
+            box-shadow: none; /* Pas d'ombre */
+            backdrop-filter: none; /* Désactiver le flou pour la performance */
+            -webkit-backdrop-filter: none;
+        }
+    }
+
+    /* * Styles pour les écrans mobiles (smartphones, largeur max 767px)
+     * Ceci inclut toujours les styles précédemment définis.
+     */
+    @media (max-width: 767px) {
+        /* Paragraphes sur mobile */
+        p {
+            text-align: left; /* Souvent plus lisible sur mobile que justifié */
+            font-size: 0.9rem; /* Taille de police légèrement plus petite */
+            line-height: 1.5; /* Espacement des lignes pour la lisibilité */
+            hyphens: none; /* Désactiver les tirets sur mobile si vous préférez des lignes plus courtes sans coupure de mots */
+             /* Assure que les mots longs ne débordent pas */
+        }
+        
+        /* Titres h1 sur mobile */
+        #home h1 {
+            font-size: 2.2rem; /* Taille de police ajustée */
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            text-align: center; /* Titres centrés sur mobile */
+            hyphens: none; /* Pas de tirets dans les titres */
+           
+        }
+        #home h1 span.block {
+            font-size: 1.9rem; /* Taille de police ajustée */
+            line-height: 1.2;
+            text-align: center;
+            hyphens: none;
+            
+        }
+
+        /* Titres h3 dans le carrousel sur mobile */
+        .carousel-2d-slide h3 {
+            font-size: 1.15rem;
+            text-align: center;
+            hyphens: none;
+            overflow-wrap: break-word;
+        }
+        /* Texte de carrousel sur mobile */
+        .carousel-2d-slide p {
+            font-size: 0.85rem;
+            text-align: center;
+            hyphens: none;
+            overflow-wrap: break-word;
+        }
+
+        /* Ajustez les tailles de boutons pour mobile */
+        .px-8.py-3 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-top: 0.65rem;
+            padding-bottom: 0.65rem;
+            font-size: 0.95rem;
+        }
+
+        /* Centrez les boutons sur mobile */
+        .flex-col.sm:flex-row {
+            align-items: center;
+        }
+
+        /* Centrez les éléments de liste sur mobile */
+        ul.space-y-4 li {
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Ajustements du carrousel sur mobile */
+        #hero-2d-carousel {
+            height: 350px;
+            max-width: 100%;
+        }
+        #hero-2d-carousel .carousel-2d-slide img {
+             height: 100%;
+             max-height: 220px;
+             object-fit: contain;
+        }
+    }
+
+    /* * Styles pour les écrans desktop et plus grands (largeur min 768px)
+     * Appliqueront aux tablettes en mode paysage, laptops, et desktops.
+     */
+    @media (min-width: 768px) {
+        /* Paragraphes sur desktop */
+        p {
+            text-align: normal; /* Justifié pour une apparence propre sur grand écran */
+            ; /* Optimise l'espacement entre les mots */
+             /* Ou 'break-word' si vous voulez vraiment que les mots très longs se coupent sans tiret, mais c'est moins esthétique */
+        }
+        
+        /* Titres h1 sur desktop */
+       
+
+        /* Titres h3 dans le carrousel sur desktop */
+        .carousel-2d-slide h3 {
+            font-size: 1.5rem;
+            text-align: left;
+            
+        }
+        /* Texte de carrousel sur desktop */
+        .carousel-2d-slide p {
+            font-size: 1rem;
+            text-align: left;
+            
+        }
+
+        /* Ajustements d'espacement pour les grands écrans */
+        #home {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+    }
+
+    /* * Styles pour les très grands écrans (largeur min 1024px)
+     * Pour les moniteurs de bureau larges.
+     */
+    @media (min-width: 1024px) { /* lg */
+        #home {
+            padding-top: 7rem; /* lg:py-28 */
+            padding-bottom: 7rem; /* lg:py-28 */
+        }
+        #home h1 {
+            font-size: 4rem; /* Encore plus grand pour les très grands écrans */
+        }
+        #home h1 span.block {
+            font-size: 3.5rem;
+        }
+    }
+
+    /* Les styles généraux et les animations qui doivent rester actives sur les grands écrans */
+    /* General Enhancements & Responsive Adjustments */
+    #home {
+        padding-top: 2rem; /* py-16 */
+        padding-bottom: 2rem; /* py-16 */
+    }
+
+    @media (min-width: 640px) { /* sm */
+        #home {
+            padding-top: 5rem; /* sm:py-20 */
+            padding-bottom: 5rem; /* sm:py-20 */
+        }
+    }
+
+    @media (min-width: 768px) { /* md */
+        #home {
+            padding-top: 6rem; /* md:py-24 */
+            padding-bottom: 6rem; /* md:py-24 */
+        }
+    }
+
+    /* Styles pour le conteneur des particules */
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: transparent; 
+        z-index: 0; 
+        pointer-events: none; 
+        overflow: hidden; 
+    }
+    .particle {
+        position: absolute;
+        background-color: rgb(255, 137, 3);
+        border-radius: 50%;
+        opacity: 0;
+    }
+
+    /* Keyframe pour l'animation d'apparition/disparition des particules */
+    @keyframes fadeInOut {
+        0% { opacity: 0; }
+        20% { opacity: 0.6; }
+        80% { opacity: 0.6; }
+        100% { opacity: 0; }
+    }
+
+    /* Glass Effect for the left panel */
+    .glass-effect {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+
+    /* Glass Effect for the text (Title + Paragraph) */
+    .glass-effect-text {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+
+    /* Animations */
+    @keyframes gradient-text {
+        0% { background-position: 0% 50;}
+        100% { background-position: 100% 50;}
+    }
+    .animate-gradient-text {
+        background-size: 200% 200%;
+        animation: gradient-text 3s linear infinite alternate;
+    }
+    @keyframes fade-in {
+        from { opacity: 0; transform: translateY(30px);}
+        to { opacity: 1; transform: translateY(0);}
+    }
+    .animate-fade-in { animation: fade-in 1s 0.2s both;}
+    .animate-fade-in-delay { animation: fade-in 1s 0.5s both;}
+    .animate-fade-in-up { animation: fade-in 1s both;} 
+    .animate-fade-in-up:nth-child(1) { animation-delay: 0.8s; } 
+    .animate-fade-in-up:nth-child(2) { animation-delay: 0.9s; }
+    .animate-fade-in-up:nth-child(3) { animation-delay: 1.0s; }
+    .animate-fade-in-up:nth-child(4) { animation-delay: 1.1s; }
+    .animate-fade-in-up:nth-child(5) { animation-delay: 1.2s; }
+    .animate-fade-in-up2 { animation: fade-in 1s 1.3s both;} 
+
+    @keyframes pulse-slow {
+        0%,100% { transform: scale(1);}
+        50% { transform: scale(1.08);}
+    }
+    .animate-pulse-slow { animation: pulse-slow 6s infinite;}
+    @keyframes pulse-slow2 {
+        0%,100% { transform: scale(1);}
+        50% { transform: scale(1.12);}
+    }
+    .animate-pulse-slow2 { animation: pulse-slow2 8s infinite;}
+    @keyframes float {
+        0%,100% { transform: translateY(0) translateX(-50%) translateY(-50%);}
+        50% { transform: translateY(-30px) translateX(-50%) translateY(-50%);}
+    }
+    .animate-float { animation: float 7s ease-in-out infinite;}
+    @keyframes spin-slow {
+        0% { transform: rotate(0deg);}
+        100% { transform: rotate(360deg);}
+    }
+    .animate-spin-slow { animation: spin-slow 18s linear infinite;}
+
+    /* NOUVELLES ANIMATIONS DES BULLES */
+    @keyframes bubble-float-1 {
+        0%, 100% { transform: translate(0, 0) scale(1);}
+        30% { transform: translate(20px, 50px) scale(1.05);}
+        70% { transform: translate(-30px, -40px) scale(0.95);}
+    }
+    .animate-bubble-1 {
+        animation: bubble-float-1 10s ease-in-out infinite alternate;
+    }
+
+    @keyframes bubble-float-2 {
+        0%, 100% { transform: translate(0, 0) scale(1);}
+        40% { transform: translate(-50px, 30px) scale(0.9);}
+        80% { transform: translate(40px, -20px) scale(1.1);}
+    }
+    .animate-bubble-2 {
+        animation: bubble-float-2 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes bubble-float-3 {
+        0%, 100% { transform: translate(0, 0) scale(1);}
+        25% { transform: translate(30px, -60px) scale(1.03);}
+        65% { transform: translate(-20px, 70px) scale(0.97);}
+    }
+    .animate-bubble-3 {
+        animation: bubble-float-3 9s ease-in-out infinite alternate;
+    }
+
+    /* Carousel 2D Specific Styles */
+    .carousel-2d-slide {
+        box-shadow: 0 10px 32px 0 rgba(2,33,87,0.10), 0 2px 4px 0 rgba(0,0,0,0.04);
+        background: rgba(255,255,255,0.95); 
+        flex-shrink: 0;
+    }
+
+    /* Ajout de styles pour les boutons de navigation du carrousel */
+    #carousel-2d-prev, #carousel-2d-next {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: rgba(2, 33, 87, 0.7);
+        color: white;
+        font-size: 1.5rem;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    #carousel-2d-prev:hover, #carousel-2d-next:hover {
+        background-color: rgba(255, 102, 0, 0.7);
+        transform: scale(1.1);
+    }
+</style>
+
+<!-- <style>
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100vh;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Styles par défaut pour les paragraphes (s'appliquent partout sauf si écrasés par une media query) */
+    p {
+        word-break: normal; /* Empêche les coupures arbitraires des mots */
+        overflow-wrap: break-word; /* Permet aux mots longs de se couper si nécessaire pour éviter le débordement */
+        hyphens: auto; /* Active les tirets automatiques pour une meilleure justification */
+        -webkit-hyphens: auto; /* Compatibilité Safari */
+        -ms-hyphens: auto; /* Compatibilité IE/Edge */
+        text-align: left; /* Alignement par défaut, ajusté par media query */
+    }
+
+    /* Styles par défaut pour les titres h1 et h3, pour éviter les répétitions */
+    h1, h3 {
+        word-break: normal;
+        overflow-wrap: break-word;
+        hyphens: none; /* Généralement, on ne veut pas de tirets dans les titres */
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        text-align: left; /* Alignement par défaut, ajusté par media query */
+    }
+
+    /* Pour les écrans mobiles (largeur max 767px) */
+    @media (max-width: 767px) {
+        /* Paragraphes sur mobile */
+        p {
+            text-align: left; /* Souvent plus lisible sur mobile que justifié */
+            font-size: 0.9rem; /* Taille de police légèrement plus petite */
+            line-height: 1.5; /* Espacement des lignes pour la lisibilité */
+            hyphens: none; /* Désactiver les tirets sur mobile si vous préférez des lignes plus courtes sans coupure de mots */
+            overflow-wrap: break-word; /* Assure que les mots longs ne débordent pas */
+        }
+        
+        /* Titres h1 sur mobile */
+        #home h1 {
+            font-size: 2.2rem; /* Taille de police ajustée */
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            text-align: center; /* Titres centrés sur mobile */
+            hyphens: none; /* Pas de tirets dans les titres */
+            overflow-wrap: break-word;
+        }
+        #home h1 span.block {
+            font-size: 1.9rem; /* Taille de police ajustée */
+            line-height: 1.2;
+            text-align: center;
+            hyphens: none;
+            overflow-wrap: break-word;
+        }
+
+        /* Titres h3 dans le carrousel sur mobile */
+        .carousel-2d-slide h3 {
+            font-size: 1.15rem;
+            text-align: center;
+            hyphens: none;
+            overflow-wrap: break-word;
+        }
+        /* Texte de carrousel sur mobile */
+        .carousel-2d-slide p {
+            font-size: 0.85rem;
+            text-align: center;
+            hyphens: none;
+            overflow-wrap: break-word;
+        }
+
+        /* Ajustez les tailles de boutons pour mobile */
+        .px-8.py-3 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-top: 0.65rem;
+            padding-bottom: 0.65rem;
+            font-size: 0.95rem;
+        }
+
+        /* Centrez les boutons sur mobile */
+        .flex-col.sm:flex-row {
+            align-items: center;
+        }
+
+        /* Centrez les éléments de liste sur mobile */
+        ul.space-y-4 li {
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Ajustements du carrousel sur mobile */
+        #hero-2d-carousel {
+            height: 350px;
+            max-width: 100%;
+        }
+        #hero-2d-carousel .carousel-2d-slide img {
+             height: 100%;
+             max-height: 220px;
+             object-fit: contain;
+        }
+    }
+
+    /* Pour les écrans desktop et plus grands (largeur min 768px) */
+    @media (min-width: 768px) {
+        /* Paragraphes sur desktop */
+        p {
+            text-align: justify; /* Justifié pour une apparence propre sur grand écran */
+            text-justify: inter-word; /* Optimise l'espacement entre les mots */
+            hyphens: auto; /* Active les tirets pour aider la justification et réduire les "rivières" d'espaces blancs */
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            word-break: normal; /* Laisse les tirets gérer la coupure */
+            overflow-wrap: normal; /* Ou 'break-word' si vous voulez vraiment que les mots très longs se coupent sans tiret, mais c'est moins esthétique */
+        }
+        
+        /* Titres h1 sur desktop */
+        #home h1 {
+            font-size: 3.5rem; /* Taille de police plus grande pour les grands écrans */
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            text-align: left; /* Ou centré si c'est le design désiré */
+            hyphens: none;
+        }
+        #home h1 span.block {
+            font-size: 3rem; /* Taille de police ajustée */
+            line-height: 1.2;
+            text-align: left;
+            hyphens: none;
+        }
+
+        /* Titres h3 dans le carrousel sur desktop */
+        .carousel-2d-slide h3 {
+            font-size: 1.5rem;
+            text-align: left;
+            hyphens: none;
+        }
+        /* Texte de carrousel sur desktop */
+        .carousel-2d-slide p {
+            font-size: 1rem;
+            text-align: left;
+            hyphens: auto; /* Peut-être utile pour les descriptions longues dans le carrousel */
+        }
+
+        /* Ajustements d'espacement pour les grands écrans */
+        #home {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+    }
+
+    @media (min-width: 1024px) { /* lg */
+        #home {
+            padding-top: 7rem; /* lg:py-28 */
+            padding-bottom: 7rem; /* lg:py-28 */
+        }
+        #home h1 {
+            font-size: 4rem; /* Encore plus grand pour les très grands écrans */
+        }
+        #home h1 span.block {
+            font-size: 3.5rem;
+        }
+    }
+
+    /* Le reste de votre CSS inchangé (animations, effets de verre, etc.) */
+    /* General Enhancements & Responsive Adjustments */
+    #home {
+        padding-top: 2rem; /* py-16 */
+        padding-bottom: 2rem; /* py-16 */
+    }
+
+    @media (min-width: 640px) { /* sm */
+        #home {
+            padding-top: 5rem; /* sm:py-20 */
+            padding-bottom: 5rem; /* sm:py-20 */
+        }
+    }
+
+    @media (min-width: 768px) { /* md */
+        #home {
+            padding-top: 6rem; /* md:py-24 */
+            padding-bottom: 6rem; /* md:py-24 */
+        }
+    }
+
+    @media (min-width: 1024px) { /* lg */
+        #home {
+            padding-top: 7rem; /* lg:py-28 */
+            padding-bottom: 7rem; /* lg:py-28 */
+        }
+    }
+
+    /* Styles pour le conteneur des particules */
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: transparent; 
+        z-index: 0; 
+        pointer-events: none; 
+        overflow: hidden; 
+    }
+    .particle {
+        position: absolute;
+        background-color: rgb(255, 137, 3);
+        border-radius: 50%;
+        opacity: 0;
+    }
+
+    /* Keyframe pour l'animation d'apparition/disparition des particules */
+    @keyframes fadeInOut {
+        0% { opacity: 0; }
+        20% { opacity: 0.6; }
+        80% { opacity: 0.6; }
+        100% { opacity: 0; }
+    }
+
+    /* Glass Effect for the left panel */
+    .glass-effect {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+
+    /* Glass Effect for the text (Title + Paragraph) */
+    .glass-effect-text {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+
+    /* Animations */
+    @keyframes gradient-text {
+        0% { background-position: 0% 50;}
+        100% { background-position: 100% 50;}
+    }
+    .animate-gradient-text {
+        background-size: 200% 200%;
+        animation: gradient-text 3s linear infinite alternate;
+    }
+    @keyframes fade-in {
+        from { opacity: 0; transform: translateY(30px);}
+        to { opacity: 1; transform: translateY(0);}
+    }
+    .animate-fade-in { animation: fade-in 1s 0.2s both;}
+    .animate-fade-in-delay { animation: fade-in 1s 0.5s both;}
+    .animate-fade-in-up { animation: fade-in 1s both;} 
+    .animate-fade-in-up:nth-child(1) { animation-delay: 0.8s; } 
+    .animate-fade-in-up:nth-child(2) { animation-delay: 0.9s; }
+    .animate-fade-in-up:nth-child(3) { animation-delay: 1.0s; }
+    .animate-fade-in-up:nth-child(4) { animation-delay: 1.1s; }
+    .animate-fade-in-up:nth-child(5) { animation-delay: 1.2s; }
+    .animate-fade-in-up2 { animation: fade-in 1s 1.3s both;} 
+
+    @keyframes pulse-slow {
+        0%,100% { transform: scale(1);}
+        50% { transform: scale(1.08);}
+    }
+    .animate-pulse-slow { animation: pulse-slow 6s infinite;}
+    @keyframes pulse-slow2 {
+        0%,100% { transform: scale(1);}
+        50% { transform: scale(1.12);}
+    }
+    .animate-pulse-slow2 { animation: pulse-slow2 8s infinite;}
+    @keyframes float {
+        0%,100% { transform: translateY(0) translateX(-50%) translateY(-50%);}
+        50% { transform: translateY(-30px) translateX(-50%) translateY(-50%);}
+    }
+    .animate-float { animation: float 7s ease-in-out infinite;}
+    @keyframes spin-slow {
+        0% { transform: rotate(0deg);}
+        100% { transform: rotate(360deg);}
+    }
+    .animate-spin-slow { animation: spin-slow 18s linear infinite;}
+
+    /* NOUVELLES ANIMATIONS DES BULLES */
+    @keyframes bubble-float-1 {
+        0%, 100% { transform: translate(0, 0) scale(1);}
+        30% { transform: translate(20px, 50px) scale(1.05);}
+        70% { transform: translate(-30px, -40px) scale(0.95);}
+    }
+    .animate-bubble-1 {
+        animation: bubble-float-1 10s ease-in-out infinite alternate;
+    }
+
+    @keyframes bubble-float-2 {
+        0%, 100% { transform: translate(0, 0) scale(1);}
+        40% { transform: translate(-50px, 30px) scale(0.9);}
+        80% { transform: translate(40px, -20px) scale(1.1);}
+    }
+    .animate-bubble-2 {
+        animation: bubble-float-2 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes bubble-float-3 {
+        0%, 100% { transform: translate(0, 0) scale(1);}
+        25% { transform: translate(30px, -60px) scale(1.03);}
+        65% { transform: translate(-20px, 70px) scale(0.97);}
+    }
+    .animate-bubble-3 {
+        animation: bubble-float-3 9s ease-in-out infinite alternate;
+    }
+
+    /* Carousel 2D Specific Styles */
+    .carousel-2d-slide {
+        box-shadow: 0 10px 32px 0 rgba(2,33,87,0.10), 0 2px 4px 0 rgba(0,0,0,0.04);
+        background: rgba(255,255,255,0.95); 
+        flex-shrink: 0;
+    }
+
+    /* Ajout de styles pour les boutons de navigation du carrousel */
+    #carousel-2d-prev, #carousel-2d-next {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: rgba(2, 33, 87, 0.7);
+        color: white;
+        font-size: 1.5rem;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    #carousel-2d-prev:hover, #carousel-2d-next:hover {
+        background-color: rgba(255, 102, 0, 0.7);
+        transform: scale(1.1);
+    }
+</style> -->
+
+<!-- <style>
     body {
         margin: 0;
         padding: 0;
@@ -433,7 +1161,7 @@
         background-color: rgba(255, 102, 0, 0.7);
         transform: scale(1.1);
     }
-</style>
+</style> -->
     
 <!-- <style>
     body {
@@ -741,15 +1469,15 @@
 
     <nav class="fixed w-full bg-white/90 backdrop-blur shadow-lg z-40 border-b border-blue-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center relative">
-                <a href="#home" class="flex items-center flex-shrink-0">
-                    <img src="logo.png" alt="Logo GROSBIT" class="h-56 w-auto mr-3 rounded-lg object-contain" style="max-height:224px; min-width:224px;">
+            <div class="flex justify-between h-20 items-center ">
+                <a href="#home" class="flex items-left flex-shrink-0">
+                    <img src="logo.png" alt="Logo GROSBIT" class="h-56 w-auto mr-3 rounded-lg object-contain align-left" style="max-height:224px; min-width:224px;">
                 </a>
 
                 <svg class="absolute -left-16 top-1/2 -translate-y-1/2 w-20 h-20 opacity-20 pointer-events-none hidden lg:block" viewBox="0 0 100 100">
                     </svg>
 
-                <div class="flex items-center space-x-4">
+                <div class="flex items-right space-x-4">
                     <div class="hidden md:flex space-x-2 items-center">
                         <a href="#home" class="nav-link font-bold text-gray-700 hover:text-blue-600 px-4 py-2 transition duration-300 relative group rounded-lg hover:bg-blue-50 flex items-center gap-2">
                             <i class="fas fa-home"></i>
@@ -1603,11 +2331,16 @@
             <span class="absolute bottom-[5%] left-[40%] w-[110px] h-[110px] rounded-full bg-blue-600 opacity-20 blur-3xl animate-bubble-3 delay-1s"></span>
         </div>
 
+        <!-- creer une espace en haut de la page -->
+        <div>
+            <br>
+            <br>
+        </div>
+
         <div class="relative z-10 w-full animate-on-scroll mb-12">
             <div class="glass-effect-text w-full px-4 sm:px-6 lg:px-8 py-8 rounded-none sm:py-10 md:py-12">
                 <h1 class="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight mb-6 text-white drop-shadow-lg text-center">
-                    <span class="block animate-gradient-text bg-gradient-to-r from-white via-white to-white bg-clip-text text-transparent">Solutions Informatiques</span>
-                    <span class="block animate-fade-in-delay text-orange-400">Intégrées</span>
+                    <span class="inline animate-gradient-text ">Solutions Informatiques</span><span class="block animate-fade-in-delay text-orange-400">Intégrées</span>
                 </h1>
                 <p class="text-base sm:text-lg md:text-xl text-white/90 animate-fade-in text-center max-w-4xl mx-auto">
                     <span class="font-bold text-orange-500">GROSBIT </span> vous accompagne dans la transformation digitale, la sécurité, la maintenance, la formation et la fourniture de matériels informatiques. Faites confiance à notre équipe pour des solutions sur mesure et un accompagnement de qualité.
@@ -1690,14 +2423,14 @@
                     alt="Services informatiques"
                     class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
                 </div>
-            <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
+            <!-- <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
                 <img src="/img/img1.png"
                     alt="Services informatiques"
                     class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
                 <div class="text-center">
-                    <!-- <p class="text-gray-700 text-sm sm:text-base">Solutions sur mesure pour votre entreprise.</p> -->
+                    <p class="text-gray-700 text-sm sm:text-base">Solutions sur mesure pour votre entreprise.</p>
                 </div>
-            </div>
+            </div> -->
             <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
                 <img src="/img/img2.png"
                     alt="Services informatiques"
@@ -1757,15 +2490,15 @@
                     <!-- <p class="text-gray-700 text-sm sm:text-base">Assistance technique et maintenance.</p> -->
                 </div>
             </div>
-            <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
+            <!-- <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
                 <img src="https://th.bing.com/th/id/OIP.iVDtxWF7fyswpJ-s1_xiUAHaEL?r=0&rs=1&pid=ImgDetMain"
                     alt="Développement Logiciel"
                     class="w-full h-full object-fill rounded-lg shadow-md mb-4"/>
                 <div class="text-center">
-                    <!-- <h3 class="font-bold text-lg sm:text-xl text-[#0949B8FF] mb-1">Développement Logiciel</h3>
-                    <p class="text-gray-700 text-sm sm:text-base">Applications personnalisées et performantes.</p> -->
+                    <h3 class="font-bold text-lg sm:text-xl text-[#0949B8FF] mb-1">Développement Logiciel</h3>
+                    <p class="text-gray-700 text-sm sm:text-base">Applications personnalisées et performantes.</p>
                 </div>
-            </div>
+            </div> -->
             <div class="carousel-2d-slide flex-none w-full h-full flex flex-col items-center justify-center p-4">
                 <img src="/img/gb4.png"
                     alt="Développement Logiciel"
@@ -3179,32 +3912,32 @@
         <div class="overflow-hidden relative">
             <div class="flex gap-8 items-center animate-scroll-ltr whitespace-nowrap">
                 <img src="https://atlantis.sgitogo.tg/assets/images/sgi-togo-login.png" alt="SGI TOGO" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
-                <!-- <img src="https://mms.businesswire.com/media/20191014005395/fr/749501/5/Hiperdist_logo.jpg?download=1" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0"> -->
+                <img src="https://waficapital.com/wp-content/uploads/2022/12/LOGO-WAFI-CAPITAL.jpg" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://www.togo-port.net/wp-content/uploads/2018/02/logo-port-autonome-lome.png" alt="PORT AUTONOME DE LOME" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
-                <img src="https://th.bing.com/th/id/OIP.j_uW4vnbfOT2gQs7a3X_NQHaHa?r=0&rs=1&pid=ImgDetMain" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <!-- <img src="https://th.bing.com/th/id/OIP.j_uW4vnbfOT2gQs7a3X_NQHaHa?r=0&rs=1&pid=ImgDetMain" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0"> -->
                 <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://atlantis.sgitogo.tg/assets/images/sgi-togo-login.png" alt="SGI TOGO" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
-                <!-- <img src="https://mms.businesswire.com/media/20191014005395/fr/749501/5/Hiperdist_logo.jpg?download=1" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0"> -->
+                <img src="https://waficapital.com/wp-content/uploads/2022/12/LOGO-WAFI-CAPITAL.jpg" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://www.togo-port.net/wp-content/uploads/2018/02/logo-port-autonome-lome.png" alt="PORT AUTONOME DE LOME" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
-                <img src="https://th.bing.com/th/id/OIP.j_uW4vnbfOT2gQs7a3X_NQHaHa?r=0&rs=1&pid=ImgDetMain" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <!-- <img src="https://th.bing.com/th/id/OIP.j_uW4vnbfOT2gQs7a3X_NQHaHa?r=0&rs=1&pid=ImgDetMain" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0"> -->
 
 
                 <img src="https://atlantis.sgitogo.tg/assets/images/sgi-togo-login.png" alt="SGI TOGO" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
-                <!-- <img src="https://mms.businesswire.com/media/20191014005395/fr/749501/5/Hiperdist_logo.jpg?download=1" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0"> -->
+                <img src="https://waficapital.com/wp-content/uploads/2022/12/LOGO-WAFI-CAPITAL.jpg" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://www.togo-port.net/wp-content/uploads/2018/02/logo-port-autonome-lome.png" alt="PORT AUTONOME DE LOME" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
-                <img src="https://th.bing.com/th/id/OIP.j_uW4vnbfOT2gQs7a3X_NQHaHa?r=0&rs=1&pid=ImgDetMain" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <!-- <img src="https://th.bing.com/th/id/OIP.j_uW4vnbfOT2gQs7a3X_NQHaHa?r=0&rs=1&pid=ImgDetMain" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0"> -->
                 <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://atlantis.sgitogo.tg/assets/images/sgi-togo-login.png" alt="SGI TOGO" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
-                <!-- <img src="https://mms.businesswire.com/media/20191014005395/fr/749501/5/Hiperdist_logo.jpg?download=1" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0"> -->
+                <img src="https://waficapital.com/wp-content/uploads/2022/12/LOGO-WAFI-CAPITAL.jpg" alt="WAFI CAPITAL" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://www.togo-port.net/wp-content/uploads/2018/02/logo-port-autonome-lome.png" alt="PORT AUTONOME DE LOME" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
             </div>
         </div>
     </div>
 
     <div class="mt-16 animate-on-scroll">
-        <h3 class="text-2xl font-bold text-center text-gray-800 mb-8"><span class="text-blue-600">Nos</span> Partenaires</h3>
+        <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">Nos <span class="text-blue-600"> Partenaires</span></h3>
         <p class="text-gray-600 text-center max-w-3xl mx-auto mb-8">
             <!-- Nous travaillons d'arrache-pied pour conclure de futurs partenariats avec CISCO, HP, LENOVO et DELL. -->
         </p>
@@ -3217,18 +3950,42 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Dell_logo_2016.svg/1200px-Dell_logo_2016.svg.png" alt="Dell" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://th.bing.com/th/id/R.b87ac350211b155c514dd4924630b9fe?rik=QvDrXv3gl9u5pQ&pid=ImgRaw&r=0" alt="MS" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://th.bing.com/th/id/R.6e9e4c7f46b3f020e63e7ba5d5bda3fe?rik=vcwPPUPt7Snltg&pid=ImgRaw&r=0" alt="HPE" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
-                <!-- <img src="https://th.bing.com/th/id/OIP.j_uW4vnbfOT2gQs7a3X_NQHaHa?r=0&rs=1&pid=ImgDetMain" alt="MC3" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0"> -->
+                <img src="https://th.bing.com/th/id/OIP.j_uW4vnbfOT2gQs7a3X_NQHaHa?r=0&rs=1&pid=ImgDetMain" alt="MC3" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://mms.businesswire.com/media/20191014005395/fr/749501/5/Hiperdist_logo.jpg?download=1" alt="MC3" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+
                 <img src="https://th.bing.com/th/id/OIP.y4f2qtvtTD_RJiuSGF0HJAHaHa?r=0&cb=thvnextc1&w=730&h=730&rs=1&pid=ImgDetMain" alt="Cisco" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/1200px-HP_logo_2012.svg.png" alt="HP" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://logodownload.org/wp-content/uploads/2014/09/lenovo-logo-1-1.png" alt="Lenovo" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Dell_logo_2016.svg/1200px-Dell_logo_2016.svg.png" alt="Dell" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://th.bing.com/th/id/R.b87ac350211b155c514dd4924630b9fe?rik=QvDrXv3gl9u5pQ&pid=ImgRaw&r=0" alt="MS" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://th.bing.com/th/id/R.6e9e4c7f46b3f020e63e7ba5d5bda3fe?rik=vcwPPUPt7Snltg&pid=ImgRaw&r=0" alt="HPE" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
-                <!-- <img src="https://th.bing.com/th/id/OIP.j_uW4vnbfOT2gQs7a3X_NQHaHa?r=0&rs=1&pid=ImgDetMain" alt="MC3" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0"> -->
+                <img src="https://th.bing.com/th/id/OIP.j_uW4vnbfOT2gQs7a3X_NQHaHa?r=0&rs=1&pid=ImgDetMain" alt="MC3" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://mms.businesswire.com/media/20191014005395/fr/749501/5/Hiperdist_logo.jpg?download=1" alt="MC3" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                
+                <img src="https://th.bing.com/th/id/OIP.y4f2qtvtTD_RJiuSGF0HJAHaHa?r=0&cb=thvnextc1&w=730&h=730&rs=1&pid=ImgDetMain" alt="Cisco" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/1200px-HP_logo_2012.svg.png" alt="HP" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://logodownload.org/wp-content/uploads/2014/09/lenovo-logo-1-1.png" alt="Lenovo" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Dell_logo_2016.svg/1200px-Dell_logo_2016.svg.png" alt="Dell" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://th.bing.com/th/id/R.b87ac350211b155c514dd4924630b9fe?rik=QvDrXv3gl9u5pQ&pid=ImgRaw&r=0" alt="MS" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://th.bing.com/th/id/R.6e9e4c7f46b3f020e63e7ba5d5bda3fe?rik=vcwPPUPt7Snltg&pid=ImgRaw&r=0" alt="HPE" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://th.bing.com/th/id/OIP.j_uW4vnbfOT2gQs7a3X_NQHaHa?r=0&rs=1&pid=ImgDetMain" alt="MC3" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://mms.businesswire.com/media/20191014005395/fr/749501/5/Hiperdist_logo.jpg?download=1" alt="MC3" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <!-- <img src="https://th.bing.com/th/id/OIP.y4f2qtvtTD_RJiuSGF0HJAHaHa?r=0&cb=thvnextc1&w=730&h=730&rs=1&pid=ImgDetMain" alt="Cisco" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/1200px-HP_logo_2012.svg.png" alt="HP" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://logodownload.org/wp-content/uploads/2014/09/lenovo-logo-1-1.png" alt="Lenovo" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Dell_logo_2016.svg/1200px-Dell_logo_2016.svg.png" alt="Dell" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://th.bing.com/th/id/R.b87ac350211b155c514dd4924630b9fe?rik=QvDrXv3gl9u5pQ&pid=ImgRaw&r=0" alt="MS" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://th.bing.com/th/id/R.6e9e4c7f46b3f020e63e7ba5d5bda3fe?rik=vcwPPUPt7Snltg&pid=ImgRaw&r=0" alt="HPE" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="https://th.bing.com/th/id/OIP.j_uW4vnbfOT2gQs7a3X_NQHaHa?r=0&rs=1&pid=ImgDetMain" alt="MC3" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://mms.businesswire.com/media/20191014005395/fr/749501/5/Hiperdist_logo.jpg?download=1" alt="MC3" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
 
                 <img src="https://th.bing.com/th/id/OIP.y4f2qtvtTD_RJiuSGF0HJAHaHa?r=0&cb=thvnextc1&w=730&h=730&rs=1&pid=ImgDetMain" alt="Cisco" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
@@ -3272,7 +4029,7 @@
                 <img src="https://th.bing.com/th/id/OIP.j_uW4vnbfOT2gQs7a3X_NQHaHa?r=0&rs=1&pid=ImgDetMain" alt="MC3" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="https://mms.businesswire.com/media/20191014005395/fr/749501/5/Hiperdist_logo.jpg?download=1" alt="MC3" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
                 <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
-                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0">
+                <img src="" alt="" class="h-12 object-contain grayscale hover:grayscale-0 transition duration-300 drop-shadow-lg hover:scale-110 flex-shrink-0"> -->
             </div>
         </div>
     </div>
